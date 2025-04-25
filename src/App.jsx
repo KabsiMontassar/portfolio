@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Box, useColorMode } from '@chakra-ui/react'
 import Navbar from './components/navbar/Navbar'
 import FloatingSettings from './components/settings/FloatingSettings'
 import Home from './pages/home'
@@ -8,9 +9,14 @@ import Projects from './pages/projects'
 import Contact from './pages/contact'
 
 function App() {
+  const { colorMode } = useColorMode()
   return (
     <Router>
-      <div style={{ backgroundColor: '#FBF8F0', minHeight: '100vh', paddingTop: '100px' }}>
+      <Box 
+        backgroundColor={colorMode === 'light' ? '#FBF8F0' : 'gray.800'} 
+        minHeight="100vh"
+        paddingTop="100px"
+      >
         <Navbar />
         <FloatingSettings />
         <Routes>
@@ -20,7 +26,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-      </div>
+      </Box>
     </Router>
   )
 }

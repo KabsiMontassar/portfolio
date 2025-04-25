@@ -1,18 +1,23 @@
-import { Box, Flex, Link as ChakraLink } from '@chakra-ui/react'
+import { Box, Flex, Link as ChakraLink, useColorMode } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const Navbar = () => {
+  const { colorMode } = useColorMode()
+  const { t } = useTranslation()
+  
   return (
     <Box pt={8} width="100%" px={4} position="fixed" top={0} left={0} zIndex={100}>
       <Flex
-        maxW="600px"
+        maxW="650px"
         mx="auto"
         py={4}
         px={8}
-        bg="#FBF8F0"
+        bg={colorMode === 'light' ? '#FBF8F0' : 'gray.700'}
+        color={colorMode === 'light' ? 'gray.800' : 'white'}
         position="relative"
         borderRadius="full"
-        border="1px solid rgb(240, 240, 240)"
+        border={`1px solid ${colorMode === 'light' ? 'rgb(240, 240, 240)' : 'gray.600'}`}
         boxShadow="lg"
         justify="center"
         align="center"
@@ -22,16 +27,16 @@ const Navbar = () => {
           Kebsi Montassar
         </ChakraLink>
         <ChakraLink as={RouterLink} to="/about" fontSize="md" fontWeight="500" position="relative" _hover={{ fontWeight: "700" }}>
-          About
+          {t('about')}
         </ChakraLink>
         <ChakraLink as={RouterLink} to="/experience" fontSize="md" fontWeight="500" position="relative" _hover={{ fontWeight: "700" }}>
-          Experiences
+          {t('experiences')}
         </ChakraLink>
         <ChakraLink as={RouterLink} to="/projects" fontSize="md" fontWeight="500" position="relative" _hover={{ fontWeight: "700" }}>
-          Projects
+          {t('projects')}
         </ChakraLink>
         <ChakraLink as={RouterLink} to="/contact" fontSize="md" fontWeight="500" position="relative" _hover={{ fontWeight: "700" }}>
-          Contact
+          {t('contact')}
         </ChakraLink>
       </Flex>
     </Box>

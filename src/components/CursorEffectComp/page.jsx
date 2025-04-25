@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import BlurryCursor from "./cursor";
-import { VStack, Heading, Text, Box } from '@chakra-ui/react'
+import { VStack, Heading, Text, Box, useColorMode } from '@chakra-ui/react'
+import { useTranslation } from 'react-i18next'
 
 export default function Page() {
+    const { colorMode } = useColorMode()
+    const { t } = useTranslation()
     const [isActive, setIsActive] = useState(false);
 
     return (
@@ -22,12 +25,12 @@ export default function Page() {
                     onMouseEnter={() => setIsActive(true)}
                     onMouseLeave={() => setIsActive(false)}
                     fontSize={"7xl"}
-                    color="gray.600"
+                    color={colorMode === 'light' ? 'gray.600' : 'whiteAlpha.900'}
                     fontStyle="italic"
                     maxW="1000px"
                     textAlign="center"
                 >
-                    "The only way to do great work is to love what you do"
+                    "{t('quote')}"
                 </Text>
             </VStack>
             <BlurryCursor isActive={isActive} />

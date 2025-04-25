@@ -1,9 +1,17 @@
-import React from 'react'
+import { Box, useColorMode } from '@chakra-ui/react'
 
-const about = () => {
+const About = () => {
+  const { colorMode } = useColorMode()
+  
   return (
-    <div>about</div>
+    <Box 
+      p={8} 
+      color={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
+      bg={colorMode === 'light' ? 'transparent' : 'gray.800'}
+    >
+      About
+    </Box>
   )
 }
 
-export default about
+export default About
