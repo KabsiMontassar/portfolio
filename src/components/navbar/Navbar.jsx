@@ -3,16 +3,17 @@ import { Link as RouterLink } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <Box pt={14} width="100%" px={4}>
+    <Box pt={8} width="100%" px={4} position="fixed" top={0} left={0} zIndex={100}>
       <Flex
         maxW="600px"
         mx="auto"
         py={4}
         px={8}
-        bg="white"
+        bg="#FBF8F0"
         position="relative"
         borderRadius="full"
-        boxShadow="md"
+        border="1px solid rgb(240, 240, 240)"
+        boxShadow="lg"
         justify="center"
         align="center"
         gap={8}
