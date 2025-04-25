@@ -1,12 +1,26 @@
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Home from './pages/home'
+import About from './pages/about'
+import Experience from './pages/experience'
+import Projects from './pages/projects'
+import Contact from './pages/contact'
 import './App.css'
 
 function App() {
-
   return (
-    <>
-      
-    </>
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
