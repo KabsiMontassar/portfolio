@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar'
+import FloatingSettings from './components/settings/FloatingSettings'
 import Home from './pages/home'
 import About from './pages/about'
 import Experience from './pages/experience'
@@ -11,6 +12,7 @@ function App() {
     <Router>
       <div style={{ backgroundColor: '#FBF8F0', minHeight: '100vh', paddingTop: '100px' }}>
         <Navbar />
+        <FloatingSettings />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
