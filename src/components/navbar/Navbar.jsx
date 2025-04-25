@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <Box pt={14} width="100%" px={4}>
       <Flex
-        maxW="630px"
+        maxW="600px"
         mx="auto"
         py={4}
         px={8}
