@@ -17,7 +17,7 @@ const Navbar = () => {
         align="center"
         gap={8}
       >
-        <ChakraLink as={RouterLink} to="/" fontSize="xl" fontWeight="550" position="relative" _hover={{ textDecoration: "underline" }}>
+        <ChakraLink as={RouterLink} to="/" fontSize="xl" fontWeight="700" position="relative" _hover={{ textDecoration: "underline" }}>
           Kebsi Montassar
         </ChakraLink>
         <ChakraLink as={RouterLink} to="/about" fontSize="md" fontWeight="500" position="relative" _hover={{ fontWeight: "700" }}>
