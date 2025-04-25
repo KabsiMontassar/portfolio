@@ -18,7 +18,6 @@ export default function FloatingSettings() {
       position="fixed"
       right={14}
       top={8}
-      pt={4}
       zIndex={100}
     >
       <Menu placement="left-start" gutter={0} strategy="fixed">

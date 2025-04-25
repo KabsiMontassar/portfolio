@@ -2,7 +2,7 @@ import React from 'react'
 import Page from '../components/CursorEffectComp/page'
 const Home = () => {
   return (
-    <div>
+    <div >
       <Page />
     </div>
   )

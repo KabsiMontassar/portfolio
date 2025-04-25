@@ -11,7 +11,10 @@ import Contact from './pages/contact'
 function App() {
   const { colorMode } = useColorMode()
   return (
-    <Router>
+    <Router future={{ 
+      v7_startTransition: true,
+      v7_relativeSplatPath: true 
+    }}>
       <Box 
         backgroundColor={colorMode === 'light' ? '#FBF8F0' : 'gray.800'} 
         minHeight="100vh"
