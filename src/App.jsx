@@ -1,16 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
+import Navbar from './components/navbar/Navbar'
 import Home from './pages/home'
 import About from './pages/about'
 import Experience from './pages/experience'
 import Projects from './pages/projects'
 import Contact from './pages/contact'
-import './App.css'
 
 function App() {
   return (
     <Router>
-      <div>
+      <div style={{ backgroundColor: '#FBF8F0', minHeight: '100vh' }}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
