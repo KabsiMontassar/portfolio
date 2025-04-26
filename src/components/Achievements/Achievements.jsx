@@ -4,13 +4,8 @@ import {
   Heading, 
   Text, 
   Flex, 
-  useColorMode, 
   Image, 
-  Modal, 
-  ModalOverlay, 
-  ModalContent, 
-  ModalBody, 
-  ModalCloseButton,
+
   useColorModeValue,
   SimpleGrid,
   Badge,
@@ -118,7 +113,7 @@ const AchievementCard = ({ achievement, index, isExpanded, onToggle }) => {
           borderRight={index % 2 === 0 ? "none" : { base: "none", md: `6px solid ${borderColor}` }}
           borderTop={{ base: `6px solid ${borderColor}`, md: "none" }}
           transform={isExpanded ? "translateY(0)" : "translateY(10px)"}
-          transition="all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+          transition="all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275)"
           _hover={{ 
             transform: "translateY(0)", 
             boxShadow: "xl",
@@ -256,8 +251,6 @@ const AchievementCard = ({ achievement, index, isExpanded, onToggle }) => {
 };
 
 const ImagePreview = ({ images, borderColor, textColor }) => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
     <>
@@ -290,7 +283,6 @@ const ImagePreview = ({ images, borderColor, textColor }) => {
               borderRadius="lg"
               overflow="hidden"
               cursor="pointer"
-              onClick={() => setSelectedImage(img.url)}
               transition="all 0.3s ease"
               _hover={{ 
                 transform: 'scale(1.05)',
@@ -337,32 +329,6 @@ const ImagePreview = ({ images, borderColor, textColor }) => {
         ))}
       </SimpleGrid>
 
-      <Modal 
-        isOpen={!!selectedImage} 
-        onClose={() => setSelectedImage(null)} 
-        size={isMobile ? "full" : "xl"}
-        motionPreset="scale"
-      >
-        <ModalOverlay bg="blackAlpha.800" />
-        <ModalContent bg="transparent" boxShadow="none">
-          <ModalCloseButton 
-            color="white" 
-            bg="blackAlpha.600" 
-            _hover={{ bg: "blackAlpha.800" }}
-            size="lg"
-          />
-          <ModalBody p={0} display="flex" alignItems="center" justifyContent="center">
-            <Image 
-              src={selectedImage} 
-              alt="Preview" 
-              maxW="100%"
-              maxH="90vh"
-              objectFit="contain"
-              borderRadius="lg"
-            />
-          </ModalBody>
-        </ModalContent>
-      </Modal>
     </>
   );
 };
