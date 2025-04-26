@@ -1,4 +1,4 @@
-import React, { useState, } from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Heading,
@@ -8,15 +8,20 @@ import {
 import { useTranslation } from 'react-i18next';
 import AchievementCard from './AchievementCard';
 import { achievements } from './data';
+
 const Achievements = () => {
   const { t } = useTranslation();
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [expandedCards, setExpandedCards] = useState([]);
 
-  const handleToggle = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
+  const handleToggleExpand = (index) => {
+    setExpandedCards(prev => {
+      if (prev.includes(index)) {
+        return prev.filter(i => i !== index);
+      } else {
+        return [...prev, index];
+      }
+    });
   };
-
-
 
   const headingGradient = useColorModeValue(
     'linear(to-r, gray.700, gray.500)',
@@ -88,8 +93,8 @@ const Achievements = () => {
             key={index}
             achievement={achievement}
             index={index}
-            isExpanded={expandedIndex === index}
-            onToggle={() => handleToggle(index)}
+            expandedCards={expandedCards}
+            onToggleExpand={handleToggleExpand}
           />
         ))}
       </Box>
