@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap';
+import { useColorMode } from '@chakra-ui/react';
 
 const lerp = (start, end, factor) => (1 - factor) * start + factor * end;
 
@@ -8,15 +9,26 @@ export default function BlurryCursor({ isActive }) {
     const delayedMouse = useRef({ x: 0, y: 0 });
     const rafId = useRef();
     const circles = useRef([]);
-    const size = isActive ? 150 : 20;  // Remove px units, use numbers instead
-    const scale = isActive ? 1.5 : 1;  // Add scale factor
+    const size = isActive ? 150 : 20;
+    const scale = isActive ? 1.5 : 1;
+    const { colorMode } = useColorMode();
 
-    const colors = [
-        "#c32d27",
-        "#f5c63f",
-        "#457ec4",
-        "#356fdb",
+    // Define color schemes for light and dark modes
+    const lightModeColors = [
+        "#2D3748", // Gray
+        "#3182CE", // Blue
+        "#38A169", // Green
+        "#805AD5", // Purple
     ];
+
+    const darkModeColors = [
+        "#A0AEC0", // Light Gray
+        "#63B3ED", // Light Blue
+        "#68D391", // Light Green
+        "#B794F4", // Light Purple
+    ];
+
+    const colors = colorMode === 'light' ? lightModeColors : darkModeColors;
 
     const manageMouseMove = (e) => {
         const { clientX, clientY } = e;
@@ -79,7 +91,7 @@ export default function BlurryCursor({ isActive }) {
                         height: `${size}px`,
                         borderRadius: '50%',
                         filter: `blur(${isActive ? 20 : 2}px)`,
-                        opacity: isActive ? 0.8 - (i * 0.1) : 0.6 - (i * 0.1),
+                        opacity: isActive ? 0.5 - (i * 0.1) : 0.3 - (i * 0.05),
                         transition: 'width 0.3s ease-out, height 0.3s ease-out, filter 0.3s ease-out'
                     }}
                     key={i} 

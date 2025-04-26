@@ -35,7 +35,7 @@ export default function Page() {
     }, [])
 
     return (
-        <Box height="100%" width="100%" position="relative" overflow="hidden">
+        <Box  height="100%" width="100%" position="relative" overflow="hidden">
             <Box 
                 ref={bgRef} 
                 position="absolute" 
