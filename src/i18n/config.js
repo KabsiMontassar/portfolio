@@ -23,7 +23,12 @@ i18n.use(initReactI18next).init({
         ,  "moreAboutMe": "More About Me",
         "copyright": "© 2024 Kebsi Montassar. All rights reserved.",
         "privacyNote": "Built with privacy and security in mind.",
-        "home": "Home"
+        "home": "Home",
+        "getToKnowMe": "Get To Know Me More",
+        "hackathons": "Hackathons",
+        "certificates": "Certificates",
+        "skills": "Skills",
+        "education": "Education Degrees"
       }
     },
     fr: {
@@ -43,7 +48,12 @@ i18n.use(initReactI18next).init({
         "moreAboutMe": "En savoir plus sur moi",
         "copyright": "© 2024 Kebsi Montassar. Tous droits réservés.",
         "privacyNote": "Construit avec la confidentialité et la sécurité à l'esprit.",
-        "home": "Accueil"
+        "home": "Accueil",
+        "getToKnowMe": "Apprenez à Me Connaître",
+        "hackathons": "Hackathons",
+        "certificates": "Certificats",
+        "skills": "Compétences",
+        "education": "Diplômes"
       }
     }
   },
