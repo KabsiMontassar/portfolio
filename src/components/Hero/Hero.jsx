@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Heading, Text, Button, VStack, useColorMode } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
-
+import {summary} from '../../constants/content'
 const Hero = () => {
   const { colorMode } = useColorMode()
   const navigate = useNavigate()
@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <Box
       as="section"
-      height="100%"
+      
       display="flex"
       alignItems="center"
       justifyContent="center"
@@ -17,21 +17,14 @@ const Hero = () => {
       position="relative"
     >
       <VStack spacing={6}>
-        <Heading 
-          fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
+        <Text 
+          fontSize={{ base: '4xl', md: '5xl', lg: '4xl' }}
           color={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
-          fontWeight="bold"
+          maxW={'1200px'}
         >
-          Kebsi Montassar | Frontend Developer
-        </Heading>
-        <Text
-          fontSize={{ base: 'xl', md: '2xl' }}
-          color={colorMode === 'light' ? 'gray.600' : 'whiteAlpha.800'}
-          maxW="2xl"
-          mb={8}
-        >
-          Building beautiful web experiences with modern technologies
+          {summary.intro}
         </Text>
+      
         <Button
           size="lg"
           colorScheme={colorMode === 'light' ? 'blackAlpha' : 'whiteAlpha'}
@@ -41,6 +34,12 @@ const Hero = () => {
             boxShadow: 'lg',
           }}
           transition="all 0.2s"
+          borderRadius={'full'}
+          fontSize={{ base: 'lg', md: 'xl' }}
+            fontWeight="bold"
+            px={8}
+            py={4}
+            bg={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
         >
           More About Me
         </Button>
