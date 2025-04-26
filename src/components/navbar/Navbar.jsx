@@ -7,7 +7,7 @@ const Navbar = () => {
   const { t } = useTranslation()
   
   return (
-    <Box pt={8} width="100%" px={4} position="fixed" top={0} left={0} zIndex={100}>
+    <Box pt={8} width="100%" px={4} position="fixed" top={0} left={0} zIndex={1000}>
       <Flex
         maxW="650px"
         mx="auto"

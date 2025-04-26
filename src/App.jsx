@@ -18,7 +18,7 @@ function App() {
       <Box 
         backgroundColor={colorMode === 'light' ? '#FBF8F0' : 'gray.800'} 
         minHeight="100vh"
-        paddingTop="100px"
+        position="relative"
       >
         <Navbar />
         <FloatingSettings />
