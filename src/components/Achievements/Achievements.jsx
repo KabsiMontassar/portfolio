@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
-import { Box, Heading, useColorMode, Text } from '@chakra-ui/react';
+import React, { useRef, useState, useEffect } from 'react';
+import { Box, Heading, Text, Flex, useColorMode } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
+
 import gsap from 'gsap';
 
 const softColors = {
@@ -36,129 +37,101 @@ const softColors = {
   }
 };
 
-const AchievementCard = ({ achievement, index }) => {
+const AchievementCard = ({ achievement, index, isExpanded, onToggle }) => {
   const cardRef = useRef(null);
-  const svgRef = useRef(null);
-  const contentRef = useRef(null);
   const colorKey = achievement.label.toLowerCase();
 
-  const expandCard = () => {
-    gsap.to(cardRef.current, {
-      x: '-50%',
-      left: '50%',
-      width: "95vw",
-      height: "300px",
-      duration: 0.8,
-      ease: "power4.out",
-    });
-
-    gsap.to(contentRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.5,
-      delay: 0.3
-    });
-
-    gsap.to(svgRef.current, {
-      scale: 2,
-      x: -100,
-      duration: 0.6,
-      ease: "back.out(1.7)"
-    });
-  };
-
-  const collapseCard = () => {
-    gsap.to(cardRef.current, {
-      x: 0,
-      left: 0,
-      width: "80%",
-      height: "160px",
-      duration: 0.6,
-      ease: "power3.inOut"
-    });
-
-    gsap.to(contentRef.current, {
-      opacity: 0,
-      y: 20,
-      duration: 0.3
-    });
-
-    gsap.to(svgRef.current, {
-      scale: 1,
-      x: 0,
-      duration: 0.6,
-      ease: "back.in"
-    });
-  };
-
-  const getShape = () => {
-    switch(achievement.label) {
-      case 'projects':
-        return "M10 10h40v40h-40z";
-      case 'hackathons':
-        return "M30 10 L50 30 L30 50 L10 30 Z";
-      case 'experiences':
-        return "M30,10 A20,20 0 1,0 30,50 A20,20 0 1,0 30,10";
-      case 'certificates':
-        return "M10,30 Q30,5 50,30 Q30,55 10,30";
-      case 'skills':
-        return "M30,10 L50,20 L50,40 L30,50 L10,40 L10,20 Z";
-      default:
-        return "M25,10 L45,25 L35,48 L15,48 L5,25 Z";
-    }
-  };
+  useEffect(() => {
+    gsap.fromTo(cardRef.current, 
+      { opacity: 0, x: index % 2 === 0 ? -100 : 100 },
+      { 
+        opacity: 1, 
+        x: 0, 
+        duration: 1,
+        delay: index * 0.2,
+        ease: "power3.out"
+      }
+    );
+  }, []);
 
   return (
     <Box
       ref={cardRef}
-      position="absolute"
-      left={0}
-      top={`${index * 180}px`}
-      height="160px"
-      width="80%"
-      bg={softColors[colorKey]?.bg || '#F0F0F0'}
-      borderRadius="2xl"
-      borderRight={`6px solid ${softColors[colorKey]?.border || '#CCCCCC'}`}
-      boxShadow="lg"
-      overflow="hidden"
+      position="relative"
+      mb={20}
+      opacity={0}
+      
       cursor="pointer"
-      transition="box-shadow 0.3s ease"
-      _hover={{ boxShadow: "2xl" }}
-      onClick={expandCard}
-      onMouseLeave={collapseCard}
+      onClick={onToggle}
     >
-      <Box p={8} display="flex" height="100%">
-        <Box flex="1" display="flex" alignItems="center">
-          <svg
-            ref={svgRef}
-            width="100"
-            height="100"
-            viewBox="0 0 60 60"
-            style={{ marginRight: "40px", flexShrink: 0 }}
-          >
-            <path d={getShape()} fill={softColors[colorKey]?.bg || '#F0F0F0'} 
-                  stroke={softColors[colorKey]?.border || '#CCCCCC'} strokeWidth="3" />
-          </svg>
-          <Box>
-            <Text fontSize="4xl" fontWeight="bold" color={softColors[colorKey]?.text}>{achievement.number}</Text>
-            <Text fontSize="xl" color={softColors[colorKey]?.text} opacity={0.9}>{achievement.label}</Text>
-          </Box>
-        </Box>
-        <Box 
-          ref={contentRef} 
-          flex="2" 
-          opacity={0} 
-          transform="translateY(20px)"
-          ml={8}
-          borderLeft={`2px solid ${softColors[colorKey]?.border}40`}
-          pl={8}
+      <Flex
+        direction={index % 2 === 0 ? "row" : "row-reverse"}
+        align="center"
+        w="100%"
+        position="relative"
+      >
+        <Text
+          fontSize="240px"
+          fontWeight="900"
+          opacity={0.1}
+          position="absolute"
+          left={index % 2 === 0 ? "-20px" : "auto"}
+          right={index % 2 === 0 ? "auto" : "-20px"}
+          top="-200px"
+          color={softColors[colorKey].text}
         >
-          <Text fontSize="lg" color={softColors[colorKey]?.text}>
-            Additional content for {achievement.label} goes here.
-            This could include descriptions, achievements, or other relevant information.
+          {index + 1}
+        </Text>
+        
+        <Box
+          w={isExpanded ? "600px" : "400px"}
+          h="300px"
+          bg={softColors[colorKey].bg}
+          p={8}
+          borderRadius="3xl"
+          boxShadow={isExpanded ? "2xl" : "xl"}
+          borderLeft={index % 2 === 0 ? `8px solid ${softColors[colorKey].border}` : "none"}
+          borderRight={index % 2 === 0 ? "none" : `8px solid ${softColors[colorKey].border}`}
+          transform={isExpanded ? "translateY(0)" : "translateY(20px)"}
+          transition="all 0.3s ease-in-out"
+          _hover={{ transform: "translateY(0)", boxShadow: "2xl" }}
+          overflow="hidden"
+          display="flex"
+          flexDirection="column"
+          justifyContent="space-between"
+        >
+          <Flex align="center" mb={4}>
+            <Box
+              w="60px"
+              h="60px"
+              borderRadius="xl"
+              bg={`${softColors[colorKey].border}22`}
+              mr={4}
+              display="flex"
+              align="center"
+              justify="center"
+            >
+              <Text fontSize="2xl" fontWeight="bold" color={softColors[colorKey].text}>
+                {achievement.number}
+              </Text>
+            </Box>
+            <Text fontSize="2xl" fontWeight="700" color={softColors[colorKey].text}>
+              {achievement.label}
+            </Text>
+          </Flex>
+          
+          <Text color={softColors[colorKey].text} opacity={0.8} fontSize="md" lineHeight={1.8}>
+            {achievement.description}
           </Text>
         </Box>
-      </Box>
+
+        <Box 
+          flex={1} 
+          h="2px" 
+          bg={`${softColors[colorKey].border}33`}
+          mx={8}
+        />
+      </Flex>
     </Box>
   );
 };
@@ -166,36 +139,65 @@ const AchievementCard = ({ achievement, index }) => {
 const Achievements = () => {
   const { t } = useTranslation();
   const { colorMode } = useColorMode();
+  const [expandedIndex, setExpandedIndex] = useState(null);
+  
+  const handleToggle = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
 
   const achievements = [
-    { number: "15+", label: t('projects') },
-    { number: "5+", label: t('hackathons') },
-    { number: "3+", label: t('experiences') },
-    { number: "10+", label: t('certificates') },
-    { number: "20+", label: t('skills') },
-    { number: "2+", label: t('education') }
+    { 
+      number: "15+", 
+      label: 'projects',
+      description: "Built responsive web applications using React, Node.js, and modern frameworks. Specialized in creating interactive dashboards and e-commerce solutions."
+    },
+    { 
+      number: "5+", 
+      label: 'hackathons',
+      description: "Participated in competitive coding events, winning awards for innovative solutions in AI and web development categories."
+    },
+    { 
+      number: "3+", 
+      label: 'experiences',
+      description: "Professional work experience at tech companies, contributing to large-scale projects and collaborating with cross-functional teams."
+    },
+    { 
+      number: "10+", 
+      label: 'certificates',
+      description: "Completed certifications in web development, cloud computing, and UX design from recognized platforms like Coursera and Udemy."
+    },
+    { 
+      number: "20+", 
+      label: 'skills',
+      description: "Mastered technologies including JavaScript, Python, React, Node.js, and cloud platforms like AWS and Firebase."
+    },
+    { 
+      number: "2+", 
+      label: 'education',
+      description: "Advanced degrees in Computer Science with focus on human-computer interaction and distributed systems."
+    }
   ];
 
   return (
-    <Box minHeight="100vh" px={8} py={16}>
-      <Heading
-        fontSize="6xl"
-        mb={16}
-        color={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
-      >
-        {t('getToKnowMe')}
-      </Heading>
-      <Box 
-        position="relative" 
-        height="1100px"
-        mx="auto"
-        mt={8}
-      >
+    <Box minHeight="100vh" py={20} overflow="hidden">
+      <Box px={20} mb={28}>
+        <Heading
+          fontSize="7xl"
+          bgGradient="linear(to-r, gray.700, gray.500)"
+          bgClip="text"
+          letterSpacing="tight"
+        >
+          {t('getToKnowMe')}
+        </Heading>
+      </Box>
+      <Box maxW="1400px" mx="auto" px={8}>
         {achievements.map((achievement, index) => (
           <AchievementCard
             key={index}
             achievement={achievement}
             index={index}
+            isExpanded={expandedIndex === index}
+            onToggle={() => handleToggle(index)}
           />
         ))}
       </Box>
