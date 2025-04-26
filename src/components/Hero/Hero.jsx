@@ -16,6 +16,7 @@ const Hero = () => {
       justifyContent="center"
       textAlign="center"
       position="relative"
+      
     >
        
       <VStack spacing={6}>
