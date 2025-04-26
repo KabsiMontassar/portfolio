@@ -28,7 +28,9 @@ i18n.use(initReactI18next).init({
         "hackathons": "Hackathons",
         "certificates": "Certificates",
         "skills": "Skills",
-        "education": "Education Degrees"
+        "education": "Education Degrees",
+        "featuredWorks": "Featured Works",
+        "worksDescription": "Explore some of my notable projects and their impact."
       }
     },
     fr: {
@@ -53,7 +55,9 @@ i18n.use(initReactI18next).init({
         "hackathons": "Hackathons",
         "certificates": "Certificats",
         "skills": "Compétences",
-        "education": "Diplômes"
+        "education": "Diplômes",
+        "featuredWorks": "Travaux en Vedette",
+        "worksDescription": "Découvrez certains de mes projets notables et leur impact."
       }
     }
   },

@@ -2,6 +2,7 @@ import React from 'react'
 import Page from '../components/CursorEffectComp/page'
 import Hero from '../components/Hero/Hero'
 import Achievements from '../components/Achievements/Achievements'
+import PersonalCard from '../components/PersonalCard/PersonalCard'
 
 const Home = () => {
   return (
@@ -12,8 +13,11 @@ const Home = () => {
       <section style={{ height: '80vh', position: 'relative' }}>
         <Hero />
       </section>
-      <section>
+      <section >
         <Achievements />
+      </section>
+      <section >
+        <PersonalCard />
       </section>
     </div>
   )
