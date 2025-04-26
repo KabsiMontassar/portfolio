@@ -46,7 +46,7 @@ export default function Page() {
                 zIndex={1}
                 opacity={colorMode === 'light' ? 0.16 : 0.18}
             >
-                <svg width="100%" height="100%" style={{filter: 'blur(40px)'}}>
+                <svg width="100%" height="90vh" style={{filter: 'blur(40px)'}}>
                     {/* Primary shapes */}
                     <circle className="bg-shape" r="120" fill="#FF3366"/>
                     <circle className="bg-shape" r="140" fill="#33FF99"/>
@@ -60,12 +60,7 @@ export default function Page() {
                     <circle className="bg-shape" r="140" fill="#FF33CC"/>
                     <circle className="bg-shape" r="70" fill="#33FF66"/>
                     {/* Accent shapes */}
-                    <circle className="bg-shape" r="60" fill="#FF99CC"/>
-                    <circle className="bg-shape" r="85" fill="#99FF33"/>
-                    <circle className="bg-shape" r="95" fill="#3399FF"/>
-                    <circle className="bg-shape" r="75" fill="#FF3399"/>
-                    <circle className="bg-shape" r="115" fill="#33CCFF"/>
-                </svg>
+                     </svg>
             </Box>
             
             <Box

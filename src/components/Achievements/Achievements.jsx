@@ -33,8 +33,8 @@ const Achievements = () => {
 
       <Box
         position="absolute"
-        top="-100px"
-        right="-100px"
+        top="15%"
+        right="10%"
         w="400px"
         h="400px"
         borderRadius="full"
@@ -45,8 +45,20 @@ const Achievements = () => {
       />
       <Box
         position="absolute"
-        bottom="-100px"
-        left="-100px"
+        bottom="10%"
+        left="5%"
+        w="500px"
+        h="500px"
+        borderRadius="full"
+        bg="pink.100"
+        filter="blur(100px)"
+        opacity={0.2}
+        zIndex={0}
+      />
+       <Box
+        position="absolute"
+        bottom="50%"
+        left="20%"
         w="500px"
         h="500px"
         borderRadius="full"
