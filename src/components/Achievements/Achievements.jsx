@@ -42,7 +42,7 @@ const ImagePreview = ({ images, colorKey }) => {
 
   return (
     <>
-      <Flex gap={6}>
+      <Flex w="100%" px={10} justifyContent="space-between" gap={12}>
         {images.map((img, idx) => (
           <Flex 
             key={idx}
@@ -106,7 +106,7 @@ const AchievementCard = ({ achievement, index, isExpanded, onToggle }) => {
         ease: "power3.out"
       }
     );
-  }, []);
+  }, [index]);
 
   return (
     <Box
@@ -138,7 +138,7 @@ const AchievementCard = ({ achievement, index, isExpanded, onToggle }) => {
         </Text>
         
         <Box
-          w={isExpanded ? "full" : "400px"}
+          w={isExpanded ? "full" : "600px"}
           h={"300px"}
           bg={softColors[colorKey].bg}
           p={8}
@@ -192,7 +192,7 @@ const AchievementCard = ({ achievement, index, isExpanded, onToggle }) => {
                   bg={`${softColors[colorKey].border}33`} 
                   mx={4}
                 />
-                <Box flex={2}>
+                <Box flex={3} display="flex" alignItems="center" justifyContent="center">
                   <ImagePreview images={achievement.images} colorKey={colorKey} />
                 </Box>
               </Flex>
