@@ -9,7 +9,10 @@ export default function Page() {
     const [isActive, setIsActive] = useState(false);
 
     return (
+        <>
+       
         <Box
+
             height="100%"
             width="100%"
             position="relative"
@@ -19,6 +22,7 @@ export default function Page() {
             justifyContent="center"
             zIndex={10}
         >
+           
             <VStack spacing={6} align="center">
                 <Text
                     onMouseEnter={() => setIsActive(true)}
@@ -34,5 +38,7 @@ export default function Page() {
             </VStack>
             <BlurryCursor isActive={isActive} />
         </Box>
+        
+        </>
     )
 }

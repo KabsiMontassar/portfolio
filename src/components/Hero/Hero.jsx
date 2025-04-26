@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, Heading, Text, Button, VStack, useColorMode } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 import {summary} from '../../constants/content'
+
 const Hero = () => {
   const { colorMode } = useColorMode()
   const navigate = useNavigate()
@@ -16,6 +17,7 @@ const Hero = () => {
       textAlign="center"
       position="relative"
     >
+       
       <VStack spacing={6}>
         <Text 
           fontSize={{ base: '4xl', md: '5xl', lg: '4xl' }}
