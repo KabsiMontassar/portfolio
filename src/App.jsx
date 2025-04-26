@@ -7,9 +7,35 @@ import About from './pages/about'
 import Experience from './pages/experience'
 import Projects from './pages/projects'
 import Contact from './pages/contact'
-
+import Footer from './components/Footer/Footer'
+import Lenis from 'lenis';
+import { useEffect } from 'react';
 function App() {
   const { colorMode } = useColorMode()
+
+  useEffect( () => {
+
+    const lenis = new Lenis()
+
+
+
+    function raf(time) {
+
+      lenis.raf(time)
+
+      requestAnimationFrame(raf)
+
+    }
+
+
+
+    requestAnimationFrame(raf)
+
+  }, [])
+
+
+
+
   return (
     <Router future={{ 
       v7_startTransition: true,
@@ -30,6 +56,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Box>
+      <Footer />
     </Router>
   )
 }

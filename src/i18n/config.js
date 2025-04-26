@@ -18,7 +18,12 @@ i18n.use(initReactI18next).init({
         "aboutTitle": "About Me",
         "projectsTitle": "My Projects",
         "experienceTitle": "My Experience",
-        "contactTitle": "Contact Me"
+        "contactTitle": "Contact Me",
+        "summary" :"Hi, I'm Kebsi Montassar, a Full Stack Developer passionate about building AI-integrated web applications and scalable cloud-based solutions. I aspire to create secure, efficient systems using the best tools for each project. I’m especially focused on delivering complete web experiences that combine strong UI/UX design with smart, thoughtful AI features."
+        ,  "moreAboutMe": "More About Me",
+        "copyright": "© 2024 Kebsi Montassar. All rights reserved.",
+        "privacyNote": "Built with privacy and security in mind.",
+        "home": "Home"
       }
     },
     fr: {
@@ -33,7 +38,12 @@ i18n.use(initReactI18next).init({
         "aboutTitle": "À Propos de Moi",
         "projectsTitle": "Mes Projets",
         "experienceTitle": "Mon Expérience",
-        "contactTitle": "Me Contacter"
+        "contactTitle": "Me Contacter",
+        "summary" :"Bonjour, je suis Kebsi Montassar, un développeur Full Stack passionné par la création d'applications web intégrées à l'IA et de solutions cloud évolutives. J'aspire à créer des systèmes sécurisés et efficaces en utilisant les meilleurs outils pour chaque projet. Je me concentre particulièrement sur la livraison d'expériences web complètes qui allient un design UI/UX solide à des fonctionnalités IA intelligentes et réfléchies.",
+        "moreAboutMe": "En savoir plus sur moi",
+        "copyright": "© 2024 Kebsi Montassar. Tous droits réservés.",
+        "privacyNote": "Construit avec la confidentialité et la sécurité à l'esprit.",
+        "home": "Accueil"
       }
     }
   },

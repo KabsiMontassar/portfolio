@@ -1,11 +1,12 @@
 import React from 'react'
 import { Box, Heading, Text, Button, VStack, useColorMode } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
-import {summary} from '../../constants/content'
+import { useTranslation } from 'react-i18next'
 
 const Hero = () => {
   const { colorMode } = useColorMode()
   const navigate = useNavigate()
+    const { t } = useTranslation()
 
   return (
     <Box
@@ -25,7 +26,7 @@ const Hero = () => {
           color={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
           maxW={'1200px'}
         >
-          {summary.intro}
+          {t('summary')}
         </Text>
       
         <Button
@@ -36,6 +37,7 @@ const Hero = () => {
             transform: 'translateY(-2px)',
             boxShadow: 'lg',
           }}
+           my={8}
           transition="all 0.2s"
           borderRadius={'full'}
           fontSize={{ base: 'lg', md: 'xl' }}
@@ -44,7 +46,7 @@ const Hero = () => {
             py={4}
             bg={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
         >
-          More About Me
+          {t('moreAboutMe')}
         </Button>
       </VStack>
     </Box>
