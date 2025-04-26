@@ -80,12 +80,18 @@ const AchievementCard = ({ achievement, index, isExpanded, onToggle }) => {
       }}
       transition="all 0.3s ease"
     >
+
+  
+
+
       <Flex
         direction={{ base: "column", md: index % 2 === 0 ? "row" : "row-reverse" }}
         align="center"
         w="100%"
         position="relative"
       >
+       
+        
         <Text
           className="achievement-number"
           fontSize={{ base: "120px", md: "240px" }}
@@ -312,17 +318,7 @@ const ImagePreview = ({ images, borderColor, textColor }) => {
                 alignItems="center"
                 justifyContent="center"
               >
-                <Box
-                  bg={`${borderColor}80`}
-                  color="white"
-                  px={3}
-                  py={1}
-                  borderRadius="full"
-                  fontSize="xs"
-                  fontWeight="bold"
-                >
-                  View
-                </Box>
+              
               </Box>
             </Box>
           </Flex>
@@ -482,7 +478,7 @@ const Achievements = () => {
   );
 
   return (
-    <Box minHeight="100vh" py={{ base: 12, md: 20 }} overflow="hidden" position="relative">
+    <Box userSelect={"none"} minHeight="100vh" py={{ base: 12, md: 20 }} overflow="hidden" position="relative">
       {/* Decorative elements */}
       <Box
         position="absolute"
