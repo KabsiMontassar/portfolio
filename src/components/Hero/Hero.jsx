@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <Box
       as="section"
-      
+      height="80vh"
       display="flex"
       alignItems="center"
       justifyContent="center"

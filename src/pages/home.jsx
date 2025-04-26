@@ -8,7 +8,7 @@ const Home = () => {
       <section style={{ height: '100vh', position: 'relative' }}>
         <Page />
       </section>
-      <section style={{ position: 'relative' }}>
+      <section style={{ height: '80vh', position: 'relative' }}>
         <Hero />
       </section>
     </div>
