@@ -46,10 +46,10 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
         `${achievement.color}.600`,
         `${achievement.color}.300`
     );
-    const hoverBg = useColorModeValue(
-        `${achievement.color}.50`,
-        `${achievement.color}.800`
-    );
+    // const hoverBg = useColorModeValue(
+    //     `${achievement.color}.50`,
+    //     `${achievement.color}.800`
+    // );
 
     useEffect(() => {
         // Card animation - only on initial mount
@@ -105,7 +105,7 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
                     position="relative"
                 >
                     <Text
-                        className="achievement-number"
+                       
                         fontSize={{ base: "120px", md: "240px" }}
                         fontWeight="900"
                         opacity={0.1}
@@ -121,22 +121,17 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
                     </Text>
 
                     <Box
+                        className={`achievement-card ${achievement.color}`}
                         w={{ base: "full", md: isExpanded ? "full" : "600px" }}
                         h={{ base: "auto", md: isExpanded ? "400px" : "300px" }}
                         bg={bgColor}
                         p={{ base: 6, md: 8 }}
                         borderRadius="3xl"
-                        boxShadow={isExpanded ? "xl" : "md"}
                         borderLeft={index % 2 === 0 ? { base: "none", md: `6px solid ${borderColor}` } : "none"}
                         borderRight={index % 2 === 0 ? "none" : { base: "none", md: `6px solid ${borderColor}` }}
                         borderTop={{ base: `6px solid ${borderColor}`, md: "none" }}
                         transform={isExpanded ? "translateY(0)" : "translateY(10px)"}
                         transition="all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275)"
-                        _hover={{
-                            transform: "translateY(0)",
-                            boxShadow: "xl",
-                            bg: hoverBg
-                        }}
                         overflow="hidden"
                         display="flex"
                         flexDirection="column"
