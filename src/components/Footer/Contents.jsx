@@ -16,14 +16,19 @@ const navlinks = [
     { name: t('contact'), path: '/contact' },
   ]
   
-
+const firstColor = colorMode === 'light' ? '#D9E2F3' : '#1A202C'
+const secondColor = colorMode === 'light' ? '#BEE3F8' : '#08162E'
   
+  const bgGradient =  `linear(to-b, ${firstColor}, ${secondColor})`
+
+
 
   return (
     <Box
+    
       height="full"
       width="full"
-      bg={colorMode === 'light' ? 'blue.100' : '#08162e'}
+      bgGradient={bgGradient}
       color={colorMode === 'light' ? 'whiteAlpha.900' : 'whiteAlpha.900'}
       display="flex"
       alignItems="center"
