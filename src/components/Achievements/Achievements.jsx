@@ -14,7 +14,7 @@ const Achievements = () => {
 
   // Convert i18n achievements data into array format
   const achievements = useMemo(() => {
-    const categories = ['projects', 'hackathons', 'experience', 'certificates', 'skills', 'education'];
+    const categories = [ 'experience', 'education','projects', 'hackathons', 'certificates', 'skills'];
     return categories.map(category => ({
       ...t(`achievements.${category}`, { returnObjects: true }),
       color: {
@@ -44,9 +44,10 @@ const Achievements = () => {
   );
 
   return (
-    <Box userSelect={"none"} overflow="hidden" position="relative">
+    <Box    userSelect={"none"} overflow="hidden" position="relative">
 
-      <Box
+      <Box 
+   
         position="absolute"
         top="15%"
         right="10%"

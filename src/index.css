@@ -7,3 +7,10 @@
    font-weight: 400;
 }
 
+.Shadowsbackground{
+   background: linear-gradient(180deg, #F5F5F5 0%, #ff1212 100%);
+   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+   border-radius: 8px;
+   padding: 20px;
+   margin: 20px;
+}

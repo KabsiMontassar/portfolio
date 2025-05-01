@@ -117,6 +117,9 @@ i18n.use(initReactI18next).init({
             "images": [
               { "url": "/images/skills/skill1.jpg", "title": "JavaScript" },
               { "url": "/images/skills/skill2.jpg", "title": "React" },
+              { "url": "/images/skills/skill3.jpg", "title": "AWS" },
+              { "url": "/images/skills/skill1.jpg", "title": "JavaScript" },
+              { "url": "/images/skills/skill2.jpg", "title": "React" },
               { "url": "/images/skills/skill3.jpg", "title": "AWS" }
             ],
             "skills": ["JavaScript", "Python", "React", "Node.js", "AWS", "Firebase"]
@@ -128,8 +131,7 @@ i18n.use(initReactI18next).init({
             "description": "Advanced degrees in Computer Science with focus on human-computer interaction and distributed systems. Published research papers on innovative approaches to user interface design.",
             "images": [
               { "url": "/images/education/edu1.jpg", "title": "Bachelor's Degree" },
-              { "url": "/images/education/edu2.jpg", "title": "Master's Degree" },
-              { "url": "/images/education/edu3.jpg", "title": "PhD" }
+              { "url": "/images/education/edu2.jpg", "title": "Master's Degree" }
             ],
             "skills": ["Research", "Algorithms", "Distributed Systems", "HCI"]
           }
@@ -247,6 +249,9 @@ i18n.use(initReactI18next).init({
             "images": [
               { "url": "/images/skills/skill1.jpg", "title": "JavaScript" },
               { "url": "/images/skills/skill2.jpg", "title": "React" },
+              { "url": "/images/skills/skill3.jpg", "title": "AWS" },
+              { "url": "/images/skills/skill1.jpg", "title": "JavaScript" },
+              { "url": "/images/skills/skill2.jpg", "title": "React" },
               { "url": "/images/skills/skill3.jpg", "title": "AWS" }
             ],
             "skills": ["JavaScript", "Python", "React", "Node.js", "AWS", "Firebase"]
@@ -259,7 +264,6 @@ i18n.use(initReactI18next).init({
             "images": [
               { "url": "/images/education/edu1.jpg", "title": "Licence" },
               { "url": "/images/education/edu2.jpg", "title": "Master" },
-              { "url": "/images/education/edu3.jpg", "title": "Doctorat" }
             ],
             "skills": ["Recherche", "Algorithmes", "Systèmes Distribués", "IHM"]
           }
