@@ -25,7 +25,7 @@ i18n.use(initReactI18next).init({
         "moreAboutMe": "More About Me",
         "getToKnowMe": "Get To Know Me More",
         "exploreJourney": "Explore my journey through projects, experiences, and achievements that shaped my career.",
-        
+       
         // Page Titles
         "aboutTitle": "About Me",
         "projectsTitle": "My Projects",
@@ -150,7 +150,8 @@ i18n.use(initReactI18next).init({
               "Full Stack Development", "Cross-Browser Compatibility", "Security Best Practices",
               "Encryption", "Data Visualization", "ChartJs", "MongoDB", "Mongoose", "Postman", "Git"
             ],
-            "linkToCompany": "https://www.linkedin.com/company/fidness-company/"
+            "linkToCompany": "https://www.linkedin.com/company/fidness-company/",
+            "images": ["https://picsum.photos/200/300", "https://picsum.photos/200/300", "https://picsum.photos/200/300"]
           },
           "esprit": {
             "title": "Full Stack Web Developer Intern",
@@ -170,7 +171,8 @@ i18n.use(initReactI18next).init({
               "Firebase", "Algolia API", "Chakra UI", "Figma", "Cross-Browser Compatibility",
               "ReactJS", "Postman", "Security Best Practices"
             ],
-            "linkToCompany": "https://www.linkedin.com/school/ecole-supérieure-privée-d'ingénierie-et-de-technologies---esprit/"
+            "linkToCompany": "https://www.linkedin.com/school/ecole-supérieure-privée-d'ingénierie-et-de-technologies---esprit/",
+            "images": ["https://picsum.photos/200/300", "https://picsum.photos/200/300", "https://picsum.photos/200/300"]
           },
           "moodandfood": {
             "title": "Full Stack Web Developer Intern",
@@ -190,7 +192,8 @@ i18n.use(initReactI18next).init({
               "Firebase Extensions", "Security Best Practices", "AI (OpenAI)",
               "HTML", "CSS", "JavaScript", "ReactJS", "Chakra UI", "Figma", "Postman"
             ],
-            "linkToCompany": "https://www.linkedin.com/company/mood-and-food/"
+            "linkToCompany": "https://www.linkedin.com/company/mood-and-food/",
+            "images": ["https://picsum.photos/200/300", "https://picsum.photos/200/300", "https://picsum.photos/200/300"]
           }
         }
       }
@@ -339,7 +342,9 @@ i18n.use(initReactI18next).init({
               "Développement Full Stack", "Compatibilité Cross-Browser", "Bonnes Pratiques de Sécurité",
               "Chiffrement", "Visualisation de Données", "ChartJs", "MongoDB", "Mongoose", "Postman", "Git"
             ],
-            "linkToCompany": "https://www.linkedin.com/company/fidness-company/"
+            "linkToCompany": "https://www.linkedin.com/company/fidness-company/",
+            "images": ["https://picsum.photos/200/300", "https://picsum.photos/200/300", "https://picsum.photos/200/300"] 
+
           },
           "esprit": {
             "title": "Stagiaire Développeur Web Full Stack",
@@ -359,7 +364,8 @@ i18n.use(initReactI18next).init({
               "Firebase", "API Algolia", "Chakra UI", "Figma", "Compatibilité Cross-Browser",
               "ReactJS", "Postman", "Bonnes Pratiques de Sécurité"
             ],
-            "linkToCompany": "https://www.linkedin.com/school/ecole-supérieure-privée-d'ingénierie-et-de-technologies---esprit/"
+            "linkToCompany": "https://www.linkedin.com/school/ecole-supérieure-privée-d'ingénierie-et-de-technologies---esprit/",
+             "images": ["https://picsum.photos/200/300", "https://picsum.photos/200/300", "https://picsum.photos/200/300"] 
           },
           "moodandfood": {
             "title": "Stagiaire Développeur Web Full Stack",
@@ -379,7 +385,8 @@ i18n.use(initReactI18next).init({
               "Extensions Firebase", "Bonnes Pratiques de Sécurité", "IA (OpenAI)",
               "HTML", "CSS", "JavaScript", "ReactJS", "Chakra UI", "Figma", "Postman"
             ],
-            "linkToCompany": "https://www.linkedin.com/company/mood-and-food/"
+            "linkToCompany": "https://www.linkedin.com/company/mood-and-food/",
+            "images": ["https://picsum.photos/200/300", "https://picsum.photos/200/300", "https://picsum.photos/200/300"]
           }
         }
       }

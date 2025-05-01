@@ -41,7 +41,7 @@ return (
                 _hover={{ transform: 'scale(1.02)' }}
             >
                 <Image
-                    src="/path/to/your/image.jpg"
+                src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHNwZWFraWVyfGVufDB8fHx8MTY5MjQ1NTY3Ng&ixlib=rb-4.0.3&q=80&w=1080"
                     alt="Speaker"
                     objectFit="cover"
                     w="100%"
