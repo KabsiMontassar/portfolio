@@ -1,21 +1,42 @@
 import React from 'react'
-import data from './data'
-import { Box, Heading, useColorModeValue } from '@chakra-ui/react'
+import { Box, Heading, useColorModeValue, Text } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 import ExperienceCard from './ExperienceCard'
-
+import originalData from './data'
 
 const getCardColor = (index) => {
-    const colors = [
-      { light: 'teal', dark: 'cyan' },
-      { light: 'purple', dark: 'pink' },
-      { light: 'orange', dark: 'yellow' }
-    ]
-    return colors[index % colors.length]
-  }
+  const colors = [
+    { light: 'teal', dark: 'cyan' },
+    { light: 'purple', dark: 'pink' },
+    { light: 'orange', dark: 'yellow' }
+  ]
+  return colors[index % colors.length]
+}
+
 const ExperienceElement = () => {
   const { t } = useTranslation()
   
+  const experienceData = React.useMemo(() => {
+    const experienceKeys = ['fidness', 'esprit', 'moodandfood']
+    const expDataExists = t('experience_data', { returnObjects: true }) !== 'experience_data'
+    
+    if (expDataExists) {
+      return experienceKeys.map(key => {
+        const expData = t(`experience_data.${key}`, { returnObjects: true })
+        return {
+          ...expData,
+          Description: expData.description || [],
+          Technologies: expData.technologies || []
+        }
+      })
+    } else {
+      console.warn('Translation keys for experience_data not found, using original data')
+      return originalData
+    }
+  }, [t]) 
+
+
+
   return (
     <Box
       pt="120px"
@@ -89,16 +110,23 @@ const ExperienceElement = () => {
       </Heading>
 
       <Box position="relative" zIndex={1}>
-        {data.map((exp, index) => (
-          <ExperienceCard 
-            key={index} 
-            experience={exp} 
-            index={index}
-            nextColor={index < data.length - 1 ? getCardColor(index + 1) : null}
-          />
-        ))}
+        {Array.isArray(experienceData) && experienceData.length > 0 ? (
+          experienceData.map((exp, index) => (
+            <ExperienceCard 
+              key={index} 
+              experience={exp} 
+              index={index}
+              nextColor={index < experienceData.length - 1 ? getCardColor(index + 1) : null}
+            />
+          ))
+        ) : (
+          <Box textAlign="center" py={8}>
+            <Text color="gray.500">No experience data available</Text>
+          </Box>
+        )}
       </Box>
     </Box>
   )
 }
+
 export default ExperienceElement

@@ -115,12 +115,9 @@ i18n.use(initReactI18next).init({
             "title": "Skills",
             "description": "Mastered technologies including JavaScript, Python, React, Node.js, and cloud platforms like AWS and Firebase. Strong foundation in both frontend and backend development with focus on clean code practices.",
             "images": [
-              { "url": "/images/skills/skill1.jpg", "title": "JavaScript" },
-              { "url": "/images/skills/skill2.jpg", "title": "React" },
-              { "url": "/images/skills/skill3.jpg", "title": "AWS" },
-              { "url": "/images/skills/skill1.jpg", "title": "JavaScript" },
-              { "url": "/images/skills/skill2.jpg", "title": "React" },
-              { "url": "/images/skills/skill3.jpg", "title": "AWS" }
+              { "url": "/images/skills/skill1.jpg", "title": "JavaScript Expertise" },
+              { "url": "/images/skills/skill2.jpg", "title": "React Development" },
+              { "url": "/images/skills/skill3.jpg", "title": "AWS Cloud" }
             ],
             "skills": ["JavaScript", "Python", "React", "Node.js", "AWS", "Firebase"]
           },
@@ -134,6 +131,66 @@ i18n.use(initReactI18next).init({
               { "url": "/images/education/edu2.jpg", "title": "Master's Degree" }
             ],
             "skills": ["Research", "Algorithms", "Distributed Systems", "HCI"]
+          }
+        },
+        // Experience Data
+        "experience_data": {
+          "fidness": {
+            "title": "Full Stack Web Developer Intern",
+            "company": "FIDNESS",
+            "location": "La Marsa, Tunisia",
+            "startDate": "2023-2-01",
+            "endDate": "2023-6-31",
+            "description": [
+              "Designed and developed a web application for managing partner contracts, implementing encryption and other security measures to protect sensitive data.",
+              "Designed and implemented data visualization features to improve data presentation, enabling efficient management and enhancing client retention."
+            ],
+            "technologies": [
+              "HTML", "CSS", "JavaScript", "ReactJS", "NodeJS", "RESTful APIs",
+              "Full Stack Development", "Cross-Browser Compatibility", "Security Best Practices",
+              "Encryption", "Data Visualization", "ChartJs", "MongoDB", "Mongoose", "Postman", "Git"
+            ],
+            "linkToCompany": "https://www.linkedin.com/company/fidness-company/"
+          },
+          "esprit": {
+            "title": "Full Stack Web Developer Intern",
+            "company": "ESPRIT",
+            "location": "Ariana, Tunisia",
+            "startDate": "2024-6-01",
+            "endDate": "2024-7-31",
+            "description": [
+              "Developed an e-commerce platform for plant sales with category filtering and Algolia search.",
+              "Implemented stateless authentication using JWT.",
+              "Built AI models for plant disease diagnosis and plant recognition with care recommendations.",
+              "Designed a user-friendly interface with Chakra UI and Figma.",
+              "Utilized Firebase for backend services and tested APIs with Postman."
+            ],
+            "technologies": [
+              "Full Stack Development", "E-commerce", "AI", "JWT Authentication",
+              "Firebase", "Algolia API", "Chakra UI", "Figma", "Cross-Browser Compatibility",
+              "ReactJS", "Postman", "Security Best Practices"
+            ],
+            "linkToCompany": "https://www.linkedin.com/school/ecole-supérieure-privée-d'ingénierie-et-de-technologies---esprit/"
+          },
+          "moodandfood": {
+            "title": "Full Stack Web Developer Intern",
+            "company": "Mood and Food",
+            "location": "Ariana, Tunisia",
+            "startDate": "2024-8-01",
+            "endDate": "2025-1-31",
+            "description": [
+              "Designed and developed a full-stack e-commerce web application for diet products, gym accessories, and nutritional documentation.",
+              "Created modern, responsive UI/UX designs using Figma and implemented them with ReactJS and Chakra UI.",
+              "Built the back-end using Node.js and Express, with RESTful APIs for secure data handling and JWT for authentication.",
+              "Implemented real-time data management using Firebase Firestore and Firebase Extensions.",
+              "Conducted API testing and debugging using Postman."
+            ],
+            "technologies": [
+              "Full Stack Development", "E-commerce", "RESTful APIs", "Firebase",
+              "Firebase Extensions", "Security Best Practices", "AI (OpenAI)",
+              "HTML", "CSS", "JavaScript", "ReactJS", "Chakra UI", "Figma", "Postman"
+            ],
+            "linkToCompany": "https://www.linkedin.com/company/mood-and-food/"
           }
         }
       }
@@ -247,12 +304,9 @@ i18n.use(initReactI18next).init({
             "title": "Compétences",
             "description": "Maîtrise des technologies incluant JavaScript, Python, React, Node.js et des plateformes cloud comme AWS et Firebase. Solide fondation en développement frontend et backend avec focus sur les pratiques de code propre.",
             "images": [
-              { "url": "/images/skills/skill1.jpg", "title": "JavaScript" },
-              { "url": "/images/skills/skill2.jpg", "title": "React" },
-              { "url": "/images/skills/skill3.jpg", "title": "AWS" },
-              { "url": "/images/skills/skill1.jpg", "title": "JavaScript" },
-              { "url": "/images/skills/skill2.jpg", "title": "React" },
-              { "url": "/images/skills/skill3.jpg", "title": "AWS" }
+              { "url": "/images/skills/skill1.jpg", "title": "Expertise JavaScript" },
+              { "url": "/images/skills/skill2.jpg", "title": "Développement React" },
+              { "url": "/images/skills/skill3.jpg", "title": "Cloud AWS" }
             ],
             "skills": ["JavaScript", "Python", "React", "Node.js", "AWS", "Firebase"]
           },
@@ -263,9 +317,69 @@ i18n.use(initReactI18next).init({
             "description": "Diplômes avancés en informatique avec spécialisation en interaction homme-machine et systèmes distribués. Publication d'articles de recherche sur des approches innovantes en conception d'interfaces utilisateur.",
             "images": [
               { "url": "/images/education/edu1.jpg", "title": "Licence" },
-              { "url": "/images/education/edu2.jpg", "title": "Master" },
+              { "url": "/images/education/edu2.jpg", "title": "Master" }
             ],
             "skills": ["Recherche", "Algorithmes", "Systèmes Distribués", "IHM"]
+          }
+        },
+        // Experience Data
+        "experience_data": {
+          "fidness": {
+            "title": "Stagiaire Développeur Web Full Stack",
+            "company": "FIDNESS",
+            "location": "La Marsa, Tunisie",
+            "startDate": "2023-2-01",
+            "endDate": "2023-6-31",
+            "description": [
+              "Conception et développement d'une application web pour la gestion des contrats partenaires, avec mise en place du chiffrement et d'autres mesures de sécurité.",
+              "Conception et implémentation de fonctionnalités de visualisation des données pour améliorer la présentation et la gestion efficace."
+            ],
+            "technologies": [
+              "HTML", "CSS", "JavaScript", "ReactJS", "NodeJS", "RESTful APIs",
+              "Développement Full Stack", "Compatibilité Cross-Browser", "Bonnes Pratiques de Sécurité",
+              "Chiffrement", "Visualisation de Données", "ChartJs", "MongoDB", "Mongoose", "Postman", "Git"
+            ],
+            "linkToCompany": "https://www.linkedin.com/company/fidness-company/"
+          },
+          "esprit": {
+            "title": "Stagiaire Développeur Web Full Stack",
+            "company": "ESPRIT",
+            "location": "Ariana, Tunisie",
+            "startDate": "2024-6-01",
+            "endDate": "2024-7-31",
+            "description": [
+              "Développement d'une plateforme e-commerce pour la vente de plantes avec filtrage par catégorie et recherche Algolia.",
+              "Mise en œuvre d'une authentification sans état utilisant JWT.",
+              "Création de modèles IA pour le diagnostic des maladies des plantes et la reconnaissance des plantes avec recommandations de soins.",
+              "Conception d'une interface utilisateur conviviale avec Chakra UI et Figma.",
+              "Utilisation de Firebase pour les services backend et test des APIs avec Postman."
+            ],
+            "technologies": [
+              "Développement Full Stack", "E-commerce", "IA", "Authentification JWT",
+              "Firebase", "API Algolia", "Chakra UI", "Figma", "Compatibilité Cross-Browser",
+              "ReactJS", "Postman", "Bonnes Pratiques de Sécurité"
+            ],
+            "linkToCompany": "https://www.linkedin.com/school/ecole-supérieure-privée-d'ingénierie-et-de-technologies---esprit/"
+          },
+          "moodandfood": {
+            "title": "Stagiaire Développeur Web Full Stack",
+            "company": "Mood and Food",
+            "location": "Ariana, Tunisie",
+            "startDate": "2024-8-01",
+            "endDate": "2025-1-31",
+            "description": [
+              "Conception et développement d'une application web e-commerce complète pour les produits diététiques, accessoires de gym et documentation nutritionnelle.",
+              "Création de designs UI/UX modernes et réactifs avec Figma et leur implémentation avec ReactJS et Chakra UI.",
+              "Développement du backend avec Node.js et Express, avec APIs RESTful pour la gestion sécurisée des données et JWT pour l'authentification.",
+              "Mise en œuvre de la gestion des données en temps réel avec Firebase Firestore et Firebase Extensions.",
+              "Test et débogage des APIs avec Postman."
+            ],
+            "technologies": [
+              "Développement Full Stack", "E-commerce", "APIs RESTful", "Firebase",
+              "Extensions Firebase", "Bonnes Pratiques de Sécurité", "IA (OpenAI)",
+              "HTML", "CSS", "JavaScript", "ReactJS", "Chakra UI", "Figma", "Postman"
+            ],
+            "linkToCompany": "https://www.linkedin.com/company/mood-and-food/"
           }
         }
       }
