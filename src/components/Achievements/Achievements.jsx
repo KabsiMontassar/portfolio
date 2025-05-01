@@ -29,7 +29,7 @@ const Achievements = () => {
   );
 
   return (
-    <Box userSelect={"none"} minHeight="100vh" py={{ base: 12, md: 20 }} overflow="hidden" position="relative">
+    <Box userSelect={"none"}   overflow="hidden" position="relative">
 
       <Box
         position="absolute"
@@ -38,7 +38,7 @@ const Achievements = () => {
         w="400px"
         h="400px"
         borderRadius="full"
-        bg="blue.100"
+        bg={useColorModeValue("orange.200", "pink.200")}
         filter="blur(80px)"
         opacity={0.3}
         zIndex={0}
@@ -50,7 +50,8 @@ const Achievements = () => {
         w="500px"
         h="500px"
         borderRadius="full"
-        bg="pink.100"
+        bg={useColorModeValue("red.300", "cyan.200")}
+
         filter="blur(100px)"
         opacity={0.2}
         zIndex={0}
@@ -62,7 +63,7 @@ const Achievements = () => {
         w="500px"
         h="500px"
         borderRadius="full"
-        bg="pink.100"
+        bg={useColorModeValue("pink.300", "green.200")}
         filter="blur(100px)"
         opacity={0.2}
         zIndex={0}
@@ -73,6 +74,10 @@ const Achievements = () => {
         mb={{ base: 16, md: 28 }}
         position="relative"
         zIndex={1}
+        textAlign="center"
+        maxW="1100px"
+        mx="auto"
+        pb={{ base: 4, md: 8 }}
       >
         <Heading
           fontSize={{ base: "4xl", md: "7xl" }}
@@ -87,7 +92,7 @@ const Achievements = () => {
           mt={4}
           fontSize={{ base: "md", md: "lg" }}
           color={useColorModeValue("gray.600", "gray.300")}
-          maxW="600px"
+      
         >
           Explore my journey through projects, experiences, and achievements that shaped my career.
         </Text>

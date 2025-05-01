@@ -42,7 +42,7 @@ function App() {
       v7_relativeSplatPath: true 
     }}>
       <Box 
-        backgroundColor={colorMode === 'light' ? '#FBF8F0' : 'gray.800'} 
+        backgroundColor={colorMode === 'light' ? '#D9E2F3' : 'gray.800'} 
         minHeight="100vh"
         position="relative"
       >
