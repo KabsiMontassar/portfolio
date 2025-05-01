@@ -23,7 +23,7 @@ const navlinks = [
     <Box
       height="full"
       width="full"
-      bg={colorMode === 'light' ? 'gray.200' : 'gray.900'}
+      bg={colorMode === 'light' ? 'blue.100' : '#08162e'}
       color={colorMode === 'light' ? 'whiteAlpha.900' : 'whiteAlpha.900'}
       display="flex"
       alignItems="center"

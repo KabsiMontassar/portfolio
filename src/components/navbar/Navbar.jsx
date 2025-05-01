@@ -13,11 +13,11 @@ const Navbar = () => {
         mx="auto"
         py={4}
         px={8}
-        bg={colorMode === 'light' ? '#FBF8F0' : 'gray.700'}
+        bg={colorMode === 'light' ? 'blue.100' : '#08162e'}
         color={colorMode === 'light' ? 'gray.800' : 'white'}
         position="relative"
         borderRadius="full"
-        border={`1px solid ${colorMode === 'light' ? 'rgb(240, 240, 240)' : 'gray.600'}`}
+       // border={`1px solid ${colorMode === 'light' ? 'rgb(240, 240, 240)' : 'gray.600'}`}
         boxShadow="lg"
         justify="center"
         align="center"
