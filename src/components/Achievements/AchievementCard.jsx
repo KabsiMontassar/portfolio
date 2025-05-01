@@ -46,13 +46,9 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
         `${achievement.color}.600`,
         `${achievement.color}.300`
     );
-    // const hoverBg = useColorModeValue(
-    //     `${achievement.color}.50`,
-    //     `${achievement.color}.800`
-    // );
+
 
     useEffect(() => {
-        // Card animation - only on initial mount
         const cardElement = cardRef.current;
 
         gsap.fromTo(cardElement,

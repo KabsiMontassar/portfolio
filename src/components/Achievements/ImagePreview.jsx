@@ -14,10 +14,8 @@ import {
     ViewIcon, 
     EmailIcon 
 } from '@chakra-ui/icons'
-import { useNavigate } from 'react-router-dom'
 
 const ImagePreview = ({ images, borderColor, textColor }) => {
-    const navigate = useNavigate()
 
     const getIconByTitle = (title) => {
         if (title.toLowerCase().includes('platform')) return MdAttachMoney
@@ -44,11 +42,9 @@ const ImagePreview = ({ images, borderColor, textColor }) => {
                     direction="column"
                     align="center"
                     transition="all 0.3s ease"
-                    onClick={() => navigate('/projects')}
+                 
                     cursor="pointer"
-                    _hover={{
-                        transform: 'translateY(-5px)'
-                    }}
+                  
                 >
                     <Box
                         borderRadius="lg"
@@ -92,16 +88,7 @@ const ImagePreview = ({ images, borderColor, textColor }) => {
                         >
                             {img.title}
                         </Text>
-                        <Icon
-                            as={FiArrowRight}
-                            className="arrow-icon"
-                            color={textColor}
-                            opacity={0}
-                            transform="translateX(-10px)"
-                            transition="all 0.3s ease"
-                            position="absolute"
-                            right={4}
-                        />
+                     
                     </Box>
                 </Flex>
             ))}

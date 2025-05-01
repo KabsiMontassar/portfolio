@@ -12,7 +12,6 @@ const Achievements = () => {
   const { t } = useTranslation();
   const [expandedCards, setExpandedCards] = useState([]);
 
-  // Convert i18n achievements data into array format
   const achievements = useMemo(() => {
     const categories = [ 'experience', 'education','projects', 'hackathons', 'certificates', 'skills'];
     return categories.map(category => ({
