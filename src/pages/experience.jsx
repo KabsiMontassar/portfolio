@@ -1,21 +1,5 @@
 import React from 'react'
-/**
- Mood and Food
-Full Stack Developer Intern
-Ariana, Tunis
-August 2024–January 2025
-•
-Designed and developed a full-stack e-commerce web application for diet products, gym accessories, and nutritional documentation, featuring AI-based product recommendations using TensorFlow and OpenAI.
-•
-Created modern, responsive UI/UX designs using Figma and implemented them with ReactJS and Chakra UI.
-•
-Built the back-end using Node.js and Express, with RESTful APIs for secure data handling and JWT for authentication.
-•
-Implemented real-time data management using Firebase Firestore and Firebase Extensions.
-•
-Conducted API testing and debugging using Postman.
-Technologies: Full Stack Development, E-commerce, RESTful APIs, Firebase, Firebase Extensions, Security Best Practices, AI (OpenAI), Recommendations, HTML, CSS, JavaScript, ReactJS, Cross-Browser Compatibility, Chakra UI, Figma, Postman.
-*/
+
 const data = [
   {
     title: 'Full Stack Web Developer Intern',
