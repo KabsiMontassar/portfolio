@@ -17,7 +17,6 @@ const Navbar = () => {
         color={colorMode === 'light' ? 'gray.800' : 'white'}
         position="relative"
         borderRadius="full"
-       // border={`1px solid ${colorMode === 'light' ? 'rgb(240, 240, 240)' : 'gray.600'}`}
         boxShadow="lg"
         justify="center"
         align="center"

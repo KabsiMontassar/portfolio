@@ -24,7 +24,7 @@ export default function FloatingSettings() {
       <Menu placement="left-start" gutter={0} strategy="fixed">
         <MenuButton
           color={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
-          bg={colorMode === 'light' ? '#FBF8F0' : 'gray.700'}
+          bg={colorMode === 'light' ? 'blue.100' : 'gray.700'}
           as={IconButton}
           aria-label="Settings"
           icon={<FiSettings />}
@@ -32,12 +32,12 @@ export default function FloatingSettings() {
           size="lg"
           boxShadow="lg"
           borderRadius="full"
-          _hover={{ transform: 'rotate(45deg)', bg: colorMode === 'light' ? '#F0EDE3' : 'gray.600' }}
+          _hover={{ transform: 'rotate(45deg)', bg: colorMode === 'light' ? 'blue.100' : 'gray.600' }}
           transition="all 0.3s ease"
         />
         <MenuList 
           p={4} 
-          bg={colorMode === 'light' ? '#FBF8F0' : 'gray.700'} 
+          bg={colorMode === 'light' ? 'blue.100' : 'gray.700'} 
           color={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
           borderColor={colorMode === 'light' ? 'gray.200' : 'gray.600'}
           minW="300px"

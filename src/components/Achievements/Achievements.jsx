@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   Box,
   Heading,
@@ -7,11 +7,26 @@ import {
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import AchievementCard from './AchievementCard';
-import { achievements } from './data';
 
 const Achievements = () => {
   const { t } = useTranslation();
   const [expandedCards, setExpandedCards] = useState([]);
+
+  // Convert i18n achievements data into array format
+  const achievements = useMemo(() => {
+    const categories = ['projects', 'hackathons', 'experience', 'certificates', 'skills', 'education'];
+    return categories.map(category => ({
+      ...t(`achievements.${category}`, { returnObjects: true }),
+      color: {
+        projects: 'pink',
+        hackathons: 'teal',
+        experience: 'blue',
+        certificates: 'orange',
+        skills: 'purple',
+        education: 'red'
+      }[category]
+    }));
+  }, [t]);
 
   const handleToggleExpand = (index) => {
     setExpandedCards(prev => {
@@ -29,7 +44,7 @@ const Achievements = () => {
   );
 
   return (
-    <Box userSelect={"none"}   overflow="hidden" position="relative">
+    <Box userSelect={"none"} overflow="hidden" position="relative">
 
       <Box
         position="absolute"
@@ -51,12 +66,11 @@ const Achievements = () => {
         h="500px"
         borderRadius="full"
         bg={useColorModeValue("red.300", "cyan.200")}
-
         filter="blur(100px)"
         opacity={0.2}
         zIndex={0}
       />
-       <Box
+      <Box
         position="absolute"
         bottom="50%"
         left="20%"
@@ -92,9 +106,8 @@ const Achievements = () => {
           mt={4}
           fontSize={{ base: "md", md: "lg" }}
           color={useColorModeValue("gray.600", "gray.300")}
-      
         >
-          Explore my journey through projects, experiences, and achievements that shaped my career.
+          {t('exploreJourney')}
         </Text>
       </Box>
 
