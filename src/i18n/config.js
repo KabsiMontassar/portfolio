@@ -25,6 +25,11 @@ i18n.use(initReactI18next).init({
         "moreAboutMe": "More About Me",
         "getToKnowMe": "Get To Know Me More",
         "exploreJourney": "Explore my journey through projects, experiences, and achievements that shaped my career.",
+        
+        // Personal Card
+        "greeting": "Hi",
+        "contactMe": "Contact Me",
+        "profileImageAlt": "Professional Profile Photo",
        
         // Page Titles
         "aboutTitle": "About Me",
@@ -217,6 +222,11 @@ i18n.use(initReactI18next).init({
         "moreAboutMe": "En savoir plus sur moi",
         "getToKnowMe": "Apprenez à Me Connaître",
         "exploreJourney": "Explorez mon parcours à travers les projets, expériences et réalisations qui ont façonné ma carrière.",
+        
+        // Personal Card
+        "greeting": "Salut",
+        "contactMe": "Me Contacter",
+        "profileImageAlt": "Photo de Profil Professionnelle",
         
         // Page Titles
         "aboutTitle": "À Propos de Moi",

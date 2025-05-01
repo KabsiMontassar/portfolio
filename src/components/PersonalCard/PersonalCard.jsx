@@ -1,34 +1,38 @@
 import { Box, Flex, Image, Text, Button, Icon, useColorMode } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@chakra-ui/icons";
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-const FeaturedSection = () => {
+const PersonalCard = () => {
   const { colorMode } = useColorMode();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const navigateToContact = () => {
     navigate('/contact');
   }
 
-return (
+  return (
     <Flex
         as="section"
-      
         direction="column"
         position="relative"
-        minH="110vh"
+        minH={{ base: "140vh", md: "110vh" }}
         justifyContent="center"
         alignItems="center"
         overflow="hidden"
+        px={{ base: 4, md: 0 }}
     >
         {/* Left Card */}
         <Flex 
             direction="column" 
-            position="absolute"
-            left="15%"
-            top="50%"
-            transform="translateY(-50%)"
+            position={{ base: "relative", md: "absolute" }}
+            left={{ base: 0, md: "15%" }}
+            top={{ base: "10%", md: "50%" }}
+            transform={{ base: "none", md: "translateY(-50%)" }}
             zIndex={2}
+            mb={{ base: 10, md: 0 }}
+            mx={{ base: "auto", md: 0 }}
         >
             <Box
                 borderRadius="3xl"
@@ -41,8 +45,9 @@ return (
                 _hover={{ transform: 'scale(1.02)' }}
             >
                 <Image
-                src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHNwZWFraWVyfGVufDB8fHx8MTY5MjQ1NTY3Ng&ixlib=rb-4.0.3&q=80&w=1080"
-                    alt="Speaker"
+                    src="/images/profile.jpg"
+                    fallbackSrc="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHNwZWFraWVyfGVufDB8fHx8MTY5MjQ1NTY3Ng&ixlib=rb-4.0.3&q=80&w=1080"
+                    alt={t('profileImageAlt', 'Professional Profile Photo')}
                     objectFit="cover"
                     w="100%"
                     h="100%"
@@ -53,10 +58,11 @@ return (
         {/* Right Card */}
         <Flex 
             direction="column" 
-            position="absolute"
-            right="20%"
-            bottom="5%"
+            position={{ base: "relative", md: "absolute" }}
+            right={{ base: 0, md: "20%" }}
+            bottom={{ base: "10%", md: "5%" }}
             zIndex={1}
+            mx={{ base: "auto", md: 0 }}
         >
             <Box
                 position="relative"
@@ -79,7 +85,7 @@ return (
                     textAlign="center"
                     textShadow="1px 1px 2px rgba(0, 0, 0, 0.2)"
                 >
-                    Hi
+                    {t('greeting', 'Hi')}
                 </Text>
 
                 <Button
@@ -95,6 +101,7 @@ return (
                     _hover={{ transform: 'scale(1.1)' }}
                     transition="transform 0.2s ease"
                     onClick={navigateToContact}
+                    aria-label={t('contactMe', 'Contact Me')}
                 >
                     <Icon 
                         as={ArrowRightIcon} 
@@ -105,7 +112,7 @@ return (
             </Box>
         </Flex>
     </Flex>
-);
+  );
 };
 
-export default FeaturedSection;
+export default PersonalCard;
