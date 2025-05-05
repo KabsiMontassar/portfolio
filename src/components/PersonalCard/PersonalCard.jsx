@@ -2,8 +2,8 @@ import { Box, Flex, Image, Text, Button, Icon, useColorMode } from "@chakra-ui/r
 import { ArrowRightIcon } from "@chakra-ui/icons";
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import img from '../../../public/image.jpg'; // Adjust the path as necessary
-import imgtest from '../../../public/test.JPG'; // Adjust the path as necessary
+import img from '../../public/image.jpg';
+import imgtest from '../../public/test.JPG';
 const PersonalCard = () => {
     const { colorMode } = useColorMode();
     const navigate = useNavigate();
@@ -12,6 +12,10 @@ const PersonalCard = () => {
     const navigateToContact = () => {
         navigate('/contact');
     }
+
+
+
+    
 
     return (
         <Flex
