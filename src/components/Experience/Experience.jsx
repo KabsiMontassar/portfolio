@@ -1,29 +1,10 @@
 import React from 'react'
-import { Box, Heading, useColorModeValue, Text } from '@chakra-ui/react'
-import { useTranslation } from 'react-i18next'
+import { Box, Heading, useColorModeValue } from '@chakra-ui/react'
 import ExperienceCard from './ExperienceCard'
 
-const ExperienceElement = () => {
-  const { t } = useTranslation()
-  
-  const experienceData = React.useMemo(() => {
-    const experienceKeys = ['fidness', 'esprit', 'moodandfood']
-    const expDataExists = t('experience_data', { returnObjects: true }) !== 'experience_data'
-    
-    return expDataExists ? experienceKeys.map(key => {
-      const expData = t(`experience_data.${key}`, { returnObjects: true })
-      return {
-        ...expData,
-        Description: expData.description || [],
-        Technologies: expData.technologies || []
-      }
-    }) : []
-  }, [t]) 
+const ExperienceElement = ({experienceData}) => {
 
-  const bgGradient = useColorModeValue(
-    'linear(to-r, blue.600, purple.600)',
-    'linear(to-r, blue.200, purple.200)'
-  )
+
 
   return (
     <Box
@@ -34,7 +15,6 @@ const ExperienceElement = () => {
       position="relative"
       overflow="hidden"
     >
-      {/* Background Blobs */}
       <Box
         position="absolute"
         top="15%"
@@ -72,34 +52,28 @@ const ExperienceElement = () => {
         zIndex={0}
       />
 
-      {/* Title */}
       <Heading
         textAlign="center"
         mb={16}
         fontSize={{ base: "3xl", md: "5xl" }}
-        bgGradient={bgGradient}
+        bgGradient="linear(to-r, purple.500, blue.500, pink.500)"
         bgClip="text"
         px={4}
       >
-        {t('experienceTitle')}
+        My experiences
       </Heading>
 
-      {/* Experience Cards */}
       <Box position="relative" zIndex={1}>
-        {experienceData.length > 0 ? (
-          experienceData.map((exp, index) => (
-            <ExperienceCard 
-              key={`exp-${index}`}
-              experience={exp} 
-              index={index}
-              isLast={index === experienceData.length - 1}
-            />
-          ))
-        ) : (
-          <Box textAlign="center" py={8}>
-            <Text color="gray.500">{t('noExperienceData')}</Text>
-          </Box>
-        )}
+
+        {experienceData.map((exp, index) => (
+          <ExperienceCard
+            key={`exp-${index}`}
+            experience={exp}
+            index={index}
+            isLast={index === experienceData.length - 1}
+          />
+        ))}
+
       </Box>
     </Box>
   )
