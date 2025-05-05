@@ -11,9 +11,28 @@ import {
   useColorMode,
   Container,
   Grid,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
 } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
-import { FaCode, FaHeart, FaLaptopCode, FaArrowRight } from 'react-icons/fa';
+import { 
+  FaCode, 
+  FaHeart, 
+  FaLaptopCode, 
+  FaArrowRight,
+  FaBrain,
+  FaCogs,
+  FaCloud,
+  FaPuzzlePiece,
+  FaPalette,
+  FaDatabase,
+  FaTools,
+  FaRobot,
+  FaPencilRuler
+} from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
@@ -43,10 +62,53 @@ const About = () => {
   }, []);
 
   const allTextsGrouped = {
-    skills: [
-      'React', 'JavaScript', 'TypeScript', 'Node.js', 'HTML/CSS',
-      'Chakra UI', 'Figma', 'Git', 'Python', 'UI/UX Design'
-    ],
+    skills: {
+      programmingLanguages: {
+        icon: FaBrain,
+        title: 'Programming Languages',
+        items: ['TypeScript', 'JavaScript', 'PHP', 'Java', 'HTML5', 'CSS3']
+      },
+      backend: {
+        icon: FaCogs,
+        title: 'Backend Frameworks / Runtime',
+        items: ['Node.js', 'Express.js', 'NestJS', 'Spring Boot']
+      },
+      cloud: {
+        icon: FaCloud,
+        title: 'Cloud & Hosting Platforms',
+        items: ['AWS', 'Azure', 'OpenStack', 'Firebase', 'Supabase']
+      },
+      frontend: {
+        icon: FaPuzzlePiece,
+        title: 'Frontend Frameworks & Libraries',
+        items: ['React', 'Angular.js', 'Next.js']
+      },
+      ui: {
+        icon: FaPalette,
+        title: 'UI Libraries & Styling',
+        items: ['Chakra UI', 'TailwindCSS']
+      },
+      databases: {
+        icon: FaDatabase,
+        title: 'Databases',
+        items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis']
+      },
+      devops: {
+        icon: FaTools,
+        title: 'DevOps & CI/CD Tools',
+        items: ['Jenkins', 'GitHub','GitHub Actions']
+      },
+      ai: {
+        icon: FaRobot,
+        title: 'AI/ML Frameworks',
+        items: ['TensorFlow']
+      },
+      design: {
+        icon: FaPencilRuler,
+        title: 'Design & Prototyping',
+        items: ['Figma']
+      }
+    },
     headings: [
       'aboutTitle', 'Crafting Digital Experiences',
       'professionalBio', 'Professional Journey',
@@ -73,7 +135,15 @@ const About = () => {
     100% { transform: translateY(0px) rotate(0deg); }
   `;
 
+  const glowingShadow = keyframes`
+    0% { box-shadow: 0 0 30px 5px rgba(147, 51, 234, 0.6); }
+    33% { box-shadow: 0 0 30px 5px rgba(59, 130, 246, 0.6); }
+    66% { box-shadow: 0 0 30px 5px rgba(236, 72, 153, 0.6); }
+    100% { box-shadow: 0 0 30px 5px rgba(147, 51, 234, 0.6); }
+  `;
+
   const floatAnimation = `${float} 6s ease-in-out infinite`;
+  const shadowGlow = `${glowingShadow} 6s ease-in-out infinite`;
 
   return (
     <Box
@@ -124,7 +194,6 @@ const About = () => {
         <Grid
           templateColumns={{ base: '1fr', lg: '1fr 0.8fr' }}
           gap={{ base: 10, lg: 20 }}
-          alignItems="center"
         >
           <Box>
             <Heading
@@ -171,30 +240,64 @@ const About = () => {
               </Flex>
             </Box>
 
-            <SimpleGrid columns={{ base: 2, md: 3 }} spacing={4} mb={8}>
-              {allTextsGrouped.skills.map((skill, index) => (
-                <Tag
-                  key={index}
-                  size="lg"
-                  borderRadius="xl"
-                  p={3}
-                  bg={colorMode === 'light' 
-                    ? `linear-gradient(135deg, ${['purple.50', 'blue.50', 'pink.50'][index % 3]}, white)`
-                    : `linear-gradient(135deg, ${['purple.900', 'blue.900', 'pink.900'][index % 3]}, gray.800)`
-                  }
-                  border="1px solid"
-                  borderColor={colorMode === 'light' ? 'purple.200' : 'purple.700'}
-                  boxShadow="md"
-                  _hover={{
-                    transform: 'translateY(-2px) scale(1.05)',
-                    boxShadow: 'lg',
-                  }}
-                  transition="all 0.2s ease"
-                >
-                  <TagLabel fontWeight="600" textAlign="center" w="100%">{skill}</TagLabel>
-                </Tag>
-              ))}
-            </SimpleGrid>
+            <Box mb={8}>
+              <Accordion allowMultiple>
+                {Object.entries(allTextsGrouped.skills).map(([key, category]) => (
+                  <AccordionItem 
+                    key={key} 
+                    mb={2}
+                    border="1px solid"
+                    borderColor={colorMode === 'light' ? 'purple.200' : 'purple.700'}
+                    borderRadius="xl"
+                    overflow="hidden"
+                  >
+                    <AccordionButton
+                      p={4}
+                      _hover={{
+                        bg: colorMode === 'light' ? 'purple.50' : 'purple.900'
+                      }}
+                    >
+                      <Flex align="center" flex="1">
+                        <Icon 
+                          as={category.icon} 
+                          mr={3} 
+                          color={colorMode === 'light' ? 'purple.600' : 'purple.300'} 
+                          boxSize={5}
+                        />
+                        <Heading size="md">{category.title}</Heading>
+                      </Flex>
+                      <AccordionIcon />
+                    </AccordionButton>
+                    <AccordionPanel pb={4}>
+                      <SimpleGrid columns={{ base: 2, md: 3 }} spacing={4}>
+                        {category.items.map((skill, index) => (
+                          <Tag
+                            key={index}
+                            size="lg"
+                            borderRadius="xl"
+                            p={3}
+                            bg={colorMode === 'light' 
+                              ? `linear-gradient(135deg, ${['purple.50', 'blue.50', 'pink.50'][index % 3]}, white)`
+                              : `linear-gradient(135deg, ${['purple.900', 'blue.900', 'pink.900'][index % 3]}, gray.800)`
+                            }
+                            border="1px solid"
+                            borderColor={colorMode === 'light' ? 'purple.200' : 'purple.700'}
+                            boxShadow="md"
+                            _hover={{
+                              transform: 'translateY(-2px) scale(1.05)',
+                              boxShadow: 'lg',
+                            }}
+                            transition="all 0.2s ease"
+                          >
+                            <TagLabel fontWeight="600" textAlign="center" w="100%">{skill}</TagLabel>
+                          </Tag>
+                        ))}
+                      </SimpleGrid>
+                    </AccordionPanel>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </Box>
 
             <Box
               bg={colorMode === 'light' ? 'rgba(255, 255, 255, 0.8)' : 'rgba(26, 32, 44, 0.8)'}
@@ -226,16 +329,19 @@ const About = () => {
           </Box>
 
           <Box
-            position="relative"
-            className="image-container"
-            h={{ base: '400px', lg: '600px' }}
+            display={{ base: 'none', lg: 'block' }}
+            position="fixed"
+            right="10%"
+            top="50vh"
+            transform="translateY(-50%)"
+            width="500px"
+            zIndex={2}
           >
             <Box
               position="relative"
-              h="100%"
-              transform="perspective(1000px) rotateY(-5deg)"
-              transition="transform 0.5s ease"
-              _hover={{ transform: 'perspective(1000px) rotateY(0deg)' }}
+              className="image-container"
+              h="600px"
+              transition="all 0.3s ease"
             >
               <Image
                 src={img}
@@ -244,7 +350,8 @@ const About = () => {
                 w="100%"
                 h="100%"
                 borderRadius="2xl"
-                boxShadow="2xl"
+                animation={shadowGlow}
+                boxShadow="0 0 30px 5px rgba(147, 51, 234, 0.6)"
               />
               
               <Box
