@@ -1,3 +1,45 @@
+import React, { useRef } from 'react'
+import {
+  Box,
+  Container,
+  Heading,
+  Text,
+  VStack,
+  HStack,
+  Badge,
+  Button,
+  Flex,
+  List,
+  ListItem,
+  ListIcon,
+  chakra,
+  SimpleGrid,
+  Icon,
+  Tag,
+  TagLabel,
+  Divider,
+  useColorModeValue,
+  usePrefersReducedMotion
+} from '@chakra-ui/react'
+import { motion, useInView } from 'framer-motion'
+import { keyframes } from '@emotion/react'
+import { FiGithub, FiExternalLink, FiCheckCircle, FiCode, FiCpu, FiAward } from 'react-icons/fi'
+import { FaReact, FaAngular, FaNodeJs, FaDocker } from 'react-icons/fa'
+import { SiTypescript, SiNestjs, SiSpringboot, SiSymfony, SiPostgresql, SiMongodb, SiKubernetes } from 'react-icons/si'
+import { FaFreeCodeCamp } from 'react-icons/fa'
+
+// Motion components
+const MotionBox = chakra(motion.div)
+const MotionFlex = chakra(motion.div)
+const MotionHeading = chakra(motion.h2)
+const MotionText = chakra(motion.p)
+
+// Floating animation
+const floatingAnimation = keyframes`
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+`
 
 // Projects data
 const projectsData = [
@@ -41,56 +83,32 @@ const projectsData = [
   },
 ]
 
-
-const certs =[
+const certs = [
   {
     title: 'IBM Artificial Intelligence Fundamentals',
     issuer: 'IBM',
     year: 2025,
+    icon: FaAngular,
+    color: '#052FAD',
+    description: 'Fundamentals of AI including machine learning, deep learning, and neural networks'
   },
   {
-    title: 'Attendance Hashgraph Developer',
+    title: 'Hedera Hashgraph Developer',
     issuer: 'The Hashgraph Association',
     year: 2025,
+    icon: FaAngular,
+    color: '#00C4BE',
+    description: 'Building decentralized applications on the Hedera network'
   },
   {
-    title: 'Legacy JavaScript Algorithms and Data Structures',
+    title: 'JavaScript Algorithms and Data Structures',
     issuer: 'FreeCodeCamp',
     year: 2022,
+    icon: FaAngular,
+    color: '#0A0A23',
+    description: 'Mastery of JavaScript fundamentals and problem-solving techniques'
   },
 ]
-
-import React, { useRef } from 'react'
-import {
-  Box,
-  Container,
-  Heading,
-  Text,
-  VStack,
-  HStack,
-  Badge,
-  Button,
-  Flex,
-  List,
-  ListItem,
-  ListIcon,
-  chakra,
-  SimpleGrid,
-  Icon,
-  Tag,
-  TagLabel,
-  Divider,
-  useColorModeValue
-} from '@chakra-ui/react'
-import { motion, useInView } from 'framer-motion'
-import { FiGithub, FiExternalLink, FiCheckCircle, FiCode, FiServer, FiDatabase, FiCpu, FiLayers } from 'react-icons/fi'
-import { FaReact, FaAngular, FaNodeJs, FaDocker, FaAws } from 'react-icons/fa'
-import { SiTypescript, SiNestjs, SiSpringboot, SiSymfony, SiPostgresql, SiMongodb, SiKubernetes } from 'react-icons/si'
-
-// Motion components
-const MotionBox = chakra(motion.div)
-const MotionFlex = chakra(motion.div)
-const MotionHeading = chakra(motion.h2)
 
 // Project card component
 const ProjectCard = ({ project, index }) => {
@@ -192,7 +210,6 @@ const ProjectCard = ({ project, index }) => {
                 >
                   Code
                 </Button>
-
               </HStack>
             </Flex>
 
@@ -257,6 +274,86 @@ const ProjectCard = ({ project, index }) => {
   )
 }
 
+// Certification card component
+const CertificationCard = ({ cert, index }) => {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const prefersReducedMotion = usePrefersReducedMotion()
+  
+  const cardBg = useColorModeValue('white', 'gray.800')
+  const borderColor = useColorModeValue('gray.200', 'gray.700')
+  const textColor = useColorModeValue('gray.700', 'gray.300')
+  const floating = prefersReducedMotion ? undefined : `${floatingAnimation} 8s ease-in-out infinite`
+
+  return (
+    <MotionBox
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <Box
+        bg={cardBg}
+        p={6}
+        borderRadius="2xl"
+        boxShadow="xl"
+        border="1px solid"
+        borderColor={borderColor}
+        position="relative"
+        overflow="hidden"
+        animation={floating}
+        _hover={{
+          transform: 'translateY(-5px)',
+          transition: 'transform 0.3s ease'
+        }}
+      >
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          right={0}
+          height="4px"
+          bg={cert.color}
+        />
+        <VStack spacing={4} align="stretch" pt={2}>
+          <Flex align="center">
+            <Box
+              p={2}
+              borderRadius="lg"
+              bg={`${cert.color}20`}
+              color={cert.color}
+              mr={4}
+            >
+              <Icon as={cert.icon} boxSize={6} />
+            </Box>
+            <VStack align="start" spacing={0}>
+              <Heading size="md" color={textColor}>
+                {cert.title}
+              </Heading>
+              <Text fontSize="sm" color={textColor} opacity={0.8}>
+                {cert.issuer} • {cert.year}
+              </Text>
+            </VStack>
+          </Flex>
+          <Text color={textColor} fontSize="sm">
+            {cert.description}
+          </Text>
+          <Button
+            size="sm"
+            variant="outline"
+            colorScheme="purple"
+            mt={2}
+            rightIcon={<FiExternalLink />}
+            alignSelf="flex-start"
+          >
+            View Credential
+          </Button>
+        </VStack>
+      </Box>
+    </MotionBox>
+  )
+}
+
 // Projects page component
 const Projects = () => {
   const headingGradient = useColorModeValue(
@@ -264,6 +361,16 @@ const Projects = () => {
     'linear(to-r, purple.300, blue.300)'
   )
   const bgColor = useColorModeValue('gray.50', 'gray.900')
+  const prefersReducedMotion = usePrefersReducedMotion()
+
+  // Background animation
+  const moveBackground = keyframes`
+    0% { transform: translate(0%, 0%) rotate(0deg); }
+    25% { transform: translate(5%, 5%) rotate(5deg); }
+    50% { transform: translate(10%, 0%) rotate(0deg); }
+    75% { transform: translate(5%, -5%) rotate(-5deg); }
+    100% { transform: translate(0%, 0%) rotate(0deg); }
+  `
 
   return (
     <Box
@@ -273,33 +380,65 @@ const Projects = () => {
       position="relative"
       overflow="hidden"
     >
+      {/* Animated Background Elements */}
       <Box
         position="absolute"
         top="10%"
         right="10%"
-        w={{ base: '200px', md: '400px' }}
-        h={{ base: '200px', md: '400px' }}
+        w={{ base: '300px', md: '600px' }}
+        h={{ base: '300px', md: '600px' }}
         borderRadius="full"
         bgGradient="linear(to-br, purple.400, blue.400)"
-        filter="blur(80px)"
-        opacity={0.1}
+        filter="blur(120px)"
+        opacity={0.15}
         zIndex={0}
+        animation={!prefersReducedMotion ? `${moveBackground} 20s ease infinite` : undefined}
       />
       <Box
         position="absolute"
-        bottom="10%"
-        left="5%"
-        w={{ base: '300px', md: '500px' }}
-        h={{ base: '300px', md: '500px' }}
+        bottom="15%"
+        left="10%"
+        w={{ base: '250px', md: '500px' }}
+        h={{ base: '250px', md: '500px' }}
         borderRadius="full"
         bgGradient="linear(to-br, pink.400, purple.400)"
+        filter="blur(130px)"
+        opacity={0.15}
+        zIndex={0}
+        animation={!prefersReducedMotion ? `${moveBackground} 25s ease infinite 5s` : undefined}
+      />
+      <Box
+        position="absolute"
+        top="40%"
+        left="30%"
+        w={{ base: '200px', md: '400px' }}
+        h={{ base: '200px', md: '400px' }}
+        borderRadius="full"
+        bgGradient="linear(to-br, blue.300, teal.300)"
         filter="blur(100px)"
         opacity={0.1}
+        zIndex={0}
+        animation={!prefersReducedMotion ? `${moveBackground} 30s ease infinite 10s` : undefined}
+      />
+
+      {/* Grid Pattern */}
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        bgImage={useColorModeValue(
+          "linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)",
+          "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)"
+        )}
+        backgroundSize="40px 40px"
         zIndex={0}
       />
 
       <Container maxW="container.xl" position="relative" zIndex={1} py={12}>
         <VStack spacing={16} align="stretch">
+          {/* Projects Header */}
           <MotionBox
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -316,16 +455,17 @@ const Projects = () => {
             >
               My Projects
             </MotionHeading>
-            <Text
+            <MotionText
               fontSize={{ base: "lg", md: "xl" }}
               color={useColorModeValue("gray.600", "gray.300")}
               maxW="2xl"
               mx="auto"
             >
               Showcasing innovative solutions built with cutting-edge technologies
-            </Text>
+            </MotionText>
           </MotionBox>
 
+          {/* Projects List */}
           <VStack spacing={20} align="stretch">
             {projectsData.map((project, index) => (
               <ProjectCard
@@ -336,8 +476,46 @@ const Projects = () => {
             ))}
           </VStack>
 
+          {/* Certifications Section */}
+          <VStack spacing={16} align="stretch" mt={32}>
+            <MotionBox
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              textAlign="center"
+            >
+              <MotionHeading
+                fontSize={{ base: "4xl", md: "5xl" }}
+                bgGradient={headingGradient}
+                bgClip="text"
+                letterSpacing="tight"
+                lineHeight="1.1"
+                mb={4}
+              >
+                Certifications
+              </MotionHeading>
+              <MotionText
+                fontSize={{ base: "lg", md: "xl" }}
+                color={useColorModeValue("gray.600", "gray.300")}
+                maxW="2xl"
+                mx="auto"
+              >
+                Validated expertise through industry-recognized certifications
+              </MotionText>
+            </MotionBox>
 
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
+              {certs.map((cert, index) => (
+                <CertificationCard
+                  key={cert.title}
+                  cert={cert}
+                  index={index}
+                />
+              ))}
+            </SimpleGrid>
+          </VStack>
 
+     
         </VStack>
       </Container>
     </Box>
