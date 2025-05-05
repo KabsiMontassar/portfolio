@@ -2,6 +2,7 @@ import { Box, Flex, Image, Text, Button, Icon, useColorMode } from "@chakra-ui/r
 import { ArrowRightIcon } from "@chakra-ui/icons";
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import img from './image.jpg';
 
 const PersonalCard = () => {
   const { colorMode } = useColorMode();
@@ -39,18 +40,25 @@ const PersonalCard = () => {
                 overflow="hidden"
                 w={{ base: "340px", md: "500px", lg: "600px" }}
                 h={{ base: "440px", md: "600px", lg: "700px" }}
-                bg={colorMode === 'light' ? 'gray.100' : 'gray.700'}
+            
                 boxShadow="2xl"
                 transition="transform 0.3s ease"
                 _hover={{ transform: 'scale(1.02)' }}
             >
                 <Image
-                    src="/images/profile.jpg"
-                    fallbackSrc="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHNwZWFraWVyfGVufDB8fHx8MTY5MjQ1NTY3Ng&ixlib=rb-4.0.3&q=80&w=1080"
+                    src={img}
+                    loading="lazy"
+                    
                     alt={t('profileImageAlt', 'Professional Profile Photo')}
                     objectFit="cover"
                     w="100%"
                     h="100%"
+                    borderRadius="3xl"
+                    filter={colorMode === 'light' ? "brightness(0.9)" : "brightness(1.1)"}
+                    _hover={{ filter: colorMode === 'light' ? "brightness(1)" : "brightness(1.2)" }}
+                    transition="filter 0.3s ease"
+                 
+
                 />
             </Box>
         </Flex>
