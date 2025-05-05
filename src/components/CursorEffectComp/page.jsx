@@ -9,17 +9,17 @@ export default function Page() {
     const { t } = useTranslation()
     const [isActive, setIsActive] = useState(false)
     const bgRef = useRef(null)
-    
+
     useEffect(() => {
         const shapes = bgRef.current.querySelectorAll('.bg-shape')
-        
+
         shapes.forEach((shape, i) => {
             gsap.set(shape, {
                 x: Math.random() * window.innerWidth,
                 y: Math.random() * window.innerHeight,
                 scale: Math.random() * 2 + 0.5,
             })
-            
+
             gsap.to(shape, {
                 x: `random(0, ${window.innerWidth})`,
                 y: `random(0, ${window.innerHeight})`,
@@ -35,34 +35,34 @@ export default function Page() {
     }, [])
 
     return (
-        <Box  height="100%" width="100%" position="relative" overflow="hidden">
-            <Box 
-                ref={bgRef} 
-                position="absolute" 
-                top={0} 
-                left={0} 
-                right={0} 
-                bottom={0} 
+        <Box height="100%" width="100%" position="relative" overflow="hidden">
+            <Box
+                ref={bgRef}
+                position="absolute"
+                top={0}
+                left={0}
+                right={0}
+                bottom={0}
                 zIndex={1}
                 opacity={colorMode === 'light' ? 0.16 : 0.18}
             >
-                <svg width="100%" height="90vh" style={{filter: 'blur(40px)'}}>
+                <svg width="100%" height="90vh" style={{ filter: 'blur(40px)' }}>
                     {/* Primary shapes */}
-                    <circle className="bg-shape" r="120" fill="#FF3366"/>
-                    <circle className="bg-shape" r="140" fill="#33FF99"/>
-                    <circle className="bg-shape" r="100" fill="#3366FF"/>
-                    <circle className="bg-shape" r="160" fill="#FFCC33"/>
-                    <circle className="bg-shape" r="130" fill="#9933FF"/>
+                    <circle className="bg-shape" r="120" fill="#FF3366" />
+                    <circle className="bg-shape" r="140" fill="#33FF99" />
+                    <circle className="bg-shape" r="100" fill="#3366FF" />
+                    <circle className="bg-shape" r="160" fill="#FFCC33" />
+                    <circle className="bg-shape" r="130" fill="#9933FF" />
                     {/* Secondary shapes */}
-                    <circle className="bg-shape" r="90" fill="#FF6633"/>
-                    <circle className="bg-shape" r="110" fill="#33FFCC"/>
-                    <circle className="bg-shape" r="80" fill="#6633FF"/>
-                    <circle className="bg-shape" r="140" fill="#FF33CC"/>
-                    <circle className="bg-shape" r="70" fill="#33FF66"/>
+                    <circle className="bg-shape" r="90" fill="#FF6633" />
+                    <circle className="bg-shape" r="110" fill="#33FFCC" />
+                    <circle className="bg-shape" r="80" fill="#6633FF" />
+                    <circle className="bg-shape" r="140" fill="#FF33CC" />
+                    <circle className="bg-shape" r="70" fill="#33FF66" />
                     {/* Accent shapes */}
-                     </svg>
+                </svg>
             </Box>
-            
+
             <Box
                 height="100%"
                 width="100%"

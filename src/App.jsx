@@ -13,7 +13,7 @@ import { useEffect } from 'react';
 function App() {
   const { colorMode } = useColorMode()
 
-  useEffect( () => {
+  useEffect(() => {
 
     const lenis = new Lenis()
 
@@ -37,12 +37,12 @@ function App() {
 
 
   return (
-    <Router future={{ 
+    <Router future={{
       v7_startTransition: true,
-      v7_relativeSplatPath: true 
+      v7_relativeSplatPath: true
     }}>
-      <Box 
-        backgroundColor={colorMode === 'light' ? '#D9E2F3' : 'gray.800'} 
+      <Box
+        backgroundColor={colorMode === 'light' ? '#D9E2F3' : 'gray.800'}
         minHeight="100vh"
         position="relative"
       >
