@@ -1,10 +1,10 @@
-import { 
-  Box, 
-  Flex, 
-  Heading, 
-  Text, 
-  Image, 
-  Tag, 
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Image,
+  Tag,
   TagLabel,
   SimpleGrid,
   Icon,
@@ -22,10 +22,10 @@ import {
   usePrefersReducedMotion
 } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
-import { 
-  FaCode, 
-  FaHeart, 
-  FaLaptopCode, 
+import {
+  FaCode,
+  FaHeart,
+  FaLaptopCode,
   FaArrowRight,
   FaBrain,
   FaCogs,
@@ -109,7 +109,7 @@ const About = () => {
     {
       icon: FaTools,
       title: 'DevOps Tools',
-      items: ['Jenkins', 'GitHub','GitHub Actions'],
+      items: ['Jenkins', 'GitHub', 'GitHub Actions'],
       color: 'yellow'
     },
     {
@@ -137,6 +137,21 @@ const About = () => {
   const gradientAnimation = `${gradientShift} 15s ease infinite`;
 
   return (
+    <>
+        <Box
+        position="fixed"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        zIndex={0}
+        opacity={0.05}
+        bgImage={colorMode === 'light' ?
+          "linear-gradient(to right, gray.200 1px, transparent 1px), linear-gradient(to bottom, gray.200 1px, transparent 1px)" :
+          "linear-gradient(to right, gray.700 1px, transparent 1px), linear-gradient(to bottom, gray.700 1px, transparent 1px)"}
+        backgroundSize="40px 40px"
+      />
+  
     <Box
       pt="100px"
       position="relative"
@@ -144,6 +159,8 @@ const About = () => {
       minH="100vh"
       bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
     >
+      {/* Grid background pattern */}
+    
       {/* Animated background elements */}
       {!prefersReducedMotion && (
         <>
@@ -172,25 +189,12 @@ const About = () => {
         </>
       )}
 
-      {/* Grid background pattern */}
-      <Box
-        position="fixed"
-        top={0}
-        left={0}
-        right={0}
-        bottom={0}
-        zIndex={0}
-        opacity={0.05}
-        bgImage={colorMode === 'light' ? 
-          "linear-gradient(to right, gray.200 1px, transparent 1px), linear-gradient(to bottom, gray.200 1px, transparent 1px)" :
-          "linear-gradient(to right, gray.700 1px, transparent 1px), linear-gradient(to bottom, gray.700 1px, transparent 1px)"}
-        backgroundSize="40px 40px"
-      />
 
-      <Container 
-        maxW="container.xl" 
-        py={20} 
-        position="relative" 
+
+      <Container
+        maxW="container.xl"
+        py={20}
+        position="relative"
         zIndex={1}
       >
         {/* Hero Section */}
@@ -200,7 +204,7 @@ const About = () => {
             lineHeight="1.1"
             mb={6}
           >
-            <Box 
+            <Box
               as="span"
               bgGradient="linear(to-r, purple.500, blue.500, pink.500)"
               bgClip="text"
@@ -269,8 +273,8 @@ const About = () => {
                   <Heading size="md" mb={1}>
                     Kebsi Montassar
                   </Heading>
-                  <Text 
-                    fontSize="sm" 
+                  <Text
+                    fontSize="sm"
                     color={colorMode === 'light' ? 'gray.600' : 'gray.300'}
                     fontWeight="500"
                   >
@@ -340,10 +344,10 @@ const About = () => {
               }}
             >
               <Flex align="center" mb={4}>
-                <Icon 
-                  as={FaCode} 
-                  mr={3} 
-                  color="purple.500" 
+                <Icon
+                  as={FaCode}
+                  mr={3}
+                  color="purple.500"
                   boxSize={6}
                 />
                 <Heading as="h2" size="lg" fontWeight="700">
@@ -357,9 +361,9 @@ const About = () => {
                 <Text fontSize="lg" lineHeight="tall">
                   My approach combines modern development practices with user-centered design principles to deliver exceptional digital experiences.
                 </Text>
-                <Flex 
-                  align="center" 
-                  color="purple.500" 
+                <Flex
+                  align="center"
+                  color="purple.500"
                   fontWeight="600"
                   mt={4}
                   _hover={{ transform: 'translateX(5px)' }}
@@ -376,7 +380,7 @@ const About = () => {
         {/* Full Width Technical Expertise */}
         <Box mb={16}>
           <Heading size="xl" mb={8} fontWeight="800">
-            <Box 
+            <Box
               as="span"
               bgGradient="linear(to-r, blue.500, teal.500)"
               bgClip="text"
@@ -384,7 +388,7 @@ const About = () => {
               Technical Expertise
             </Box>
           </Heading>
-          
+
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
             {skillCategories.map((category) => (
               <Box
@@ -433,19 +437,19 @@ const About = () => {
                       borderRadius="full"
                       px={4}
                       py={2}
-                      bg={colorMode === 'light' 
-                        ? `${category.color}.50` 
+                      bg={colorMode === 'light'
+                        ? `${category.color}.50`
                         : `${category.color}.900`}
-                      color={colorMode === 'light' 
-                        ? `${category.color}.700` 
+                      color={colorMode === 'light'
+                        ? `${category.color}.700`
                         : `${category.color}.200`}
                       border="1px solid"
-                      borderColor={colorMode === 'light' 
-                        ? `${category.color}.100` 
+                      borderColor={colorMode === 'light'
+                        ? `${category.color}.100`
                         : `${category.color}.800`}
                       _hover={{
-                        bg: colorMode === 'light' 
-                          ? `${category.color}.100` 
+                        bg: colorMode === 'light'
+                          ? `${category.color}.100`
                           : `${category.color}.800`,
                         transform: 'scale(1.05)',
                       }}
@@ -472,10 +476,10 @@ const About = () => {
             borderColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
           >
             <Flex align="center" mb={4}>
-              <Icon 
-                as={FaHeart} 
-                mr={3} 
-                color="pink.500" 
+              <Icon
+                as={FaHeart}
+                mr={3}
+                color="pink.500"
                 boxSize={6}
               />
               <Heading as="h2" size="lg" fontWeight="700">
@@ -556,6 +560,7 @@ const About = () => {
         </Box>
       </Container>
     </Box>
+    </>
   );
 };
 
