@@ -10,7 +10,9 @@ import {
   Icon,
   useColorMode,
   Container,
+  Grid,
 } from '@chakra-ui/react';
+import { keyframes } from '@emotion/react';
 import { FaCode, FaHeart, FaLaptopCode, FaArrowRight } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
@@ -20,8 +22,6 @@ import img from '../../public/image.jpg';
 const About = () => {
   const { colorMode } = useColorMode();
   const { t } = useTranslation();
-
- 
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -41,8 +41,6 @@ const About = () => {
       lenis.destroy();
     };
   }, []);
-
-
 
   const allTextsGrouped = {
     skills: [
@@ -69,268 +67,214 @@ const About = () => {
     ]
   };
 
+  const float = keyframes`
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  `;
 
-
-
-
-
-
+  const floatAnimation = `${float} 6s ease-in-out infinite`;
 
   return (
-    <Container 
-      maxW="container.xl" 
-      py={12}
+    <Box
+      position="relative"
+      overflow="hidden"
+      minH="100vh"
+      bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
     >
-      <Flex 
-        direction={{ base: "column", lg: "row" }}
-        align="center"
-        pt={{ base: "100px", lg: "150px" }}
-        justify="space-between"
-        gap={10}
-        position="relative"
-      >
-        {/* Decorative elements */}
-        <Box
-          position="absolute"
-          top="10%"
-          left="5%"
-          w="200px"
-          h="200px"
-          borderRadius="full"
-          bg={colorMode === 'light' ? 'purple.100' : 'purple.900'}
-          opacity={0.3}
-          filter="blur(60px)"
-          zIndex="-1"
-        />
-        <Box
-          position="absolute"
-          bottom="10%"
-          right="5%"
-          w="300px"
-          h="300px"
-          borderRadius="full"
-          bg={colorMode === 'light' ? 'blue.100' : 'blue.900'}
-          opacity={0.3}
-          filter="blur(80px)"
-          zIndex="-1"
-        />
+      <Box
+        position="fixed"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        zIndex={0}
+        opacity={0.1}
+        bgImage="radial-gradient(circle at 20px 20px, rgba(130, 90, 230, 0.1) 2px, transparent 0)"
+        backgroundSize="40px 40px"
+      />
 
-        {/* Left side - Bio and Skills */}
-        <Box flex="1" w={{ base: "100%", lg: "55%" }} zIndex="1">
-          <Heading 
-            as="h1" 
-            size="2xl" 
-            mb={8}
-            bgGradient={colorMode === 'light' ? 'linear(to-r, purple.600, blue.600)' : 'linear(to-r, purple.300, blue.300)'}
-            bgClip="text"
-            fontWeight="800"
-            letterSpacing="tight"
-          >
-            {t('aboutTitle', 'Crafting Digital Experiences')}
-          </Heading>
-          
-          {/* Bio Section */}
-          <Box 
-            mb={12} 
-            p={6}
-            borderRadius="xl"
-            bg={colorMode === 'light' ? 'whiteAlpha.600' : 'blackAlpha.400'}
-            backdropFilter="blur(10px)"
-            border="1px solid"
-            borderColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
-            boxShadow="lg"
-            transition="all 0.3s ease"
-            _hover={{
-              boxShadow: 'xl',
-              transform: 'translateY(-5px)'
-            }}
-          >
-            <Flex align="center" mb={4}>
-              <Icon 
-                as={FaCode} 
-                mr={3} 
-                color={colorMode === 'light' ? 'purple.600' : 'purple.300'} 
-                boxSize={6}
-              />
-              <Heading as="h2" size="lg" fontWeight="700">
-                {t('professionalBio', 'Professional Journey')}
-              </Heading>
-            </Flex>
-            <Text fontSize="lg" mb={4} lineHeight="tall">
-              {allTextsGrouped.bio[0]}
-            </Text>
-            <Flex align="center" color={colorMode === 'light' ? 'purple.600' : 'purple.300'} fontWeight="600">
-              <Text mr={2}>View my resume</Text>
-              <Icon as={FaArrowRight} />
-            </Flex>
-          </Box>
-          
-       
-          <Box 
-            mb={12} 
-            p={6}
-            borderRadius="xl"
-            bg={colorMode === 'light' ? 'whiteAlpha.600' : 'blackAlpha.400'}
-            backdropFilter="blur(10px)"
-            border="1px solid"
-            borderColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
-            boxShadow="lg"
-            transition="all 0.3s ease"
-            _hover={{
-              boxShadow: 'xl',
-              transform: 'translateY(-5px)'
-            }}
-          >
-            <Flex align="center" mb={4}>
-              <Icon 
-                as={FaLaptopCode} 
-                mr={3} 
-                color={colorMode === 'light' ? 'blue.600' : 'blue.300'} 
-                boxSize={6}
-              />
-              <Heading as="h2" size="lg" fontWeight="700">
-                {allTextsGrouped.headings[5]}
-              </Heading>
-            </Flex>
-            <SimpleGrid columns={{ base: 2, md: 3, lg: 3 }} spacing={3}>
+      <Box
+        position="absolute"
+        top="10%"
+        left="5%"
+        w="300px"
+        h="300px"
+        borderRadius="full"
+        bg="linear-gradient(45deg, purple.400, blue.400)"
+        filter="blur(80px)"
+        opacity={0.15}
+        animation={floatAnimation}
+      />
+      <Box
+        position="absolute"
+        bottom="20%"
+        right="10%"
+        w="400px"
+        h="400px"
+        borderRadius="full"
+        bg="linear-gradient(45deg, pink.400, purple.400)"
+        filter="blur(100px)"
+        opacity={0.15}
+        animation={floatAnimation}
+        style={{ animationDelay: '-3s' }}
+      />
+
+      <Container maxW="1400px" py={20} position="relative" zIndex={1}>
+        <Grid
+          templateColumns={{ base: '1fr', lg: '1fr 0.8fr' }}
+          gap={{ base: 10, lg: 20 }}
+          alignItems="center"
+        >
+          <Box>
+            <Heading
+              fontSize={{ base: '4xl', lg: '6xl' }}
+              bgGradient="linear(to-r, purple.400, blue.500)"
+              bgClip="text"
+              lineHeight="1.2"
+              mb={8}
+              className="glass-text"
+            >
+              {t('aboutTitle')}
+            </Heading>
+
+            <Box
+              bg={colorMode === 'light' ? 'rgba(255, 255, 255, 0.8)' : 'rgba(26, 32, 44, 0.8)'}
+              backdropFilter="blur(10px)"
+              borderRadius="2xl"
+              p={8}
+              boxShadow="xl"
+              border="1px solid"
+              borderColor={colorMode === 'light' ? 'purple.100' : 'purple.700'}
+              mb={8}
+              transform="translateY(0)"
+              transition="all 0.3s ease"
+              _hover={{ transform: 'translateY(-5px)' }}
+            >
+              <Flex align="center" mb={4}>
+                <Icon 
+                  as={FaCode} 
+                  mr={3} 
+                  color={colorMode === 'light' ? 'purple.600' : 'purple.300'} 
+                  boxSize={6}
+                />
+                <Heading as="h2" size="lg" fontWeight="700">
+                  {t('professionalBio', 'Professional Journey')}
+                </Heading>
+              </Flex>
+              <Text fontSize="lg" mb={4} lineHeight="tall">
+                {allTextsGrouped.bio[0]}
+              </Text>
+              <Flex align="center" color={colorMode === 'light' ? 'purple.600' : 'purple.300'} fontWeight="600">
+                <Text mr={2}>View my resume</Text>
+                <Icon as={FaArrowRight} />
+              </Flex>
+            </Box>
+
+            <SimpleGrid columns={{ base: 2, md: 3 }} spacing={4} mb={8}>
               {allTextsGrouped.skills.map((skill, index) => (
-                <Tag 
-                  key={index} 
-                  size="lg" 
-                  borderRadius="full" 
-                  variant="solid" 
-                  bg={colorMode === 'light' ? 'white' : 'gray.800'}
-                  color={colorMode === 'light' ? 'gray.800' : 'white'}
-                  boxShadow="md"
-                  py={3}
-                  px={4}
+                <Tag
+                  key={index}
+                  size="lg"
+                  borderRadius="xl"
+                  p={3}
+                  bg={colorMode === 'light' 
+                    ? `linear-gradient(135deg, ${['purple.50', 'blue.50', 'pink.50'][index % 3]}, white)`
+                    : `linear-gradient(135deg, ${['purple.900', 'blue.900', 'pink.900'][index % 3]}, gray.800)`
+                  }
                   border="1px solid"
-                  borderColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
-                  transition="all 0.2s ease"
+                  borderColor={colorMode === 'light' ? 'purple.200' : 'purple.700'}
+                  boxShadow="md"
                   _hover={{
-                    transform: 'translateY(-3px)',
+                    transform: 'translateY(-2px) scale(1.05)',
                     boxShadow: 'lg',
-                    bg: colorMode === 'light' ? 'purple.100' : 'purple.900'
                   }}
+                  transition="all 0.2s ease"
                 >
-                  <TagLabel fontWeight="600">{skill}</TagLabel>
+                  <TagLabel fontWeight="600" textAlign="center" w="100%">{skill}</TagLabel>
                 </Tag>
               ))}
             </SimpleGrid>
+
+            <Box
+              bg={colorMode === 'light' ? 'rgba(255, 255, 255, 0.8)' : 'rgba(26, 32, 44, 0.8)'}
+              backdropFilter="blur(10px)"
+              borderRadius="2xl"
+              p={8}
+              boxShadow="xl"
+              border="1px solid"
+              borderColor={colorMode === 'light' ? 'purple.100' : 'purple.700'}
+              transform="translateY(0)"
+              transition="all 0.3s ease"
+              _hover={{ transform: 'translateY(-5px)' }}
+            >
+              <Flex align="center" mb={4}>
+                <Icon 
+                  as={FaHeart} 
+                  mr={3} 
+                  color={colorMode === 'light' ? 'pink.600' : 'pink.300'} 
+                  boxSize={6}
+                />
+                <Heading as="h2" size="lg" fontWeight="700">
+                  {t('personalInterests', 'Beyond Coding')}
+                </Heading>
+              </Flex>
+              <Text fontSize="lg" lineHeight="tall">
+                {allTextsGrouped.personalInterests[0]}
+              </Text>
+            </Box>
           </Box>
-          
-          <Box 
-            p={6}
-            borderRadius="xl"
-            bg={colorMode === 'light' ? 'whiteAlpha.600' : 'blackAlpha.400'}
-            backdropFilter="blur(10px)"
-            border="1px solid"
-            borderColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
-            boxShadow="lg"
-            transition="all 0.3s ease"
-            _hover={{
-              boxShadow: 'xl',
-              transform: 'translateY(-5px)'
-            }}
-          >
-            <Flex align="center" mb={4}>
-              <Icon 
-                as={FaHeart} 
-                mr={3} 
-                color={colorMode === 'light' ? 'pink.600' : 'pink.300'} 
-                boxSize={6}
-              />
-              <Heading as="h2" size="lg" fontWeight="700">
-                {t('personalInterests', 'Beyond Coding')}
-              </Heading>
-            </Flex>
-            <Text fontSize="lg" lineHeight="tall">
-           {allTextsGrouped.personalInterests[0]}
-            </Text>
-          </Box>
-        </Box>
-        
-        {/* Right side - Professional Photo */}
-        <Box 
-          flex="1" 
-          w={{ base: "100%", lg: "45%" }}
-          display="flex"
-          justifyContent="center"
-          position="relative"
-        >
+
           <Box
             position="relative"
-            w={{ base: "300px", md: "400px", lg: "450px" }}
-            h={{ base: "400px", md: "550px", lg: "600px" }}
-            borderRadius="2xl"
-            overflow="hidden"
-            boxShadow="2xl"
-            transform="rotate(-2deg)"
-            transition="transform 0.5s ease"
-            _hover={{
-              transform: 'rotate(0deg)'
-            }}
+            className="image-container"
+            h={{ base: '400px', lg: '600px' }}
           >
             <Box
-              w="100%"
+              position="relative"
               h="100%"
-              bg={colorMode === 'light' ? 'purple.200' : 'purple.900'}
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              color={colorMode === 'light' ? 'purple.600' : 'purple.200'}
-              fontSize="lg"
-              fontWeight="bold"
+              transform="perspective(1000px) rotateY(-5deg)"
+              transition="transform 0.5s ease"
+              _hover={{ transform: 'perspective(1000px) rotateY(0deg)' }}
             >
               <Image
                 src={img}
-                alt={t('profileImageAlt', 'Professional Profile Photo')}
+                alt={t('profileImageAlt')}
                 objectFit="cover"
                 w="100%"
                 h="100%"
-                filter={colorMode === 'light' ? "brightness(0.9)" : "brightness(1.1)"}
-                _hover={{ filter: colorMode === 'light' ? "brightness(1)" : "brightness(1.2)" }}
-                transition="filter 0.3s ease"
+                borderRadius="2xl"
+                boxShadow="2xl"
               />
-            </Box>
-            
-            <Box
-              position="absolute"
-              bottom="8%"
-              right="-5%"
-              bg={colorMode === 'light' ? 'white' : 'gray.800'}
-              p={4}
-              borderRadius="xl"
-              boxShadow="xl"
-              border="1px solid"
-              borderColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
-              transform="rotate(5deg)"
-              w="60%"
-            >
-              <Text fontWeight="bold" fontSize="lg">
-                {allTextsGrouped.profile[2]}
-              </Text>
-              <Text fontSize="sm" opacity={0.8} mt={1}>
-                {allTextsGrouped.profile[3]}
-              </Text>
+              
               <Box
                 position="absolute"
-                top="-10px"
-                left="20px"
-                w="20px"
-                h="20px"
+                bottom="30px"
+                right="-20px"
                 bg={colorMode === 'light' ? 'white' : 'gray.800'}
-                transform="rotate(45deg)"
-                borderLeft="1px solid"
-                borderTop="1px solid"
-                borderColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
-                zIndex="-1"
-              />
+                p={4}
+                borderRadius="xl"
+                boxShadow="xl"
+                maxW="280px"
+                backdropFilter="blur(10px)"
+                border="1px solid"
+                borderColor={colorMode === 'light' ? 'purple.100' : 'purple.700'}
+                transform="translateY(0)"
+                transition="all 0.3s ease"
+                _hover={{ transform: 'translateY(-5px)' }}
+              >
+                <Text fontWeight="bold" fontSize="xl" mb={2}>
+                  {allTextsGrouped.profile[2]}
+                </Text>
+                <Text color={colorMode === 'light' ? 'gray.600' : 'gray.300'}>
+                  {allTextsGrouped.profile[3]}
+                </Text>
+              </Box>
             </Box>
           </Box>
-        </Box>
-      </Flex>
-    </Container>
+        </Grid>
+      </Container>
+    </Box>
   );
 };
 
