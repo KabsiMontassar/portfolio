@@ -41,6 +41,25 @@ const projectsData = [
   },
 ]
 
+
+const certs =[
+  {
+    title: 'IBM Artificial Intelligence Fundamentals',
+    issuer: 'IBM',
+    year: 2025,
+  },
+  {
+    title: 'Attendance Hashgraph Developer',
+    issuer: 'The Hashgraph Association',
+    year: 2025,
+  },
+  {
+    title: 'Legacy JavaScript Algorithms and Data Structures',
+    issuer: 'FreeCodeCamp',
+    year: 2022,
+  },
+]
+
 import React, { useRef } from 'react'
 import {
   Box,
