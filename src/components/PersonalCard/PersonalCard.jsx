@@ -2,7 +2,7 @@ import { Box, Flex, Image, Text, Button, Icon, useColorMode } from "@chakra-ui/r
 import { ArrowRightIcon } from "@chakra-ui/icons";
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import img from './image.jpg';
+import img from '../../../public/image.jpg'; // Adjust the path as necessary
 
 const PersonalCard = () => {
   const { colorMode } = useColorMode();
