@@ -1,4 +1,4 @@
-import {  Box, Container, usePrefersReducedMotion, useColorModeValue } from '@chakra-ui/react';
+import { Box, Container, usePrefersReducedMotion, useColorModeValue } from '@chakra-ui/react';
 import alltexts from '../data/aboutdata.js';
 import HeroSection from '../components/about/HeroSection.jsx';
 import Technical from '../components/about/Technical.jsx';
