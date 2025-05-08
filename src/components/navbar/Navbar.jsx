@@ -61,7 +61,7 @@ const Navbar = () => {
         mx="auto"
         py={{ base: 3, md: 4 }}
         px={{ base: 4, md: 8 }}
-        bg={colorMode === 'light' ? 'blue.100' : '#08162e'}
+        bg={colorMode === 'light' ? 'white' : 'gray.800'}
         color={colorMode === 'light' ? 'gray.800' : 'white'}
         position="relative"
         borderRadius="full"
@@ -119,7 +119,7 @@ const Navbar = () => {
           finalFocusRef={btnRef}
         >
           <DrawerOverlay />
-          <DrawerContent bg={colorMode === 'light' ? 'blue.50' : 'gray.800'}>
+          <DrawerContent bg={colorMode === 'light' ? 'white' : 'gray.800'}>
             <DrawerCloseButton color={colorMode === 'light' ? 'gray.700' : 'white'} />
             <DrawerBody pt={16}>
               <VStack spacing={8} align="center">

@@ -28,7 +28,7 @@ const Experience = () => {
             textAlign="center"
             mb={{ base: 8, md: 16 }}
             fontSize={{ base: "2xl", sm: "3xl", md: "4xl", lg: "5xl" }}
-            bgGradient="linear(to-r, purple.500, blue.500, pink.500)"
+            bgGradient="linear(to-r, purple.500, blue.500)"
             bgClip="text"
             px={4}
           >

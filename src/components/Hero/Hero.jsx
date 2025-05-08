@@ -24,7 +24,7 @@ const Hero = () => {
         <VStack spacing={{ base: 8, md: 6 }}>
           <Text 
             fontSize={{ base: 'lg', sm: '3xl', md: '4xl', lg: '5xl' }}
-            color={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
+            color={colorMode === 'light' ? 'gray.700' : 'gray.100'}
             maxW={{ base: "100%", md: "90%", lg: "1200px" }}
             lineHeight={{ base: 1.6, md: 1.4 }}
             fontWeight="medium"
@@ -34,11 +34,12 @@ const Hero = () => {
         
           <Button
             size={{ base: "md", md: "lg" }}
-            colorScheme={colorMode === 'light' ? 'blackAlpha' : 'whiteAlpha'}
+            colorScheme="purple"
             onClick={() => navigate('/about')}
             _hover={{
               transform: 'translateY(-2px)',
               boxShadow: 'lg',
+              bg: colorMode === 'light' ? 'purple.600' : 'purple.400',
             }}
             my={{ base: 4, md: 8 }}
             transition="all 0.2s"
@@ -47,7 +48,8 @@ const Hero = () => {
             fontWeight="bold"
             px={{ base: 6, md: 8 }}
             py={{ base: 3, md: 4 }}
-            bg={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
+            bg={colorMode === 'light' ? 'purple.500' : 'purple.500'}
+            color="white"
             width={{ base: "full", sm: "auto" }}
           >
             {t('moreAboutMe')}

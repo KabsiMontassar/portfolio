@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import gsap from 'gsap';
+import gsap from  'gsap'
 import { useColorMode } from '@chakra-ui/react';
 
 const lerp = (start, end, factor) => (1 - factor) * start + factor * end;
@@ -15,17 +15,17 @@ export default function BlurryCursor({ isActive }) {
 
     // Define color schemes for light and dark modes
     const lightModeColors = [
-        "#2D3748", // Gray
-        "#3182CE", // Blue
-        "#38A169", // Green
-        "#805AD5", // Purple
+        "#805AD5",
+        "#3182CE", 
+        "#D53F8C",
+        "#4A5568", 
     ];
 
     const darkModeColors = [
-        "#A0AEC0", // Light Gray
-        "#63B3ED", // Light Blue
-        "#68D391", // Light Green
         "#B794F4", // Light Purple
+        "#63B3ED", // Light Blue
+        "#F687B3", // Light Pink
+        "#A0AEC0", // Light Gray
     ];
 
     const colors = colorMode === 'light' ? lightModeColors : darkModeColors;

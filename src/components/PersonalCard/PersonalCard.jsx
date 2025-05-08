@@ -81,7 +81,7 @@ const PersonalCard = () => {
                     overflow="hidden"
                     w={{ base: "280px", sm: "300px", md: "350px", lg: "400px" }}
                     h={{ base: "280px", sm: "300px", md: "350px", lg: "400px" }}
-                    bg={colorMode === 'light' ? '#E6D7F9' : '#553C9A'}
+                    bg={colorMode === 'light' ? 'purple.50' : 'purple.800'}
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
@@ -92,7 +92,7 @@ const PersonalCard = () => {
                     <Text
                         fontSize={"8xl"}
                         fontWeight="bold"
-                        color={colorMode === 'light' ? 'black' : 'white'}
+                        color={colorMode === 'light' ? 'purple.700' : 'purple.100'}
                         textAlign="center"
                         textShadow="1px 1px 2px rgba(0, 0, 0, 0.2)"
                         px={4}
@@ -107,18 +107,18 @@ const PersonalCard = () => {
                         right={{ base: 4, md: 6 }}
                         borderRadius="full"
                         p={{ base: 3, md: 4 }}
-                        bg={colorMode === 'light' ? 'white' : 'gray.800'}
+                        bg={colorMode === 'light' ? 'white' : 'gray.700'}
                         boxShadow="lg"
                         minW="auto"
                         h="auto"
-                        _hover={{ transform: 'scale(1.1)' }}
+                        _hover={{ transform: 'scale(1.1)', bg: colorMode === 'light' ? 'gray.100' : 'gray.600' }}
                         transition="transform 0.2s ease"
                         onClick={navigateToContact}
                         aria-label={t('contactMe', 'Contact Me')}
                     >
                         <Icon
                             as={ArrowRightIcon}
-                            color={colorMode === 'light' ? 'black' : 'white'}
+                            color={colorMode === 'light' ? 'purple.700' : 'purple.200'}
                             boxSize={{ base: 3, md: 4 }}
                         />
                     </Button>

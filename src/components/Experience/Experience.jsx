@@ -22,7 +22,7 @@ const ExperienceElement = ({experienceData}) => {
         w={{ base: '200px', md: '400px' }}
         h={{ base: '200px', md: '400px' }}
         borderRadius="full"
-        bg={useColorModeValue("blue.100", "blue.900")}
+        bg={useColorModeValue("blue.100", "blue.800")}
         filter="blur(80px)"
         opacity={0.3}
         zIndex={0}
@@ -46,7 +46,7 @@ const ExperienceElement = ({experienceData}) => {
         w={{ base: '150px', md: '300px' }}
         h={{ base: '150px', md: '300px' }}
         borderRadius="full"
-        bg={useColorModeValue("pink.100", "pink.900")}
+        bg={useColorModeValue("pink.100", "pink.800")}
         filter="blur(70px)"
         opacity={0.2}
         zIndex={0}
@@ -56,7 +56,7 @@ const ExperienceElement = ({experienceData}) => {
         textAlign="center"
         mb={16}
         fontSize={{ base: "3xl", md: "5xl" }}
-        bgGradient="linear(to-r, purple.500, blue.500, pink.500)"
+        bgGradient="linear(to-r, purple.500, blue.500)"
         bgClip="text"
         px={4}
       >

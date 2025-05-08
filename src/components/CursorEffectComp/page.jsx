@@ -80,17 +80,17 @@ export default function Page() {
             >
                 <svg width="100%" height="80%" style={{ filter: 'blur(40px)' }}>
                     {/* Primary shapes - scale radius based on screen size */}
-                    <circle className="bg-shape" r={120 * (scaleFactor || 1)} fill="#FF3366" />
-                    <circle className="bg-shape" r={140 * (scaleFactor || 1)} fill="#33FF99" />
-                    <circle className="bg-shape" r={100 * (scaleFactor || 1)} fill="#3366FF" />
-                    <circle className="bg-shape" r={160 * (scaleFactor || 1)} fill="#FFCC33" />
-                    <circle className="bg-shape" r={130 * (scaleFactor || 1)} fill="#9933FF" />
+                    <circle className="bg-shape" r={120 * (scaleFactor || 1)} fill="#805AD5" />
+                    <circle className="bg-shape" r={140 * (scaleFactor || 1)} fill="#4299E1" />
+                    <circle className="bg-shape" r={100 * (scaleFactor || 1)} fill="#9F7AEA" />
+                    <circle className="bg-shape" r={160 * (scaleFactor || 1)} fill="#7B341E" />
+                    <circle className="bg-shape" r={130 * (scaleFactor || 1)} fill="#ED64A6" />
                     {/* Secondary shapes */}
-                    <circle className="bg-shape" r={90 * (scaleFactor || 1)} fill="#FF6633" />
-                    <circle className="bg-shape" r={110 * (scaleFactor || 1)} fill="#33FFCC" />
-                    <circle className="bg-shape" r={80 * (scaleFactor || 1)} fill="#6633FF" />
-                    <circle className="bg-shape" r={140 * (scaleFactor || 1)} fill="#FF33CC" />
-                    <circle className="bg-shape" r={70 * (scaleFactor || 1)} fill="#33FF66" />
+                    <circle className="bg-shape" r={90 * (scaleFactor || 1)} fill="#667EEA" />
+                    <circle className="bg-shape" r={110 * (scaleFactor || 1)} fill="#5A67D8" />
+                    <circle className="bg-shape" r={80 * (scaleFactor || 1)} fill="#6B46C1" />
+                    <circle className="bg-shape" r={140 * (scaleFactor || 1)} fill="#D53F8C" />
+                    <circle className="bg-shape" r={70 * (scaleFactor || 1)} fill="#3182CE" />
                 </svg>
             </Box>
 
@@ -109,7 +109,7 @@ export default function Page() {
                         onMouseEnter={() => setIsActive(true)}
                         onMouseLeave={() => setIsActive(false)}
                         fontSize={quoteSize}
-                        color={colorMode === 'light' ? 'gray.600' : 'whiteAlpha.900'}
+                        color={colorMode === 'light' ? 'gray.700' : 'gray.100'}
                         fontStyle="italic"
                         maxW={{ base: "100%", md: "90%", lg: "1000px" }}
                         textAlign="center"

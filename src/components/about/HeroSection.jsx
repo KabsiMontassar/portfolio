@@ -28,7 +28,7 @@ const HeroSection = ({ alltexts }) => {
                 >
                     <Box
                         as="span"
-                        bgGradient="linear(to-r, purple.500, blue.500, pink.500)"
+                        bgGradient="linear(to-r, purple.500, blue.500)"
                         bgClip="text"
                         backgroundSize="200% auto"
                         animation={!prefersReducedMotion ? gradientAnimation : undefined}

@@ -103,20 +103,6 @@ const Contact = () => {
         zIndex={0}
         animation={!prefersReducedMotion ? floating : undefined}
       />
-          {/* Grid Pattern */}
-            <Box
-              position="absolute"
-              top={0}
-              left={0}
-              right={0}
-              bottom={0}
-              bgImage={useColorModeValue(
-                "linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)",
-                "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)"
-              )}
-              backgroundSize="40px 40px"
-              zIndex={0}
-            />
       
       <Box
         position="absolute"
@@ -133,6 +119,21 @@ const Contact = () => {
         style={{ animationDelay: '2s' }}
       />
 
+          {/* Grid Pattern */}
+            <Box
+              position="absolute"
+              top={0}
+              left={0}
+              right={0}
+              bottom={0}
+              bgImage={useColorModeValue(
+                "linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)",
+                "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)"
+              )}
+              backgroundSize="40px 40px"
+              zIndex={0}
+            />
+      
       <Container maxW="container.xl" py={20} position="relative" zIndex={1}>
         <VStack spacing={16} w="full">
           {/* Header Section */}
@@ -245,9 +246,9 @@ const Contact = () => {
                         icon={<FaLinkedin />}
                         size="lg"
                         variant="ghost"
-                        color={colorMode === 'light' ? 'gray.700' : 'gray.300'}
+                        color={colorMode === 'light' ? 'gray.700' : 'gray.200'}
                         _hover={{
-                          color: 'blue.500',
+                          color: 'purple.500',
                           transform: 'translateY(-3px)'
                         }}
                         transition="all 0.2s ease"
@@ -259,7 +260,7 @@ const Contact = () => {
                         icon={<FaGithub />}
                         size="lg"
                         variant="ghost"
-                        color={colorMode === 'light' ? 'gray.700' : 'gray.300'}
+                        color={colorMode === 'light' ? 'gray.700' : 'gray.200'}
                         _hover={{
                           color: 'gray.800',
                           transform: 'translateY(-3px)'
@@ -273,9 +274,9 @@ const Contact = () => {
                         icon={<FaTwitter />}
                         size="lg"
                         variant="ghost"
-                        color={colorMode === 'light' ? 'gray.700' : 'gray.300'}
+                        color={colorMode === 'light' ? 'gray.700' : 'gray.200'}
                         _hover={{
-                          color: 'cyan.500',
+                          color: 'blue.500',
                           transform: 'translateY(-3px)'
                         }}
                         transition="all 0.2s ease"
@@ -375,6 +376,7 @@ const Contact = () => {
                     _hover={{
                       transform: 'translateY(-3px)',
                       boxShadow: 'lg',
+                      bg: colorMode === 'light' ? 'purple.600' : 'purple.400'
                     }}
                     transition="all 0.2s ease"
                   >

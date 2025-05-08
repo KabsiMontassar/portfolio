@@ -18,7 +18,7 @@ const Technical = ({ alltexts }) => {
             <Heading size="xl" mb={8} fontWeight="800">
                 <Box
                     as="span"
-                    bgGradient="linear(to-r, blue.500, teal.500)"
+                    bgGradient="linear(to-r, purple.500, blue.500)"
                     bgClip="text"
                 >
                     {alltexts[8]}
@@ -39,7 +39,7 @@ const Technical = ({ alltexts }) => {
                         _hover={{
                             transform: 'translateY(-4px)',
                             boxShadow: 'xl',
-                            borderColor: `${category.color}.400`,
+                            borderColor: `purple.400`,
                         }}
                         overflow="hidden"
                         _before={{
@@ -49,7 +49,7 @@ const Technical = ({ alltexts }) => {
                             left: 0,
                             right: 0,
                             height: '4px',
-                            bgGradient: `linear(to-r, ${category.color}.400, ${category.color}.600)`,
+                            bgGradient: `linear(to-r, purple.400, blue.500)`,
                         }}
                     >
                         <Flex align="center" mb={4}>

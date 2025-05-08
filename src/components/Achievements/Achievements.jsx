@@ -37,10 +37,7 @@ const Achievements = () => {
     });
   };
 
-  const headingGradient = useColorModeValue(
-    'linear(to-r, gray.700, gray.500)',
-    'linear(to-r, gray.300, gray.100)'
-  );
+  const headingGradient = 'linear(to-r, purple.500, blue.500)';
 
   return (
     <Box userSelect={"none"} overflow="hidden" position="relative">
@@ -52,7 +49,7 @@ const Achievements = () => {
         w={{ base: "200px", md: "400px" }}
         h={{ base: "200px", md: "400px" }}
         borderRadius="full"
-        bg={useColorModeValue("orange.200", "pink.200")}
+        bg={useColorModeValue("purple.100", "purple.900")}
         filter={{ base: "blur(60px)", md: "blur(80px)" }}
         opacity={0.3}
         zIndex={0}
@@ -64,7 +61,7 @@ const Achievements = () => {
         w={{ base: "250px", md: "500px" }}
         h={{ base: "250px", md: "500px" }}
         borderRadius="full"
-        bg={useColorModeValue("red.300", "cyan.200")}
+        bg={useColorModeValue("blue.100", "blue.900")}
         filter={{ base: "blur(70px)", md: "blur(100px)" }}
         opacity={0.2}
         zIndex={0}
@@ -76,7 +73,7 @@ const Achievements = () => {
         w={{ base: "250px", md: "500px" }}
         h={{ base: "250px", md: "500px" }}
         borderRadius="full"
-        bg={useColorModeValue("pink.300", "green.200")}
+        bg={useColorModeValue("pink.100", "pink.900")}
         filter={{ base: "blur(70px)", md: "blur(100px)" }}
         opacity={0.2}
         zIndex={0}

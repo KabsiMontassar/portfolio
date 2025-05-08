@@ -16,8 +16,8 @@ const Footer = () => {
         { name: t('contact'), path: '/contact' },
     ]
     
-    const firstColor = colorMode === 'light' ? '#D9E2F3' : '#1A202C'
-    const secondColor = colorMode === 'light' ? '#BEE3F8' : '#08162E'
+    const firstColor = colorMode === 'light' ? '#F7FAFC' : '#1A202C'
+    const secondColor = colorMode === 'light' ? '#EDF2F7' : '#171923'
     
     const bgGradient = `linear(to-b, ${firstColor}, ${secondColor})`
   
@@ -26,7 +26,7 @@ const Footer = () => {
             height="full"
             width="full"
             bgGradient={bgGradient}
-            color={colorMode === 'light' ? 'whiteAlpha.900' : 'whiteAlpha.900'}
+            color={colorMode === 'light' ? 'gray.700' : 'white'}
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -72,8 +72,8 @@ const Footer = () => {
                             to={path.path}
                             fontSize={{ base: "xs", sm: "sm", md: "md" }}
                             fontWeight="500"
-                            color={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
-                            _hover={{ fontWeight: '700' }}
+                            color={colorMode === 'light' ? 'gray.700' : 'gray.200'}
+                            _hover={{ fontWeight: '700', color: colorMode === 'light' ? 'purple.600' : 'purple.300' }}
                         >
                             {path.name}
                         </ChakraLink>
@@ -83,14 +83,14 @@ const Footer = () => {
                 <VStack spacing={{ base: 1, md: 2 }}>
                     <Text
                         fontSize={{ base: "xs", md: "sm" }}
-                        color={colorMode === 'light' ? 'gray.600' : 'whiteAlpha.800'}
+                        color={colorMode === 'light' ? 'gray.600' : 'gray.300'}
                         textAlign="center"
                     >
                         {t('copyright')}
                     </Text>
                     <Text
                         fontSize={{ base: "xs", md: "sm" }}
-                        color={colorMode === 'light' ? 'gray.600' : 'whiteAlpha.800'}
+                        color={colorMode === 'light' ? 'gray.600' : 'gray.300'}
                         textAlign="center"
                     >
                         {t('privacyNote')}

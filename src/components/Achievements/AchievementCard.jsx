@@ -29,24 +29,35 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
         education: FiBook
     };
 
+    const colorMap = {
+        projects: 'pink',
+        hackathons: 'purple',
+        experiences: 'blue',
+        certificates: 'teal',
+        skills: 'purple',
+        education: 'blue'
+    };
+
+    // Override the color choice from achievement with our consistent colors
+    const colorChoice = colorMap[colorKey] || 'purple';
+
     // Dynamic colors based on color mode and category
     const bgColor = useColorModeValue(
-        `${achievement.color}.100`,
-        `${achievement.color}.900`
+        `${colorChoice}.50`,
+        `${colorChoice}.900`
     );
     const borderColor = useColorModeValue(
-        `${achievement.color}.500`,
-        `${achievement.color}.200`
+        `${colorChoice}.500`,
+        `${colorChoice}.200`
     );
     const textColor = useColorModeValue(
-        `${achievement.color}.700`,
-        `${achievement.color}.200`
+        `${colorChoice}.700`,
+        `${colorChoice}.200`
     );
     const mutedTextColor = useColorModeValue(
-        `${achievement.color}.600`,
-        `${achievement.color}.300`
+        `${colorChoice}.600`,
+        `${colorChoice}.300`
     );
-
 
     useEffect(() => {
         const cardElement = cardRef.current;

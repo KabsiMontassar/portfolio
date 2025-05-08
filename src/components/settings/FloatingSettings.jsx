@@ -29,7 +29,7 @@ export default function FloatingSettings() {
       <Menu placement="left-start" gutter={0} strategy="fixed">
         <MenuButton
           color={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
-          bg={colorMode === 'light' ? 'blue.100' : 'gray.700'}
+          bg={colorMode === 'light' ? 'white' : 'gray.700'}
           as={IconButton}
           aria-label="Settings"
           icon={<FiSettings />}
@@ -37,12 +37,12 @@ export default function FloatingSettings() {
           size={buttonSize}
           boxShadow="lg"
           borderRadius="full"
-          _hover={{ transform: 'rotate(45deg)', bg: colorMode === 'light' ? 'blue.100' : 'gray.600' }}
+          _hover={{ transform: 'rotate(45deg)', bg: colorMode === 'light' ? 'gray.100' : 'gray.600' }}
           transition="all 0.3s ease"
         />
         <MenuList 
           p={{ base: 2, md: 4 }}
-          bg={colorMode === 'light' ? 'blue.100' : 'gray.700'} 
+          bg={colorMode === 'light' ? 'white' : 'gray.800'} 
           color={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
           borderColor={colorMode === 'light' ? 'gray.200' : 'gray.600'}
           minW={{ base: "180px", sm: "240px", md: "300px" }}
@@ -66,12 +66,12 @@ export default function FloatingSettings() {
                 isDisabled={i18n.language === 'en'}
                 opacity={i18n.language !== 'en' ? 0.5 : 1}
                 _hover={{
-                  bg: colorMode === 'light' ? 'blackAlpha.50' : 'whiteAlpha.100'
+                  bg: colorMode === 'light' ? 'gray.100' : 'gray.700'
                 }}
                 _disabled={{
-                  bg: colorMode === 'light' ? 'blackAlpha.50' : 'whiteAlpha.100',
+                  bg: colorMode === 'light' ? 'purple.50' : 'purple.900',
                   opacity: 1,
-                  color: colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900',
+                  color: colorMode === 'light' ? 'purple.700' : 'purple.200',
                 }}
               >
                 English
@@ -92,12 +92,12 @@ export default function FloatingSettings() {
                 isDisabled={i18n.language == 'fr'}
                 opacity={i18n.language !== 'fr' ? 0.5 : 1}
                 _hover={{
-                  bg: colorMode === 'light' ? 'blackAlpha.50' : 'whiteAlpha.100'
+                  bg: colorMode === 'light' ? 'gray.100' : 'gray.700'
                 }}
                 _disabled={{
-                  bg: colorMode === 'light' ? 'blackAlpha.50' : 'whiteAlpha.100',
+                  bg: colorMode === 'light' ? 'purple.50' : 'purple.900',
                   opacity: 1,
-                  color: colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900',
+                  color: colorMode === 'light' ? 'purple.700' : 'purple.200',
                 }}
               >
                 Français
@@ -114,12 +114,12 @@ export default function FloatingSettings() {
                 opacity={colorMode !== 'light' ? 0.5 : 1}
                 color={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
                 _hover={{
-                  bg: colorMode === 'light' ? 'blackAlpha.50' : 'whiteAlpha.100'
+                  bg: colorMode === 'light' ? 'gray.100' : 'gray.700'
                 }}
                 _disabled={{
-                  bg: colorMode === 'light' ? 'blackAlpha.50' : 'whiteAlpha.100',
+                  bg: colorMode === 'light' ? 'purple.50' : 'purple.900',
                   opacity: 1,
-                  color: colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900',
+                  color: colorMode === 'light' ? 'purple.700' : 'purple.200',
                 }}
               >
                 {t('light')}
@@ -133,12 +133,12 @@ export default function FloatingSettings() {
                 opacity={colorMode !== 'dark' ? 0.5 : 1}
                 color={colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900'}
                 _hover={{
-                  bg: colorMode === 'light' ? 'blackAlpha.50' : 'whiteAlpha.100'
+                  bg: colorMode === 'light' ? 'gray.100' : 'gray.700'
                 }}
                 _disabled={{
-                  bg: colorMode === 'light' ? 'blackAlpha.50' : 'whiteAlpha.100',
+                  bg: colorMode === 'light' ? 'purple.50' : 'purple.900',
                   opacity: 1,
-                  color: colorMode === 'light' ? 'gray.700' : 'whiteAlpha.900',
+                  color: colorMode === 'light' ? 'purple.700' : 'purple.200',
                 }}
               >
                 {t('dark')}
