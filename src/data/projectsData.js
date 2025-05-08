@@ -3,8 +3,10 @@ import { FaAngular } from 'react-icons/fa';
 
 // Projects data
 const projectsData = [
+
   {
     title: 'PlayMate',
+    description: 'A web application for football enthusiasts to find and book fields.',
     details: [
       'Football matchmaking platform with field reservations, tournaments, and sportswear orders.',
       'Built an admin dashboard for efficient platform management.',
@@ -14,6 +16,7 @@ const projectsData = [
   },
   {
     title: 'FlexFlow',
+    description: 'A web application for managing and optimizing employee schedules.',
     details: [
       'Developed the frontend using React + TypeScript with Vite and Chakra UI for a fast, modern UI.',
       'Implemented secure authentication and role-based access control (RBAC) with NestJS and JWT.',
@@ -25,6 +28,7 @@ const projectsData = [
   },
   {
     title: 'VerdeSeeds',
+    description: 'A multi-tenant SaaS platform for farmers to create and manage e-commerce websites.',
     details: [
       'Developed a multi-tenant SaaS platform allowing farmers to easily create and manage customizable e-commerce websites.',
       'Built with Angular (frontend) and Spring Boot (backend) for a responsive, scalable, and modular experience.',
@@ -70,4 +74,10 @@ const certs = [
   },
 ]
 
-export { projectsData, certs }
+const texts = {
+  Technology: "Technology Stack",
+  KeyFeatures: "Key Features",
+  text1: "View Credential",
+}
+
+export { projectsData, certs  , texts}
