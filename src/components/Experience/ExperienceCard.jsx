@@ -9,26 +9,29 @@ import {
     Link,
     Badge,
     useColorModeValue,
-    Image,
-    useBreakpointValue
 } from '@chakra-ui/react'
 import { FiBriefcase, FiMapPin, FiExternalLink } from 'react-icons/fi'
 import { AiOutlineCalendar } from 'react-icons/ai'
 import { useTranslation } from 'react-i18next'
 import Lenis from '@studio-freight/lenis'
-import  StackedImages  from './StackedImages'
+import StackedImages from './StackedImages'
 
 const colorSchemes = [
-    { light: 'teal', dark: 'cyan' },
-    { light: 'purple', dark: 'pink' },
-    { light: 'orange', dark: 'yellow' }
+    { light: 'teal', dark: 'teal' },
+    { light: 'purple', dark: 'purple' },
+    { light: 'orange', dark: 'orange' },
+    { light: 'blue', dark: 'blue' },
+    { light: 'pink', dark: 'pink' },
+    { light: 'green', dark: 'green' },
+    { light: 'red', dark: 'red' },
+    { light: 'yellow', dark: 'yellow' },
+    { light: 'cyan', dark: 'cyan' },
+    { light: 'gray', dark: 'gray' },
 ]
-
 
 const ExperienceCard = ({ experience, index, isLast }) => {
     const { t } = useTranslation()
     const cardRef = React.useRef(null)
-    const isMobile = useBreakpointValue({ base: true, md: false })
 
     const Description = experience?.Description || experience?.description || []
     const Technologies = experience?.Technologies || experience?.technologies || []
@@ -86,20 +89,22 @@ const ExperienceCard = ({ experience, index, isLast }) => {
             position="relative"
             mb={isLast ? 8 : 20}
             minH="300px"
+            direction={{ base: "column", lg: "row" }}
             _before={{
                 content: '""',
                 position: 'absolute',
-                left: { base: '20px', md: '50%' },
+                left: { base: '20px', lg: '50%' },
                 height: isLast ? '100%' : 'calc(100% + 50px)',
                 width: '4px',
                 background: timelineDotColor,
-                transform: { md: 'translateX(-50%)' },
+                transform: { lg: 'translateX(-50%)' },
                 opacity: useColorModeValue(1, 0.7),
                 borderRadius: 'full',
                 boxShadow: useColorModeValue(
                     `0 0 20px ${timelineDotColor}90`,
                     `0 0 20px ${timelineDotColor}40`
-                )
+                ),
+                display: { base: 'none', md: 'block' }
             }}
         >
             {!isLast && ['25%', '50%', '75%'].map(position => (
@@ -108,10 +113,11 @@ const ExperienceCard = ({ experience, index, isLast }) => {
 
             <Box
                 position="absolute"
-                left={{ base: '12px', md: '50%' }}
+                left={{ base: '12px', lg: '50%' }}
                 top="0"
-                transform={{ md: 'translateX(-50%)' }}
+                transform={{ lg: 'translateX(-50%)' }}
                 zIndex={2}
+                display={{ base: 'none', md: 'block' }}
             >
                 <Box
                     position="absolute"
@@ -142,20 +148,21 @@ const ExperienceCard = ({ experience, index, isLast }) => {
             {/* Content Card */}
             <Flex
                 direction="column"
-                ml={{ base: '40px', md: index % 2 === 0 ? '0' : '50%' }}
-                mr={{ base: '0', md: index % 2 === 0 ? '50%' : '0' }}
-                pr={{ base: '4', md: index % 2 === 0 ? '8' : '0' }}
-                pl={{ base: '4', md: index % 2 === 0 ? '0' : '8' }}
-                width={{ base: 'calc(100% - 40px)', md: '50%' }}
-                mt={12}
+                ml={{ base: '0', md: '40px', lg: index % 2 === 0 ? '0' : '50%' }}
+                mr={{ base: '0', lg: index % 2 === 0 ? '50%' : '0' }}
+                pr={{ base: '0', lg: index % 2 === 0 ? '8' : '0' }}
+                pl={{ base: '0', lg: index % 2 === 0 ? '0' : '8' }}
+                width={{ base: '100%', lg: '50%' }}
+                mt={{ base: 4, lg: 12 }}
             >
                 {/* Date Badge */}
                 <Box
-                    position="absolute"
+                    position={{ base: "relative", lg: "absolute" }}
                     transform={{
-                        base: "translateY(-120%)",
-                        md: "translateY(-120%)"
+                        base: "none",
+                        lg: "translateY(-120%)"
                     }}
+                    mb={{ base: 4, lg: 0 }}
                     bg={bgColor}
                     p={3}
                     borderRadius="xl"
@@ -164,6 +171,7 @@ const ExperienceCard = ({ experience, index, isLast }) => {
                     boxShadow="lg"
                     zIndex={3}
                     width="fit-content"
+                    mx={{ base: "auto", lg: "0" }}
                 >
                     <Text
                         fontSize="sm"
@@ -184,6 +192,7 @@ const ExperienceCard = ({ experience, index, isLast }) => {
                     border="1px solid"
                     borderColor={borderColor}
                     transition="all 0.3s ease"
+
                     _hover={{
                         transform: 'translateY(-5px)',
                         boxShadow: `xl, 0 8px 30px -12px ${timelineDotColor}`
@@ -259,18 +268,28 @@ const ExperienceCard = ({ experience, index, isLast }) => {
                 </Box>
             </Flex>
 
-            {!isMobile && (
+            {/* Image Gallery */}
+            <Box
+                width={{ base: "100%", lg: "50%" }}
+                position={{ base: "relative", lg: "absolute" }}
+                left={{ lg: index % 2 === 0 ? '50%' : '0' }}
+                top={{ lg: '50%' }}
+                transform={{
+                    lg: index % 2 === 0 ?
+                        'translateY(-50%)' :
+                        'translateY(-50%)'
+                }}
+                alignItems="center"
+                justifyContent="center"
+                px={{ base: 4, lg: 8 }}
+                zIndex={1}
+                mt={{ base: 8, lg: 0 }}
+                mb={{ base: 8, lg: 0 }}
+                display="flex"
+            >
                 <Box
-                    width="50%"
-                    position="absolute"
-                    left={index % 2 === 0 ? '50%' : '0'}
-                    top="50%"
-                    transform="translateY(-50%)"
-                    alignItems="center"
-                    justifyContent="center"
-                    pr={index % 2 === 0 ? 8 : 0}
-                    pl={index % 2 === 0 ? 0 : 8}
-                    zIndex={1}
+                    width={{ base: "100%", lg: "90%" }}
+                    mx="auto"
                 >
                     <StackedImages
                         colorScheme={colorScheme}
@@ -278,7 +297,7 @@ const ExperienceCard = ({ experience, index, isLast }) => {
                         isLeftSide={index % 2 !== 0}
                     />
                 </Box>
-            )}
+            </Box>
         </Flex>
     )
 }

@@ -1,64 +1,144 @@
+import React, { useState } from 'react'
+import { 
+  Box, 
+  Image, 
+  Flex, 
+  IconButton, 
+  useColorModeValue,
+  Circle
+} from '@chakra-ui/react'
+import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 
-import React from 'react'
-import { Box, Image, useBreakpointValue } from '@chakra-ui/react'
-
-
-
-const StackedImages = ({ colorScheme, images = [], isLeftSide = false }) => {
-    const isMobile = useBreakpointValue({ base: true, md: false })
-
-    if (isMobile || !images.length) return null
-
-    return (
-        <Box
-            position="relative"
-            width="90%"
-            height={{ md: '500px', lg: '580px' }}
+const StackedImages = ({ colorScheme, images = [] }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const imageCount = images.length
+  
+  const handleNext = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageCount)
+  }
+  
+  const handlePrev = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + imageCount) % imageCount)
+  }
+  
+  const overlayBg = useColorModeValue(
+    `${colorScheme.light}.50`, 
+    `${colorScheme.dark}.900`
+  )
+  
+  if (!imageCount) return null
+  
+  return (
+    <Box
+      position="relative"
+      width="100%"
+      height={{ base: "250px", sm: "300px", md: "320px", lg: "350px" }}
+      mx="auto"
+      borderRadius="xl"
+      overflow="hidden"
+      boxShadow="xl"
+      border="3px solid"
+      borderColor={`${colorScheme.light}.300`}
+    >
+      {/* Image Container */}
+      <Box
+        position="relative"
+        height="100%"
+        width="100%"
+        overflow="hidden"
+      >
+        {images.map((img, index) => (
+          <Image
+            key={`gallery-img-${index}`}
+            src={img}
+            alt={`Project image ${index + 1}`}
+            position="absolute"
+            top="0"
+            left="0"
+            width="100%"
+            height="100%"
+            objectFit="cover"
+            opacity={index === currentImageIndex ? 1 : 0}
+            transition="all 0.5s ease-in-out"
+            transform={index === currentImageIndex ? "scale(1)" : "scale(0.95)"}
+            zIndex={index === currentImageIndex ? 1 : 0}
+          />
+        ))}
+      </Box>
+      
+      {/* Navigation Controls */}
+      {imageCount > 1 && (
+        <>
+          {/* Navigation Buttons */}
+          <Flex 
+            position="absolute" 
+            width="100%" 
+            justifyContent="space-between" 
+            top="50%" 
+            transform="translateY(-50%)"
+            px={2}
+            zIndex={2}
+          >
+            <IconButton
+              icon={<ChevronLeftIcon boxSize={6} />}
+              aria-label="Previous image"
+              onClick={handlePrev}
+              variant="solid"
+              colorScheme={colorScheme.light}
+              size="md"
+              isRound
+              opacity={0.8}
+              _hover={{ opacity: 1 }}
+            />
+            <IconButton
+              icon={<ChevronRightIcon boxSize={6} />}
+              aria-label="Next image"
+              onClick={handleNext}
+              variant="solid"
+              colorScheme={colorScheme.light}
+              size="md"
+              isRound
+              opacity={0.8}
+              _hover={{ opacity: 1 }}
+            />
+          </Flex>
+          
+          {/* Image Indicators */}
+          <Flex 
+            position="absolute" 
+            bottom={4} 
+            width="100%" 
+            justifyContent="center" 
+            zIndex={2}
+            bg={`${overlayBg}40`}
+            py={2}
+            borderRadius="full"
             mx="auto"
-            mt={{ md: 12, lg: 24 }}
-        >
-            {images.slice(0, 3).map((img, i) => (
-                <Box
-                    key={`img-${i}`}
-                    position="absolute"
-                    width="100%"
-                    height={{ md: '200px', lg: '240px' }}
-                    top={`${i * 30}px`}
-                    left="50%"
-                    transform={
-                        isLeftSide
-                            ? `translateX(-58%) rotate(${(i - 1) * -4}deg)`
-                            : `translateX(-42%) rotate(${(i - 1) * 4}deg)`
-                    }
-                    zIndex={3 - i}
-                    transition="all 0.4s ease"
-                    _hover={{
-                        transform: isLeftSide
-                            ? `translateX(-50%) rotate(${(i - 1) * -4}deg) translateY(-12px)`
-                            : `translateX(-50%) rotate(${(i - 1) * 4}deg) translateY(-12px)`,
-                        zIndex: 10
-                    }}
-                >
-                    <Image
-                        src={img}
-                        alt={`Project image ${i + 1}`}
-                        objectFit="cover"
-                        width="100%"
-                        height="100%"
-                        borderRadius="xl"
-                        border="4px solid"
-                        borderColor={`${colorScheme.light}.${400 - i * 100}`}
-                        boxShadow={`0 ${10 + i * 5}px ${20 + i * 5}px -5px rgba(0,0,0,0.${3 + i})`}
-                        filter={i > 0 ? `brightness(${1 - i * 0.08})` : "brightness(1)"}
-                        _hover={{
-                            filter: "brightness(1.05)",
-                            boxShadow: `0 ${15 + i * 5}px ${25 + i * 5}px -5px rgba(0,0,0,0.${4 + i})`
-                        }}
-                    />
-                </Box>
+            maxW="80%"
+            left="50%"
+            transform="translateX(-50%)"
+          >
+            {images.map((_, index) => (
+              <Circle
+                key={`indicator-${index}`}
+                size={3}
+                mx={1}
+                bg={index === currentImageIndex ? 
+                  `${colorScheme.light}.500` : 
+                  `${colorScheme.light}.200`}
+                cursor="pointer"
+                onClick={() => setCurrentImageIndex(index)}
+                transition="background-color 0.3s"
+                _hover={{
+                  bg: `${colorScheme.light}.400`
+                }}
+              />
             ))}
-        </Box>
-    )
+          </Flex>
+        </>
+      )}
+    </Box>
+  )
 }
 
 export default StackedImages
