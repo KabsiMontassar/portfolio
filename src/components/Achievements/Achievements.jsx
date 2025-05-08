@@ -5,28 +5,23 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { useTranslation } from 'react-i18next';
 import AchievementCard from './AchievementCard';
-
-const Achievements = () => {
-  const { t } = useTranslation();
+const Achievements = ({data}) => {
   const [expandedCards, setExpandedCards] = useState([]);
 
   const achievements = useMemo(() => {
-    const categories = ['experience', 'education', 'projects', 'hackathons', 'certificates', 'skills'];
-    return categories.map(category => ({
-      ...t(`achievements.${category}`, { returnObjects: true }),
+    return data.cards.map(item => ({
+      ...item,
       color: {
         experience: 'blue',
         education: 'teal',
         projects: 'pink',
         hackathons: 'purple',
-
         certificates: 'orange',
         skills: 'red',
-      }[category]
+      }[item.category]
     }));
-  }, [t]);
+  }, [data]);
 
   const handleToggleExpand = (index) => {
     setExpandedCards(prev => {
@@ -97,14 +92,14 @@ const Achievements = () => {
           letterSpacing="tight"
           lineHeight={1.1}
         >
-          {t('getToKnowMe')}
+          {data.firstText}
         </Heading>
         <Text
           mt={{ base: 2, md: 4 }}
           fontSize={{ base: "sm", sm: "md", md: "lg" }}
           color={useColorModeValue("gray.600", "gray.300")}
         >
-          {t('exploreJourney')}
+         {data.secondText}
         </Text>
       </Box>
 

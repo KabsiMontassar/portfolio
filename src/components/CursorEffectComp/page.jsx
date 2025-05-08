@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
 import BlurryCursor from "./cursor"
 import { VStack, Text, Box, useColorMode, useBreakpointValue } from '@chakra-ui/react'
-import { useTranslation } from 'react-i18next'
 import gsap from 'gsap'
 
-export default function Page() {
+export default function Page({data}) {
     const { colorMode } = useColorMode()
-    const { t } = useTranslation()
     const [isActive, setIsActive] = useState(false)
     const bgRef = useRef(null)
     
@@ -115,7 +113,7 @@ export default function Page() {
                         textAlign="center"
                         lineHeight={{ base: 1.4, md: 1.6 }}
                     >
-                        "{t('quote')}"
+                        {data}
                     </Text>
                 </VStack>
                 <BlurryCursor isActive={isActive} />

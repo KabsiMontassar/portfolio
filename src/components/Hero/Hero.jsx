@@ -1,12 +1,10 @@
 import React from 'react'
-import { Box, Heading, Text, Button, VStack, useColorMode, Container } from '@chakra-ui/react'
+import { Box, Text, Button, VStack, useColorMode, Container } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 
-const Hero = () => {
+const Hero = ({ data }) => {
   const { colorMode } = useColorMode()
   const navigate = useNavigate()
-  const { t } = useTranslation()
 
   return (
     <Box
@@ -22,16 +20,16 @@ const Hero = () => {
     >
       <Container maxW={{ base: "100%", md: "90%", lg: "1200px" }} centerContent>
         <VStack spacing={{ base: 8, md: 6 }}>
-          <Text 
+          <Text
             fontSize={{ base: 'lg', sm: '3xl', md: '4xl', lg: '5xl' }}
             color={colorMode === 'light' ? 'gray.700' : 'gray.100'}
             maxW={{ base: "100%", md: "90%", lg: "1200px" }}
             lineHeight={{ base: 1.6, md: 1.4 }}
             fontWeight="medium"
           >
-            {t('summary')}
+            {data.description}
           </Text>
-        
+
           <Button
             size={{ base: "md", md: "lg" }}
             colorScheme="purple"
@@ -52,7 +50,7 @@ const Hero = () => {
             color="white"
             width={{ base: "full", sm: "auto" }}
           >
-            {t('moreAboutMe')}
+            {data.buttonText}
           </Button>
         </VStack>
       </Container>

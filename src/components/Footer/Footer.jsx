@@ -2,19 +2,11 @@ import React from 'react'
 import { Box, IconButton, Link as ChakraLink, VStack, HStack, Text, useColorMode, Flex, Stack } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
-import { useTranslation } from 'react-i18next'
-
+import data from '../../data/footerData'
 const Footer = () => {
     const { colorMode } = useColorMode()
-    const { t } = useTranslation()
+
   
-    const navlinks = [
-        { name: t('home'), path: '/' },
-        { name: t('about'), path: '/about' },
-        { name: t('experiences'), path: '/experience' },
-        { name: t('projects'), path: '/projects' },
-        { name: t('contact'), path: '/contact' },
-    ]
     
     const firstColor = colorMode === 'light' ? '#F7FAFC' : '#1A202C'
     const secondColor = colorMode === 'light' ? '#EDF2F7' : '#171923'
@@ -40,7 +32,7 @@ const Footer = () => {
                         target="_blank"
                         aria-label="LinkedIn"
                         icon={<FaLinkedin />}
-                        fontSize={{ base: "20px", md: "24px" }}
+                         fontSize={{ base: "20px", md: "24px" }}
                         size={{ base: "md", md: "lg" }}
                         variant="ghost"
                         _hover={{ transform: 'scale(1.1)' }}
@@ -65,7 +57,7 @@ const Footer = () => {
                     textAlign="center"
                     wrap={{ base: 'wrap', md: 'nowrap' }}
                 >
-                    {navlinks.map((path, index) => (
+                    {data.navlinks.map((path, index) => (
                         <ChakraLink
                             key={index}
                             as={RouterLink}
@@ -86,14 +78,14 @@ const Footer = () => {
                         color={colorMode === 'light' ? 'gray.600' : 'gray.300'}
                         textAlign="center"
                     >
-                        {t('copyright')}
+                        {data.copyright}
                     </Text>
                     <Text
                         fontSize={{ base: "xs", md: "sm" }}
                         color={colorMode === 'light' ? 'gray.600' : 'gray.300'}
                         textAlign="center"
                     >
-                        {t('privacyNote')}
+                        {data.builtWith}
                     </Text>
                 </VStack>
             </VStack>

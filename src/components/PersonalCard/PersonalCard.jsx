@@ -1,14 +1,12 @@
 import { Box, Flex, Image, Text, Button, Icon, useColorMode } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@chakra-ui/icons";
 import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import img from '../../public/image.jpg';
 import imgtest from '../../public/test.JPG';
 
-const PersonalCard = () => {
+const PersonalCard = ({data}) => {
     const { colorMode } = useColorMode();
     const navigate = useNavigate();
-    const { t } = useTranslation();
 
     const navigateToContact = () => {
         navigate('/contact');
@@ -52,7 +50,7 @@ const PersonalCard = () => {
                     <Image
                         src={img}
                         loading="lazy"
-                        alt={t('profileImageAlt', 'Professional Profile Photo')}
+                        alt="profileImageAlt"
                         objectFit="cover"
                         w="100%"
                         h="100%"
@@ -98,7 +96,7 @@ const PersonalCard = () => {
                         px={4}
                         className="greeting-text"
                     >
-                        {t('greeting', 'Hi')}
+                       {data.text}
                     </Text>
 
                     <Button
@@ -114,7 +112,7 @@ const PersonalCard = () => {
                         _hover={{ transform: 'scale(1.1)', bg: colorMode === 'light' ? 'gray.100' : 'gray.600' }}
                         transition="transform 0.2s ease"
                         onClick={navigateToContact}
-                        aria-label={t('contactMe', 'Contact Me')}
+                        aria-label="contactMe"
                     >
                         <Icon
                             as={ArrowRightIcon}

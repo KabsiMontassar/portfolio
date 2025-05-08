@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {
   Box,
   VStack,
@@ -11,22 +11,20 @@ import {
   FormControl,
   FormLabel,
   Icon,
-  useToast,
+  // useToast,
   HStack,
   Container,
-  Flex,
   IconButton,
   SimpleGrid,
   usePrefersReducedMotion,
   useColorModeValue
 } from '@chakra-ui/react'
 
-import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { keyframes } from '@emotion/react'
-import { FiMail, FiSend, FiPhone } from 'react-icons/fi'
+import { FiSend } from 'react-icons/fi'
 import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'
-import { RiMapPinLine } from 'react-icons/ri'
+import data from '../data/contactData'
 
 const MotionBox = motion.create(Box)
 const MotionHeading = motion.create(Heading)
@@ -35,8 +33,7 @@ const MotionVStack = motion.create(VStack)
 
 const Contact = () => {
   const { colorMode } = useColorMode()
-  const { t } = useTranslation()
-  const toast = useToast()
+  //const toast = useToast()
   const [isLoading, setIsLoading] = useState(false)
   const prefersReducedMotion = usePrefersReducedMotion()
 
@@ -51,44 +48,12 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsLoading(true)
-    
-    setTimeout(() => {
-      setIsLoading(false)
-      toast({
-        title: t('messageSent'),
-        description: t('thankYou'),
-        status: 'success',
-        duration: 5000,
-        isClosable: true,
-        position: 'top-right'
-      })
-      e.target.reset()
-    }, 2000)
+
   }
 
-  const contactMethods = [
-    {
-      icon: FiMail,
-      title: 'Email',
-      value: 'kebsimontassar@gmail.com',
-      action: 'kebsimontassar@gmail.com'
-    },
-    {
-      icon: FiPhone,
-      title: 'Phone',
-      value: '+216 281 153 435',
-      action: '+216 281 153 435'
-    },
-    {
-      icon: RiMapPinLine,
-      title: 'Location',
-      value: 'Ariana, Tunisia',
-      action: 'https://www.google.com/maps/place/Ariana/@36.8689196,10.1291603,13z/data=!3m1!4b1!4m6!3m5!1s0x12e2cb4e31471bf3:0x65bc5efbce842198!8m2!3d36.8665367!4d10.1647233!16zL20vMGI0Znh0?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D'
-    }
-  ]
 
   return (
-    <Box   pt="50px" position="relative" minH="100vh" overflow="hidden">
+    <Box pt="50px" position="relative" minH="100vh" overflow="hidden">
       {/* Animated background elements */}
       <Box
         position="absolute"
@@ -103,7 +68,7 @@ const Contact = () => {
         zIndex={0}
         animation={!prefersReducedMotion ? floating : undefined}
       />
-      
+
       <Box
         position="absolute"
         bottom="10%"
@@ -119,21 +84,21 @@ const Contact = () => {
         style={{ animationDelay: '2s' }}
       />
 
-          {/* Grid Pattern */}
-            <Box
-              position="absolute"
-              top={0}
-              left={0}
-              right={0}
-              bottom={0}
-              bgImage={useColorModeValue(
-                "linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)",
-                "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)"
-              )}
-              backgroundSize="40px 40px"
-              zIndex={0}
-            />
-      
+      {/* Grid Pattern */}
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        bgImage={useColorModeValue(
+          "linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)",
+          "linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)"
+        )}
+        backgroundSize="40px 40px"
+        zIndex={0}
+      />
+
       <Container maxW="container.xl" py={20} position="relative" zIndex={1}>
         <VStack spacing={16} w="full">
           {/* Header Section */}
@@ -147,21 +112,21 @@ const Contact = () => {
           >
             <MotionHeading
               fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
-              bgGradient={colorMode === 'light' 
+              bgGradient={colorMode === 'light'
                 ? 'linear(to-r, purple.600, blue.600)'
                 : 'linear(to-r, purple.300, blue.300)'}
               bgClip="text"
               letterSpacing="tight"
               lineHeight="1.1"
             >
-              {t('contactTitle')}
+              {data.contactTitle}
             </MotionHeading>
             <MotionText
               fontSize={{ base: "lg", md: "xl" }}
               color={colorMode === 'light' ? "gray.600" : "gray.300"}
               maxW="2xl"
             >
-              {t('getInTouch')}
+              {data.getInTouch}
             </MotionText>
           </MotionVStack>
 
@@ -181,16 +146,15 @@ const Contact = () => {
               <VStack spacing={8} align="start">
                 <VStack spacing={4} align="start">
                   <Heading size="lg" fontWeight="700">
-                    Let's Connect
+                    {data.letsConnect}
                   </Heading>
                   <Text color={colorMode === 'light' ? "gray.600" : "gray.300"}>
-                    Have a project in mind or want to discuss potential opportunities? 
-                    Reach out through any of these channels.
+                    {data.connectDescription}
                   </Text>
                 </VStack>
 
                 <VStack spacing={4} w="full">
-                  {contactMethods.map((method, index) => (
+                  {data.contactMethods.map((method, index) => (
                     <MotionBox
                       key={index}
                       w="full"
@@ -200,7 +164,7 @@ const Contact = () => {
                     >
                       <Button
                         as="a"
-                      
+
                         variant="outline"
                         w="full"
                         size="lg"

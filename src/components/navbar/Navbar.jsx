@@ -14,13 +14,11 @@ import {
   useBreakpointValue
 } from '@chakra-ui/react'
 import { Link as RouterLink, useLocation } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { useRef, useEffect } from 'react'
-
+import data from '../../data/footerData'
 const Navbar = () => {
   const { colorMode } = useColorMode()
-  const { t } = useTranslation()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = useRef()
   const location = useLocation()
@@ -34,14 +32,7 @@ const Navbar = () => {
   })
   const paddingTop = useBreakpointValue({ base: 4, md: 8 })
   
-  const navLinks = [
-    { name: t('about'), path: '/about' },
-    { name: t('experiences'), path: '/experience' },
-    { name: t('projects'), path: '/projects' },
-    { name: t('contact'), path: '/contact' }
-  ]
 
-  // Responsive styles for nav items
   const navItemStyles = {
     fontSize: { base: "md", lg: "md" },
     fontWeight: "500",
@@ -85,7 +76,7 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         {!isMobile && (
           <Flex gap={6} align="center">
-            {navLinks.map((link, index) => (
+            {data.navlinks.map((link, index) => (
               <ChakraLink 
                 key={index}
                 as={RouterLink} 
@@ -123,7 +114,7 @@ const Navbar = () => {
             <DrawerCloseButton color={colorMode === 'light' ? 'gray.700' : 'white'} />
             <DrawerBody pt={16}>
               <VStack spacing={8} align="center">
-                {navLinks.map((link, index) => (
+                {data.navlinks.map((link, index) => (
                   <ChakraLink 
                     key={index}
                     as={RouterLink} 

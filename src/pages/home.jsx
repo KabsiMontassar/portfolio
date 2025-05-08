@@ -4,6 +4,21 @@ import Page from '../components/CursorEffectComp/page'
 import Hero from '../components/Hero/Hero'
 import Achievements from '../components/Achievements/Achievements'
 import PersonalCard from '../components/PersonalCard/PersonalCard'
+import {data} from '../data/homeData.js'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const Home = () => {
   return (
@@ -13,7 +28,7 @@ const Home = () => {
         height={{ base: "90vh", md: "100vh" }}
         position="relative"
       >
-        <Page />
+        <Page data={data.PageData} />
       </Box>
 
       <Box
@@ -23,7 +38,7 @@ const Home = () => {
         position="relative"
         py={{ base: 8, md: 0 }}
       >
-        <Hero />
+        <Hero data={data.HeroData} />
       </Box>
 
       <Box
@@ -31,7 +46,7 @@ const Home = () => {
         py={{ base: 8, md: 12, lg: 16 }}
 
       >
-        <Achievements />
+        <Achievements data={data.AchievementsData} />
       </Box>
 
       <Box
@@ -39,7 +54,7 @@ const Home = () => {
         py={{ base: 8, md: 12, lg: 16 }}
 
       >
-        <PersonalCard />
+        <PersonalCard  data={data.PersonalCardData}/>
       </Box>
     </Box>
   )

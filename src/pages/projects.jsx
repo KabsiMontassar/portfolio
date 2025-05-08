@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import {
   Box,
   Container,
@@ -23,14 +23,13 @@ import {
 } from '@chakra-ui/react'
 import { motion, useInView } from 'framer-motion'
 import { keyframes } from '@emotion/react'
-import { FiGithub, FiExternalLink, FiCheckCircle, FiCode, FiCpu, FiAward } from 'react-icons/fi'
+import { FiGithub, FiExternalLink, FiCheckCircle, FiCode, FiCpu } from 'react-icons/fi'
 import { FaReact, FaAngular, FaNodeJs, FaDocker } from 'react-icons/fa'
 import { SiTypescript, SiNestjs, SiSpringboot, SiSymfony, SiPostgresql, SiMongodb, SiKubernetes } from 'react-icons/si'
-import { FaFreeCodeCamp } from 'react-icons/fa'
+import { projectsData, certs } from '../data/projectsData' // Assuming you have a data.js file with the projects and certs data
 
 // Motion components
 const MotionBox = chakra(motion.div)
-const MotionFlex = chakra(motion.div)
 const MotionHeading = chakra(motion.h2)
 const MotionText = chakra(motion.p)
 
@@ -41,74 +40,6 @@ const floatingAnimation = keyframes`
   100% { transform: translateY(0px) rotate(0deg); }
 `
 
-// Projects data
-const projectsData = [
-  {
-    title: 'PlayMate',
-    details: [
-      'Football matchmaking platform with field reservations, tournaments, and sportswear orders.',
-      'Built an admin dashboard for efficient platform management.',
-      'Integrated Google Maps, Calendar, Mailing, and SMS APIs for seamless user experience.',
-    ],
-    technologies: ['PHP', 'Symfony', 'Ajax', 'Bootstrap', 'MySQL', 'API Integration', 'Backend Management'],
-  },
-  {
-    title: 'FlexFlow',
-    details: [
-      'Developed the frontend using React + TypeScript with Vite and Chakra UI for a fast, modern UI.',
-      'Implemented secure authentication and role-based access control (RBAC) with NestJS and JWT.',
-      'Created backend microservices with NestJS, using MongoDB for user data and PostgreSQL for task management.',
-      'Used Docker for containerization and GitHub Actions for automated CI/CD.',
-      'Ensured code quality and security with Mocha, Playwright, and Snyk.',
-    ],
-    technologies: ['React', 'TypeScript', 'NestJS', 'PostgreSQL', 'MongoDB', 'JWT', 'WebSockets', 'Docker', 'GitHub Actions', 'CI/CD', 'Snyk', 'Microservices', 'Vite', 'Chakra'],
-  },
-  {
-    title: 'VerdeSeeds',
-    details: [
-      'Developed a multi-tenant SaaS platform allowing farmers to easily create and manage customizable e-commerce websites.',
-      'Built with Angular (frontend) and Spring Boot (backend) for a responsive, scalable, and modular experience.',
-      'Integrated a shared marketplace for buying/selling seeds, equipment, and farming resources.',
-      'Added AI-powered features, including:',
-      'Automated component generation for e-commerce sites.',
-      'Plant disease detection with AI-driven recommendations.',
-      'Image color extraction for platform customization.',
-      'Enabled real-time notifications and messaging using WebSockets.',
-      'Designed role-based access control for managing products, customers, employees, and orders.',
-      'Deployed on OpenStack using Docker, Ansible, and Heat for automated provisioning.',
-      'Used Kubernetes for orchestration, ensuring scalability and fault tolerance.',
-      'Monitored system health with Prometheus & Grafana dashboards.',
-    ],
-    technologies: ['Angular', 'Spring Boot', 'Java', 'WebSockets', 'JWT', 'Docker', 'Kubernetes', 'OpenStack', 'Ansible', 'Heat', 'Prometheus', 'Grafana'],
-  },
-]
-
-const certs = [
-  {
-    title: 'IBM Artificial Intelligence Fundamentals',
-    issuer: 'IBM',
-    year: 2025,
-    icon: FaAngular,
-    color: '#052FAD',
-    description: 'Fundamentals of AI including machine learning, deep learning, and neural networks'
-  },
-  {
-    title: 'Hedera Hashgraph Developer',
-    issuer: 'The Hashgraph Association',
-    year: 2025,
-    icon: FaAngular,
-    color: '#00C4BE',
-    description: 'Building decentralized applications on the Hedera network'
-  },
-  {
-    title: 'JavaScript Algorithms and Data Structures',
-    issuer: 'FreeCodeCamp',
-    year: 2022,
-    icon: FaAngular,
-    color: '#0A0A23',
-    description: 'Mastery of JavaScript fundamentals and problem-solving techniques'
-  },
-]
 
 // Project card component
 const ProjectCard = ({ project, index }) => {
@@ -279,7 +210,7 @@ const CertificationCard = ({ cert, index }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const prefersReducedMotion = usePrefersReducedMotion()
-  
+
   const cardBg = useColorModeValue('white', 'gray.800')
   const borderColor = useColorModeValue('gray.200', 'gray.700')
   const textColor = useColorModeValue('gray.700', 'gray.300')
@@ -515,7 +446,7 @@ const Projects = () => {
             </SimpleGrid>
           </VStack>
 
-     
+
         </VStack>
       </Container>
     </Box>

@@ -35,7 +35,6 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
         education: 'teal',
         projects: 'pink',
         hackathons: 'purple',
-
         certificates: 'orange',
         skills: 'red',
 
@@ -129,7 +128,7 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
                     </Text>
 
                     <Box
-                        className={`achievement-card ${achievement.color}`}
+                        className={`achievement-card ${colorChoice}`}
                         w={{ base: "full", md: isExpanded ? "full" : "600px" }}
                         h={{ base: "auto", md: isExpanded ? "400px" : "300px" }}
                         bg={bgColor}
@@ -169,7 +168,7 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
                                 </Box>
                                 <Box>
                                     <Badge
-                                        colorScheme={achievement.color}
+                                        colorScheme={colorChoice}
                                         variant="subtle"
                                         fontSize="xs"
                                         mb={1}
@@ -211,7 +210,7 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
                                                     {achievement.skills.map((skill, i) => (
                                                         <Badge
                                                             key={i}
-                                                            colorScheme={achievement.color}
+                                                            colorScheme={colorChoice}
                                                             variant="outline"
                                                             px={2}
                                                             py={1}
