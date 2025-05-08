@@ -13,7 +13,7 @@ const Achievements = () => {
   const [expandedCards, setExpandedCards] = useState([]);
 
   const achievements = useMemo(() => {
-    const categories = [ 'experience', 'education','projects', 'hackathons', 'certificates', 'skills'];
+    const categories = ['experience', 'education', 'projects', 'hackathons', 'certificates', 'skills'];
     return categories.map(category => ({
       ...t(`achievements.${category}`, { returnObjects: true }),
       color: {
@@ -43,58 +43,57 @@ const Achievements = () => {
   );
 
   return (
-    <Box    userSelect={"none"} overflow="hidden" position="relative">
+    <Box userSelect={"none"} overflow="hidden" position="relative">
 
-      <Box 
-   
+      <Box
         position="absolute"
-        top="15%"
-        right="10%"
-        w="400px"
-        h="400px"
+        top={{ base: "5%", md: "15%" }}
+        right={{ base: "5%", md: "10%" }}
+        w={{ base: "200px", md: "400px" }}
+        h={{ base: "200px", md: "400px" }}
         borderRadius="full"
         bg={useColorModeValue("orange.200", "pink.200")}
-        filter="blur(80px)"
+        filter={{ base: "blur(60px)", md: "blur(80px)" }}
         opacity={0.3}
         zIndex={0}
       />
       <Box
         position="absolute"
-        bottom="10%"
-        left="5%"
-        w="500px"
-        h="500px"
+        bottom={{ base: "5%", md: "10%" }}
+        left={{ base: "2%", md: "5%" }}
+        w={{ base: "250px", md: "500px" }}
+        h={{ base: "250px", md: "500px" }}
         borderRadius="full"
         bg={useColorModeValue("red.300", "cyan.200")}
-        filter="blur(100px)"
+        filter={{ base: "blur(70px)", md: "blur(100px)" }}
         opacity={0.2}
         zIndex={0}
       />
       <Box
         position="absolute"
-        bottom="50%"
-        left="20%"
-        w="500px"
-        h="500px"
+        bottom={{ base: "40%", md: "50%" }}
+        left={{ base: "10%", md: "20%" }}
+        w={{ base: "250px", md: "500px" }}
+        h={{ base: "250px", md: "500px" }}
         borderRadius="full"
         bg={useColorModeValue("pink.300", "green.200")}
-        filter="blur(100px)"
+        filter={{ base: "blur(70px)", md: "blur(100px)" }}
         opacity={0.2}
         zIndex={0}
       />
 
       <Box
-        px={{ base: 6, md: 20 }}
-        mb={{ base: 16, md: 28 }}
+        px={{ base: 4, sm: 6, md: 12, lg: 20 }}
+        mb={{ base: 10, sm: 12, md: 16, lg: 28 }}
         position="relative"
         zIndex={1}
         textAlign="center"
         maxW="1100px"
         mx="auto"
-        pb={{ base: 4, md: 8 }}
+        pb={{ base: 2, sm: 4, md: 8 }}
       >
         <Heading
-          fontSize={{ base: "4xl", md: "7xl" }}
+          fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "7xl" }}
           bgGradient={headingGradient}
           bgClip="text"
           letterSpacing="tight"
@@ -103,8 +102,8 @@ const Achievements = () => {
           {t('getToKnowMe')}
         </Heading>
         <Text
-          mt={4}
-          fontSize={{ base: "md", md: "lg" }}
+          mt={{ base: 2, md: 4 }}
+          fontSize={{ base: "sm", sm: "md", md: "lg" }}
           color={useColorModeValue("gray.600", "gray.300")}
         >
           {t('exploreJourney')}
@@ -114,9 +113,10 @@ const Achievements = () => {
       <Box
         maxW="1400px"
         mx="auto"
-        px={{ base: 4, md: 8 }}
+        px={{ base: 2, sm: 4, md: 6, lg: 8 }}
         position="relative"
         zIndex={1}
+        gap={{ base: 4, sm: 6, md: 8 }}
       >
         {achievements.map((achievement, index) => (
           <AchievementCard

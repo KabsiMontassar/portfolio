@@ -101,7 +101,7 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
                     position="relative"
                 >
                     <Text
-                       
+
                         fontSize={{ base: "120px", md: "240px" }}
                         fontWeight="900"
                         opacity={0.1}

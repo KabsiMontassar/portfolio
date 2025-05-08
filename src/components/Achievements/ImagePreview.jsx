@@ -6,13 +6,13 @@ import { FaRankingStar } from "react-icons/fa6";
 import { MdAttachMoney } from "react-icons/md";
 import { TbFileCertificate } from "react-icons/tb";
 
-import { 
-    StarIcon, 
-    CalendarIcon, 
-    CheckIcon, 
-    SettingsIcon, 
-    ViewIcon, 
-    EmailIcon 
+import {
+    StarIcon,
+    CalendarIcon,
+    CheckIcon,
+    SettingsIcon,
+    ViewIcon,
+    EmailIcon
 } from '@chakra-ui/icons'
 
 const ImagePreview = ({ images, borderColor, textColor }) => {
@@ -23,10 +23,10 @@ const ImagePreview = ({ images, borderColor, textColor }) => {
         if (title.toLowerCase().includes('app')) return CalendarIcon
         if (title.toLowerCase().includes('tech')) return SettingsIcon
         if (title.toLowerCase().includes('challenge') || title.toLowerCase().includes('contest') || title.toLowerCase().includes('hackathon')) return FaRankingStar
-        if (title.toLowerCase().includes('web') || title.toLowerCase().includes('cloud')|| title.toLowerCase().includes('ux')) return GrCertificate
-        if (title.toLowerCase().includes('javascript') || title.toLowerCase().includes('react') || title.toLowerCase().includes('aws') ) return StarIcon
+        if (title.toLowerCase().includes('web') || title.toLowerCase().includes('cloud') || title.toLowerCase().includes('ux')) return GrCertificate
+        if (title.toLowerCase().includes('javascript') || title.toLowerCase().includes('react') || title.toLowerCase().includes('aws')) return StarIcon
         if (title.toLowerCase().includes('bachelor') || title.toLowerCase().includes('master')) return TbFileCertificate
-        return EmailIcon 
+        return EmailIcon
     }
 
     return (
@@ -42,9 +42,9 @@ const ImagePreview = ({ images, borderColor, textColor }) => {
                     direction="column"
                     align="center"
                     transition="all 0.3s ease"
-                 
+
                     cursor="pointer"
-                  
+
                 >
                     <Box
                         borderRadius="lg"
@@ -75,7 +75,7 @@ const ImagePreview = ({ images, borderColor, textColor }) => {
                             as={getIconByTitle(img.title)}
                             w={6}
                             h={6}
-                          
+
                             color={textColor}
                             mb={2}
                         />
@@ -88,7 +88,7 @@ const ImagePreview = ({ images, borderColor, textColor }) => {
                         >
                             {img.title}
                         </Text>
-                     
+
                     </Box>
                 </Flex>
             ))}

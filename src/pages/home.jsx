@@ -1,4 +1,5 @@
 import React from 'react'
+import { Box } from '@chakra-ui/react'
 import Page from '../components/CursorEffectComp/page'
 import Hero from '../components/Hero/Hero'
 import Achievements from '../components/Achievements/Achievements'
@@ -6,20 +7,41 @@ import PersonalCard from '../components/PersonalCard/PersonalCard'
 
 const Home = () => {
   return (
-    <div style={{ position: 'relative' }}>
-      <section style={{ height: '100vh', position: 'relative' }}>
+    <Box position="relative" width="100%" overflow="hidden">
+      <Box
+        as="section"
+        height={{ base: "90vh", md: "100vh" }}
+        position="relative"
+      >
         <Page />
-      </section>
-      <section style={{ height: '80vh', position: 'relative' }}>
+      </Box>
+
+      <Box
+        as="section"
+        height={{ base: "auto", md: "80vh" }}
+        minHeight={{ base: "70vh", md: "80vh" }}
+        position="relative"
+        py={{ base: 8, md: 0 }}
+      >
         <Hero />
-      </section>
-      <section >
+      </Box>
+
+      <Box
+        as="section"
+        py={{ base: 8, md: 12, lg: 16 }}
+
+      >
         <Achievements />
-      </section>
-      <section >
+      </Box>
+
+      <Box
+        as="section"
+        py={{ base: 8, md: 12, lg: 16 }}
+
+      >
         <PersonalCard />
-      </section>
-    </div>
+      </Box>
+    </Box>
   )
 }
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import BlurryCursor from "./cursor"
-import { VStack, Text, Box, useColorMode } from '@chakra-ui/react'
+import { VStack, Text, Box, useColorMode, useBreakpointValue } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 import gsap from 'gsap'
 
@@ -9,21 +9,35 @@ export default function Page() {
     const { t } = useTranslation()
     const [isActive, setIsActive] = useState(false)
     const bgRef = useRef(null)
+    
+    // Responsive circle sizes
+    const scaleFactor = useBreakpointValue({ base: 0.6, sm: 0.8, md: 1, lg: 1.2 })
+    
+    // Responsive text sizing
+    const quoteSize = useBreakpointValue({ base: "4xl", sm: "5xl", md: "6xl", lg: "7xl" })
 
     useEffect(() => {
         const shapes = bgRef.current.querySelectorAll('.bg-shape')
+        const viewportWidth = window.innerWidth
+        const viewportHeight = window.innerHeight
+        
+        // Adjust animation boundaries based on viewport
+        const maxX = viewportWidth
+        const maxY = viewportHeight
 
         shapes.forEach((shape, i) => {
+            // Scale initial positions based on viewport
             gsap.set(shape, {
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-                scale: Math.random() * 2 + 0.5,
+                x: Math.random() * maxX,
+                y: Math.random() * maxY,
+                scale: (Math.random() * 2 + 0.5) * (scaleFactor || 1),
             })
 
+            // Adjust animation range based on viewport
             gsap.to(shape, {
-                x: `random(0, ${window.innerWidth})`,
-                y: `random(0, ${window.innerHeight})`,
-                scale: 'random(0.5, 2)',
+                x: `random(0, ${maxX})`,
+                y: `random(0, ${maxY})`,
+                scale: `random(${0.5 * (scaleFactor || 1)}, ${2 * (scaleFactor || 1)})`,
                 rotation: 'random(-180, 180)',
                 duration: 'random(10, 20)',
                 ease: 'none',
@@ -32,7 +46,25 @@ export default function Page() {
                 delay: i * -2
             })
         })
-    }, [])
+        
+        // Handle resize for responsive animation
+        const handleResize = () => {
+            const newMaxX = window.innerWidth
+            const newMaxY = window.innerHeight
+            
+            shapes.forEach((shape) => {
+                // Keep shapes within new viewport boundaries
+                const currentX = gsap.getProperty(shape, "x")
+                const currentY = gsap.getProperty(shape, "y")
+                
+                if (currentX > newMaxX) gsap.set(shape, { x: newMaxX * 0.8 })
+                if (currentY > newMaxY) gsap.set(shape, { y: newMaxY * 0.8 })
+            })
+        }
+        
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [scaleFactor])
 
     return (
         <Box height="100%" width="100%" position="relative" overflow="hidden">
@@ -46,20 +78,19 @@ export default function Page() {
                 zIndex={1}
                 opacity={colorMode === 'light' ? 0.16 : 0.18}
             >
-                <svg width="100%" height="90vh" style={{ filter: 'blur(40px)' }}>
-                    {/* Primary shapes */}
-                    <circle className="bg-shape" r="120" fill="#FF3366" />
-                    <circle className="bg-shape" r="140" fill="#33FF99" />
-                    <circle className="bg-shape" r="100" fill="#3366FF" />
-                    <circle className="bg-shape" r="160" fill="#FFCC33" />
-                    <circle className="bg-shape" r="130" fill="#9933FF" />
+                <svg width="100%" height="80%" style={{ filter: 'blur(40px)' }}>
+                    {/* Primary shapes - scale radius based on screen size */}
+                    <circle className="bg-shape" r={120 * (scaleFactor || 1)} fill="#FF3366" />
+                    <circle className="bg-shape" r={140 * (scaleFactor || 1)} fill="#33FF99" />
+                    <circle className="bg-shape" r={100 * (scaleFactor || 1)} fill="#3366FF" />
+                    <circle className="bg-shape" r={160 * (scaleFactor || 1)} fill="#FFCC33" />
+                    <circle className="bg-shape" r={130 * (scaleFactor || 1)} fill="#9933FF" />
                     {/* Secondary shapes */}
-                    <circle className="bg-shape" r="90" fill="#FF6633" />
-                    <circle className="bg-shape" r="110" fill="#33FFCC" />
-                    <circle className="bg-shape" r="80" fill="#6633FF" />
-                    <circle className="bg-shape" r="140" fill="#FF33CC" />
-                    <circle className="bg-shape" r="70" fill="#33FF66" />
-                    {/* Accent shapes */}
+                    <circle className="bg-shape" r={90 * (scaleFactor || 1)} fill="#FF6633" />
+                    <circle className="bg-shape" r={110 * (scaleFactor || 1)} fill="#33FFCC" />
+                    <circle className="bg-shape" r={80 * (scaleFactor || 1)} fill="#6633FF" />
+                    <circle className="bg-shape" r={140 * (scaleFactor || 1)} fill="#FF33CC" />
+                    <circle className="bg-shape" r={70 * (scaleFactor || 1)} fill="#33FF66" />
                 </svg>
             </Box>
 
@@ -71,16 +102,18 @@ export default function Page() {
                 alignItems="center"
                 justifyContent="center"
                 zIndex={10}
+                px={{ base: 4, md: 8 }}
             >
-                <VStack spacing={6} align="center">
+                <VStack spacing={{ base: 4, md: 6 }} align="center">
                     <Text
                         onMouseEnter={() => setIsActive(true)}
                         onMouseLeave={() => setIsActive(false)}
-                        fontSize={"7xl"}
+                        fontSize={quoteSize}
                         color={colorMode === 'light' ? 'gray.600' : 'whiteAlpha.900'}
                         fontStyle="italic"
-                        maxW="1000px"
+                        maxW={{ base: "100%", md: "90%", lg: "1000px" }}
                         textAlign="center"
+                        lineHeight={{ base: 1.4, md: 1.6 }}
                     >
                         "{t('quote')}"
                     </Text>
