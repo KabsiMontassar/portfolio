@@ -12,15 +12,11 @@ import { keyframes } from '@emotion/react'
 
 import ProjectCard from '../components/Project/ProjectCard'
 import CertificationCard from '../components/Project/CertificationCard'
-import { projectsData, certs  ,texts} from '../data/projectsData'
+import { projectsData, certs  ,texts , textsused} from '../data/projectsData'
 
 const MotionBox = chakra(motion.div)
 const MotionHeading = chakra(motion.h2)
 const MotionText = chakra(motion.p)
-
-
-
-
 
 // Projects page component
 const Projects = () => {
@@ -121,7 +117,7 @@ const Projects = () => {
               lineHeight="1.1"
               mb={4}
             >
-              My Projects
+              {textsused.title}
             </MotionHeading>
             <MotionText
               fontSize={{ base: "lg", md: "xl" }}
@@ -129,7 +125,7 @@ const Projects = () => {
               maxW="2xl"
               mx="auto"
             >
-              Showcasing innovative solutions built with cutting-edge technologies
+              {textsused.description}
             </MotionText>
           </MotionBox>
 
@@ -169,7 +165,7 @@ const Projects = () => {
                 maxW="2xl"
                 mx="auto"
               >
-                Validated expertise through industry-recognized certifications
+                {textsused.certsDescription}
               </MotionText>
             </MotionBox>
 

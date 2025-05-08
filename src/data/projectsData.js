@@ -80,4 +80,11 @@ const texts = {
   text1: "View Credential",
 }
 
-export { projectsData, certs  , texts}
+  const textsused = {
+    title: "My Projects",
+    description: "Showcasing innovative solutions built with cutting-edge technologies",
+    certsTitle: "Certifications",
+    certsDescription: "Validated expertise through industry-recognized certifications"
+  }
+
+export { projectsData, certs  , texts , textsused}
