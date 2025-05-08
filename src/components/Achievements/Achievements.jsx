@@ -17,12 +17,13 @@ const Achievements = () => {
     return categories.map(category => ({
       ...t(`achievements.${category}`, { returnObjects: true }),
       color: {
-        projects: 'pink',
-        hackathons: 'teal',
         experience: 'blue',
+        education: 'teal',
+        projects: 'pink',
+        hackathons: 'purple',
+
         certificates: 'orange',
-        skills: 'purple',
-        education: 'red'
+        skills: 'red',
       }[category]
     }));
   }, [t]);

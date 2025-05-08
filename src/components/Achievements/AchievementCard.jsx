@@ -30,18 +30,19 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
     };
 
     const colorMap = {
+
+        experiences: 'blue',
+        education: 'teal',
         projects: 'pink',
         hackathons: 'purple',
-        experiences: 'blue',
-        certificates: 'teal',
-        skills: 'purple',
-        education: 'blue'
+
+        certificates: 'orange',
+        skills: 'red',
+
     };
 
-    // Override the color choice from achievement with our consistent colors
     const colorChoice = colorMap[colorKey] || 'purple';
 
-    // Dynamic colors based on color mode and category
     const bgColor = useColorModeValue(
         `${colorChoice}.50`,
         `${colorChoice}.900`
