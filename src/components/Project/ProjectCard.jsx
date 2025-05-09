@@ -110,6 +110,9 @@ const ProjectCard = ({ project, index ,allTextUsed}) => {
                             <HStack spacing={2}>
                                 <Button
                                     leftIcon={<FiGithub />}
+                                    as="a"
+                                    href={project.link}
+                                    target="_blank"
                                     variant="ghost"
                                     size="sm"
                                     color={textColor}
