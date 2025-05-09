@@ -18,6 +18,7 @@ const MotionBox = chakra(motion.div)
 const MotionHeading = chakra(motion.h2)
 const MotionText = chakra(motion.p)
 
+
 // Projects page component
 const Projects = () => {
   const headingGradient = useColorModeValue(
@@ -35,6 +36,8 @@ const Projects = () => {
     75% { transform: translate(5%, -5%) rotate(-5deg); }
     100% { transform: translate(0%, 0%) rotate(0deg); }
   `
+
+  certs.sort((a, b) => new Date(b.year) - new Date(a.year))
 
   return (
     <Box

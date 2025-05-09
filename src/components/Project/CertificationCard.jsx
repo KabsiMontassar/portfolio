@@ -101,6 +101,9 @@ const CertificationCard = ({ cert, index,alltextsused }) => {
                         mt={2}
                         rightIcon={<FiExternalLink />}
                         alignSelf="flex-start"
+                        as="a"
+                        href={cert.link}
+                        target="_blank"
                     >
                         {alltextsused.text1}
                     </Button>

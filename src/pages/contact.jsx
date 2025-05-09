@@ -1,29 +1,23 @@
-import { useState } from 'react'
 import {
   Box,
   VStack,
   Heading,
   Text,
-  Input,
-  Textarea,
-  Button,
   useColorMode,
   FormControl,
   FormLabel,
+  Button,
   Icon,
-  // useToast,
   HStack,
   Container,
   IconButton,
-  SimpleGrid,
+  useColorModeValue,
   usePrefersReducedMotion,
-  useColorModeValue
 } from '@chakra-ui/react'
 
 import { motion } from 'framer-motion'
 import { keyframes } from '@emotion/react'
-import { FiSend } from 'react-icons/fi'
-import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'
+import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import data from '../data/contactData'
 
 const MotionBox = motion.create(Box)
@@ -33,8 +27,6 @@ const MotionVStack = motion.create(VStack)
 
 const Contact = () => {
   const { colorMode } = useColorMode()
-  //const toast = useToast()
-  const [isLoading, setIsLoading] = useState(false)
   const prefersReducedMotion = usePrefersReducedMotion()
 
   const floatingAnimation = keyframes`
@@ -44,13 +36,6 @@ const Contact = () => {
   `
 
   const floating = `${floatingAnimation} 6s ease-in-out infinite`
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsLoading(true)
-
-  }
-
 
   return (
     <Box pt="50px" position="relative" minH="100vh" overflow="hidden">
@@ -130,17 +115,11 @@ const Contact = () => {
             </MotionText>
           </MotionVStack>
 
-          {/* Content Grid */}
-          <SimpleGrid
-            columns={{ base: 1, lg: 2 }}
-            spacing={10}
-            w="full"
-            alignItems="center"
-          >
-            {/* Contact Information */}
+          {/* Contact Information - Now centered and sole content */}
+          <Box w="full" maxW="600px" mx="auto">
             <MotionBox
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <VStack spacing={8} align="start">
@@ -164,7 +143,6 @@ const Contact = () => {
                     >
                       <Button
                         as="a"
-
                         variant="outline"
                         w="full"
                         size="lg"
@@ -194,18 +172,17 @@ const Contact = () => {
                   ))}
                 </VStack>
 
-                {/* Social Links */}
                 <MotionBox
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                 >
                   <VStack spacing={4} align="start">
-                    <Text fontWeight="600">Follow me</Text>
                     <HStack spacing={4}>
                       <IconButton
                         as="a"
-                        href="#"
+                        href="https://www.linkedin.com/in/montassarkabsi/"
+                        target="_blank"
                         aria-label="LinkedIn"
                         icon={<FaLinkedin />}
                         size="lg"
@@ -219,28 +196,15 @@ const Contact = () => {
                       />
                       <IconButton
                         as="a"
-                        href="#"
+                        href="https://github.com/KabsiMontassar"
+                        target="_blank"
                         aria-label="GitHub"
                         icon={<FaGithub />}
                         size="lg"
                         variant="ghost"
                         color={colorMode === 'light' ? 'gray.700' : 'gray.200'}
                         _hover={{
-                          color: 'gray.800',
-                          transform: 'translateY(-3px)'
-                        }}
-                        transition="all 0.2s ease"
-                      />
-                      <IconButton
-                        as="a"
-                        href="#"
-                        aria-label="Twitter"
-                        icon={<FaTwitter />}
-                        size="lg"
-                        variant="ghost"
-                        color={colorMode === 'light' ? 'gray.700' : 'gray.200'}
-                        _hover={{
-                          color: 'blue.500',
+                          color: 'purple.800',
                           transform: 'translateY(-3px)'
                         }}
                         transition="all 0.2s ease"
@@ -250,106 +214,7 @@ const Contact = () => {
                 </MotionBox>
               </VStack>
             </MotionBox>
-
-            {/* Contact Form */}
-            <MotionBox
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <Box
-                as="form"
-                onSubmit={handleSubmit}
-                p={8}
-                bg={colorMode === 'light' ? 'white' : 'gray.800'}
-                borderRadius="2xl"
-                boxShadow="xl"
-                border="1px solid"
-                borderColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
-                position="relative"
-                overflow="hidden"
-                _before={{
-                  content: '""',
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: '4px',
-                  bgGradient: 'linear(to-r, purple.500, blue.500)'
-                }}
-              >
-                <VStack spacing={6}>
-                  <FormControl isRequired>
-                    <FormLabel>Your Name</FormLabel>
-                    <Input
-                      placeholder="John Doe"
-                      size="lg"
-                      focusBorderColor="purple.500"
-                      _hover={{
-                        borderColor: 'purple.500'
-                      }}
-                    />
-                  </FormControl>
-
-                  <FormControl isRequired>
-                    <FormLabel>Email Address</FormLabel>
-                    <Input
-                      type="email"
-                      placeholder="john@example.com"
-                      size="lg"
-                      focusBorderColor="purple.500"
-                      _hover={{
-                        borderColor: 'purple.500'
-                      }}
-                    />
-                  </FormControl>
-
-                  <FormControl isRequired>
-                    <FormLabel>Subject</FormLabel>
-                    <Input
-                      placeholder="Project Inquiry"
-                      size="lg"
-                      focusBorderColor="purple.500"
-                      _hover={{
-                        borderColor: 'purple.500'
-                      }}
-                    />
-                  </FormControl>
-
-                  <FormControl isRequired>
-                    <FormLabel>Message</FormLabel>
-                    <Textarea
-                      placeholder="Tell me about your project..."
-                      size="lg"
-                      minH="180px"
-                      focusBorderColor="purple.500"
-                      _hover={{
-                        borderColor: 'purple.500'
-                      }}
-                    />
-                  </FormControl>
-
-                  <Button
-                    type="submit"
-                    colorScheme="purple"
-                    size="lg"
-                    width="full"
-                    isLoading={isLoading}
-                    rightIcon={<FiSend />}
-                    mt={4}
-                    _hover={{
-                      transform: 'translateY(-3px)',
-                      boxShadow: 'lg',
-                      bg: colorMode === 'light' ? 'purple.600' : 'purple.400'
-                    }}
-                    transition="all 0.2s ease"
-                  >
-                    Send Message
-                  </Button>
-                </VStack>
-              </Box>
-            </MotionBox>
-          </SimpleGrid>
+          </Box>
         </VStack>
       </Container>
     </Box>
