@@ -41,8 +41,8 @@ const PersonalCard = ({data}) => {
                 <Box
                     borderRadius="3xl"
                     overflow="hidden"
-                    w={{ base: "280px", sm: "320px", md: "400px", lg: "500px", xl: "600px" }}
-                    h={{ base: "360px", sm: "420px", md: "500px", lg: "600px", xl: "700px" }}
+                    w={{ base: "280px", sm: "320px", md: "300px", lg: "300px", xl: "400px" }}
+                    h={{ base: "360px", sm: "420px", md: "400px", lg: "400px", xl: "500px" }}
                     boxShadow="2xl"
                     transition="transform 0.7s ease"
                     _hover={{ transform: 'scale(1.05)' }}

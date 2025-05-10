@@ -77,6 +77,7 @@ const Achievements = ({data}) => {
 
       <Box
         px={{ base: 4, sm: 6, md: 12, lg: 20 }}
+        mt={{ base: 10, sm: 12, md: 16, lg: 28 }}
         mb={{ base: 10, sm: 12, md: 16, lg: 28 }}
         position="relative"
         zIndex={1}
