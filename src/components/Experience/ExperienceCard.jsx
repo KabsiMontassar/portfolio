@@ -11,11 +11,8 @@ import {
     VStack,
 } from '@chakra-ui/react'
 import { FiBriefcase, FiMapPin, FiExternalLink } from 'react-icons/fi'
-import { AiOutlineCalendar } from 'react-icons/ai'
-import { useTranslation } from 'react-i18next'
 
-const ExperienceCard = ({ experience, index, isLast, variant = 'experience' }) => {
-    const { t } = useTranslation()
+const ExperienceCard = ({ experience, isLast, variant = 'experience' }) => {
     
     const bgColor = useColorModeValue('white', 'gray.800')
     const borderColor = useColorModeValue('purple.100', 'purple.700')
@@ -24,7 +21,6 @@ const ExperienceCard = ({ experience, index, isLast, variant = 'experience' }) =
         variant === 'experience' ? 'purple.300' : 'blue.300'
     )
     const textColor = useColorModeValue('gray.700', 'gray.200')
-    const timelineColor = useColorModeValue('purple.100', 'purple.700')
 
     const Description = experience?.Description || experience?.description || []
     const Technologies = experience?.Technologies || experience?.technologies || []
