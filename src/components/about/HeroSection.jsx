@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Heading, Text, Grid, Image, Flex, VStack, Icon, useColorMode, useBreakpointValue, usePrefersReducedMotion } from '@chakra-ui/react'
 import { FaCode, FaArrowRight } from 'react-icons/fa'
-import img from '../../public/image.jpg';
+import img from '../../assets/image.jpg';
 import { keyframes } from '@emotion/react'
 
 const HeroSection = ({ alltexts }) => {
