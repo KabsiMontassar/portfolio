@@ -3,9 +3,6 @@ import { initReactI18next } from 'react-i18next'
 import { getStoredLanguage } from '../utils/localStorage'
 
 
-
-
-
 i18n.use(initReactI18next).init({
   fallbackLng: 'en',
   lng: getStoredLanguage(),
@@ -119,7 +116,59 @@ i18n.use(initReactI18next).init({
         "footer.nav.projects": "Projects",
         "footer.nav.contact": "Contact",
         "footer.copyright": "© 2024 Kebsi Montassar. All rights reserved.",
-        "footer.builtWith": "Built with privacy and security in mind."
+        "footer.builtWith": "Built with privacy and security in mind.",
+        "experience.fidness.title": "Full Stack Web Developer Intern",
+        "experience.fidness.company": "FIDNESS",
+        "experience.fidness.location": "La Marsa, Tunisia",
+        "experience.fidness.description": [
+          "Designed and developed a web application for managing partner contracts, implementing encryption and other security measures to protect sensitive data.",
+          "Designed and implemented data visualization features to improve data presentation, enabling efficient management and enhancing client retention."
+        ],
+        "experience.esprit.title": "Full Stack Web Developer Intern",
+        "experience.esprit.company": "ESPRIT",
+        "experience.esprit.location": "Ariana, Tunisia",
+        "experience.esprit.description": [
+          "Developed an e-commerce platform for plant sales with category filtering and Algolia search.",
+          "Implemented stateless authentication using JWT.",
+          "Built AI models for plant disease diagnosis and plant recognition with care recommendations.",
+          "Designed a user-friendly interface with Chakra UI and Figma.",
+          "Utilized Firebase for backend services and tested APIs with Postman."
+        ],
+        "experience.moodandfood.title": "Full Stack Web Developer Intern",
+        "experience.moodandfood.company": "Mood and Food",
+        "experience.moodandfood.location": "Ariana, Tunisia",
+        "experience.moodandfood.description": [
+          "Designed and developed a full-stack e-commerce web application for diet products, gym accessories, and nutritional documentation.",
+          "Created modern, responsive UI/UX designs using Figma and implemented them with ReactJS and Chakra UI.",
+          "Built the back-end using Node.js and Express, with RESTful APIs for secure data handling and JWT for authentication.",
+          "Implemented real-time data management using Firebase Firestore and Firebase Extensions.",
+          "Conducted API testing and debugging using Postman."
+        ],
+        "events.empowerxhack.title": "Empower X-Hack 3rd Place",
+        "events.empowerxhack.company": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+        "events.empowerxhack.location": "Tunis, Ariana",
+        "events.empowerxhack.description": [
+          "Full Stack Developer in a multidisciplinary team focused on building an SDG-aligned solution.",
+          "Utilized blockchain technology to ensure transparency and trust in the system.",
+          "Developed a server-side API to enable the mobile application to interact with blockchain methods.",
+          "Built a web platform that allows users to spend tokens earned through the mobile application."
+        ],
+        "events.bigtech.title": "Hackathon Impact Now 1st Place",
+        "events.bigtech.company": "BIGTECH",
+        "events.bigtech.location": "Tunis, Tunisia",
+        "events.bigtech.description": [
+          "Continued development of the solution from the previous hackathon to enhance functionality and performance.",
+          "Added new features and built a robust API to support extended use cases.",
+          "Focused on improving the user interface and overall design for a better user experience.",
+          "Optimized the solution to meet competition standards and ensure high performance under evaluation."
+        ],
+        "events.mutualhack.title": "Mutual Hack Hackathon",
+        "events.mutualhack.company": "MAE ASSURANCES",
+        "events.mutualhack.location": "Tunis, Tunisia",
+        "events.mutualhack.description": [
+          "Built an AI-driven system to analyze patient vitals collected from IoT devices.",
+          "Implemented real-time health monitoring and alerting for early disease detection."
+        ]
       }
     },
     fr: {
@@ -231,7 +280,52 @@ i18n.use(initReactI18next).init({
         "footer.nav.projects": "Projets",
         "footer.nav.contact": "Contact",
         "footer.copyright": "© 2024 Kebsi Montassar. Tous droits réservés.",
-        "footer.builtWith": "Conçu avec le souci de la confidentialité et de la sécurité."
+        "footer.builtWith": "Conçu avec le souci de la confidentialité et de la sécurité.",
+        "experience.fidness.title": "Stagiaire Développeur Web Full Stack",
+        "experience.fidness.company": "FIDNESS",
+        "experience.fidness.location": "La Marsa, Tunisie",
+        "experience.fidness.description": [
+          "Conçu et développé une application web pour la gestion des contrats partenaires, implémentant le chiffrement et d'autres mesures de sécurité pour protéger les données sensibles.",
+          "Conçu et implémenté des fonctionnalités de visualisation de données pour améliorer la présentation des données, permettant une gestion efficace et améliorant la rétention des clients."
+        ],
+
+        
+        
+
+
+
+        "events.bigtech.title": "Hackathon Impact Now 1ère Place",
+        "events.bigtech.company": "BIGTECH",
+        "events.bigtech.location": "Tunis, Tunisie",
+        "events.bigtech.description": [
+          "Poursuite du développement de la solution du hackathon précédent pour améliorer la fonctionnalité et la performance.",
+          "Ajout de nouvelles fonctionnalités et construction d'une API robuste pour supporter des cas d'utilisation étendus.",
+          "Focus sur l'amélioration de l'interface utilisateur et du design global pour une meilleure expérience utilisateur.",
+          "Optimisation de la solution pour répondre aux standards de la compétition et assurer une haute performance sous évaluation."
+        ],
+
+        "events.empowerxhack.title": "Empower X-Hack 3ème Place",
+        "events.empowerxhack.company": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
+        "events.empowerxhack.location": "Tunis, Ariana",
+        "events.empowerxhack.description": [
+          "Développeur Full Stack dans une équipe pluridisciplinaire axée sur la construction d'une solution alignée sur les ODD.",
+          "Utilisation de la technologie blockchain pour garantir la transparence et la confiance dans le système.",
+          "Développement d'une API côté serveur pour permettre à l'application mobile d'interagir avec les méthodes blockchain.",
+          "Création d'une plateforme web permettant aux utilisateurs de dépenser des jetons gagnés via l'application mobile."
+        ],
+  
+
+
+
+
+        "events.mutualhack.title": "Hackathon Mutual Hack",
+        "events.mutualhack.company": "MAE ASSURANCES",
+        "events.mutualhack.location": "Tunis, Tunisie",
+        "events.mutualhack.description": [
+          "Développement d'un système basé sur l'IA pour analyser les signes vitaux des patients collectés via des appareils IoT.",
+          "Implémentation d'un système de surveillance et d'alerte en temps réel pour la détection précoce des maladies."
+        ]
+
       }
     }
   },

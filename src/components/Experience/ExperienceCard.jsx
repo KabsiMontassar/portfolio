@@ -24,7 +24,6 @@ const ExperienceCard = ({ experience, isLast, variant = 'experience' }) => {
 
     const Description = experience?.Description || experience?.description || []
     const Technologies = experience?.Technologies || experience?.technologies || []
-
     const formatDate = (dateString) => {
         return new Date(dateString).toLocaleDateString('en-US', {
             month: 'short',
@@ -120,7 +119,7 @@ const ExperienceCard = ({ experience, isLast, variant = 'experience' }) => {
                     </Flex>
 
                     <Box mb={6}>
-                        {Description?.map((desc, idx) => (
+                        {Description.map((desc, idx) => (
                             <Text 
                                 key={idx} 
                                 mb={2} 
@@ -140,7 +139,7 @@ const ExperienceCard = ({ experience, isLast, variant = 'experience' }) => {
                     </Box>
 
                     <Flex wrap="wrap" gap={2}>
-                        {Technologies?.map((tech, idx) => (
+                        {Technologies.map((tech, idx) => (
                             <Badge
                                 key={idx}
                                 colorScheme="purple"

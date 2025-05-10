@@ -1,13 +1,11 @@
 import React from 'react'
 import { Box, VStack, useColorModeValue } from '@chakra-ui/react'
 import ExperienceElement from '../components/Experience/Experience'
-import { experienceData, data } from '../data/experiencedata.js'
+import { useExperienceData } from '../data/experiencedata'
 
 const Experience = () => {
-  // Separate experiences and events
-  const workExperience = experienceData
-  const eventsAndHackathons = data
-
+  const { experienceData, eventsData } = useExperienceData();
+ console.log(eventsData)
   return (
     <Box pb={20}>
       <Box
@@ -23,11 +21,10 @@ const Experience = () => {
         backgroundSize="40px 40px"
         zIndex={0}
       />
-
       <VStack spacing={16} position="relative" zIndex={1}>
         <ExperienceElement
-          experienceData={workExperience}
-          eventsData={eventsAndHackathons}
+          experienceData={experienceData}
+          eventsData={eventsData}
         />
       </VStack>
     </Box>
