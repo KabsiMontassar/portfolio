@@ -1,12 +1,98 @@
-# React + Vite
+# Modern Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and dynamic portfolio website built with React, showcasing professional experience, projects, and skills with a modern UI/UX design.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎨 Light/Dark mode support
+- 🌍 Multilingual support (English/French)
+- ⚡ Fast and responsive design
+- 🎭 Smooth animations and transitions
+- 📱 Mobile-first approach
+- 🔍 SEO friendly
+- 🖼️ Dynamic image galleries
+- 🎯 Interactive UI components
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React + Vite
+- Chakra UI
+- i18next
+- Framer Motion
+- React Router
+- Emotion
+- React Icons
+
+## 🚀 Quick Start
+
+1. Clone the repository
+```bash
+git clone https://github.com/your-username/portfolio.git
+cd portfolio
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Start the development server
+```bash
+npm run dev
+```
+
+## 📂 Project Structure
+
+```
+src/
+├── components/         # Reusable UI components
+├── data/              # Static data and content
+├── i18n/              # Internationalization configs
+├── pages/             # Page components
+├── utils/             # Utility functions
+└── assets/            # Static assets (images, etc.)
+```
+
+## 🌈 Key Components
+
+- **Home**: Dynamic landing page with personal introduction
+- **About**: Detailed professional background and skills
+- **Experience**: Timeline of work history and events
+- **Projects**: Showcase of technical projects
+- **Contact**: Contact form and social links
+
+## 🌍 Internationalization
+
+The website supports multiple languages using i18next:
+- 🇺🇸 English (default)
+- 🇫🇷 French
+
+## 🎨 Theming
+
+Built with Chakra UI for consistent theming and dark mode support:
+- Customizable color schemes
+- Responsive design system
+- Accessible components
+
+## 📱 Responsive Design
+
+- Mobile-first approach
+- Tablet & desktop optimized
+- Fluid transitions between breakpoints
+
+## 🔧 Configuration
+
+Environment variables can be set in `.env`:
+```env
+VITE_API_URL=your_api_url
+```
+
+## 📄 License
+
+MIT License - feel free to use this project for your own portfolio!
+
+## 👤 Author
+
+Kebsi Montassar
+- LinkedIn: [Kebsi Montassar](https://www.linkedin.com/in/montassarkabsi/)
+- GitHub: [KabsiMontassar](https://github.com/KabsiMontassar)
