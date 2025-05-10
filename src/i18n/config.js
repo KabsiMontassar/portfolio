@@ -2,6 +2,10 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import { getStoredLanguage } from '../utils/localStorage'
 
+
+
+
+
 i18n.use(initReactI18next).init({
   fallbackLng: 'en',
   lng: getStoredLanguage(),
@@ -73,7 +77,49 @@ i18n.use(initReactI18next).init({
         "home.achievements.skills.title": "Skills",
         "home.achievements.skills.description": "Mastered technologies including JavaScript, Python, React, Node.js, and cloud platforms like AWS and Firebase. Strong foundation in both frontend and backend development with focus on clean code practices.",
         "home.achievements.skills.label": "skills",
-        "home.personal.text": "Hi"
+        "home.personal.text": "Hi",
+        "projects.page.title": "My Projects",
+        "projects.page.description": "Showcasing innovative solutions built with cutting-edge technologies",
+        "projects.playmate.description": "A web application for football enthusiasts to find and book fields.",
+        "projects.playmate.details": [
+          "Football matchmaking platform with field reservations, tournaments, and sportswear orders.",
+          "Built an admin dashboard for efficient platform management.",
+          "Integrated Google Maps, Calendar, Mailing, and SMS APIs for seamless user experience."
+        ],
+        "projects.flexflow.description": "A web application for managing and optimizing employee schedules.",
+        "projects.flexflow.details": [
+          "Developed the frontend using React + TypeScript with Vite and Chakra UI for a fast, modern UI.",
+          "Implemented secure authentication and role-based access control (RBAC) with NestJS and JWT.",
+          "Created backend microservices with NestJS, using MongoDB for user data and PostgreSQL for task management.",
+          "Used Docker for containerization and GitHub Actions for automated CI/CD.",
+          "Ensured code quality and security with Mocha, Playwright, and Snyk."
+        ],
+        "projects.verdeseeds.description": "A multi-tenant SaaS platform for farmers to create and manage e-commerce websites.",
+        "projects.verdeseeds.details": [
+          "Developed a multi-tenant SaaS platform allowing farmers to easily create and manage customizable e-commerce websites.",
+          "Built with Angular (frontend) and Spring Boot (backend) for a responsive, scalable, and modular experience.",
+          "Integrated a shared marketplace for buying/selling seeds, equipment, and farming resources.",
+          "Added AI-powered features, including:",
+          "Automated component generation for e-commerce sites.",
+          "Plant disease detection with AI-driven recommendations.",
+          "Image color extraction for platform customization.",
+          "Enabled real-time notifications and messaging using WebSockets.",
+          "Designed role-based access control for managing products, customers, employees, and orders.",
+          "Deployed on OpenStack using Docker, Ansible, and Heat for automated provisioning.",
+          "Used Kubernetes for orchestration, ensuring scalability and fault tolerance.",
+          "Monitored system health with Prometheus & Grafana dashboards."
+        ],
+        "certs.page.title": "Certifications",
+        "certs.page.description": "Validated expertise through industry-recognized certifications",
+        "projects.labels.technology": "Technology Stack",
+        "projects.labels.features": "Key Features",
+        "projects.labels.viewCredential": "View Credential",
+        "footer.nav.about": "About",
+        "footer.nav.experience": "Experience",
+        "footer.nav.projects": "Projects",
+        "footer.nav.contact": "Contact",
+        "footer.copyright": "© 2024 Kebsi Montassar. All rights reserved.",
+        "footer.builtWith": "Built with privacy and security in mind."
       }
     },
     fr: {
@@ -143,7 +189,49 @@ i18n.use(initReactI18next).init({
         "home.achievements.skills.title": "Compétences",
         "home.achievements.skills.description": "Maîtrise des technologies incluant JavaScript, Python, React, Node.js et des plateformes cloud comme AWS et Firebase. Solide fondation en développement frontend et backend avec focus sur les pratiques de code propre.",
         "home.achievements.skills.label": "compétences",
-        "home.personal.text": "Bonjour"
+        "home.personal.text": "Bonjour",
+        "projects.page.title": "Mes Projets",
+        "projects.page.description": "Présentation de solutions innovantes construites avec des technologies de pointe",
+        "projects.playmate.description": "Une application web pour les passionnés de football pour trouver et réserver des terrains.",
+        "projects.playmate.details": [
+          "Plateforme de matchmaking football avec réservations de terrains, tournois et commandes d'équipements sportifs.",
+          "Création d'un tableau de bord administrateur pour une gestion efficace de la plateforme.",
+          "Intégration des API Google Maps, Calendar, Mailing et SMS pour une expérience utilisateur fluide."
+        ],
+        "projects.flexflow.description": "Une application web pour gérer et optimiser les horaires des employés.",
+        "projects.flexflow.details": [
+          "Développement du frontend avec React + TypeScript, Vite et Chakra UI pour une interface moderne et rapide.",
+          "Implémentation d'une authentification sécurisée et d'un contrôle d'accès basé sur les rôles avec NestJS et JWT.",
+          "Création de microservices backend avec NestJS, utilisant MongoDB pour les données utilisateurs et PostgreSQL pour la gestion des tâches.",
+          "Utilisation de Docker pour la conteneurisation et GitHub Actions pour le CI/CD automatisé.",
+          "Assurance de la qualité et de la sécurité du code avec Mocha, Playwright et Snyk."
+        ],
+        "projects.verdeseeds.description": "Une plateforme SaaS multi-locataire pour les agriculteurs pour créer et gérer des sites e-commerce.",
+        "projects.verdeseeds.details": [
+          "Développement d'une plateforme SaaS multi-locataire permettant aux agriculteurs de créer et gérer facilement des sites e-commerce personnalisables.",
+          "Construit avec Angular (frontend) et Spring Boot (backend) pour une expérience responsive, évolutive et modulaire.",
+          "Intégration d'une marketplace partagée pour l'achat/vente de semences, équipements et ressources agricoles.",
+          "Ajout de fonctionnalités alimentées par l'IA, notamment :",
+          "Génération automatisée de composants pour les sites e-commerce.",
+          "Détection des maladies des plantes avec recommandations basées sur l'IA.",
+          "Extraction des couleurs d'images pour la personnalisation de la plateforme.",
+          "Activation des notifications et messagerie en temps réel avec WebSockets.",
+          "Conception d'un contrôle d'accès basé sur les rôles pour la gestion des produits, clients, employés et commandes.",
+          "Déploiement sur OpenStack avec Docker, Ansible et Heat pour le provisionnement automatisé.",
+          "Utilisation de Kubernetes pour l'orchestration, assurant l'évolutivité et la tolérance aux pannes.",
+          "Surveillance de la santé du système avec des tableaux de bord Prometheus & Grafana."
+        ],
+        "certs.page.title": "Certifications",
+        "certs.page.description": "Expertise validée par des certifications reconnues par l'industrie",
+        "projects.labels.technology": "Stack Technologique",
+        "projects.labels.features": "Fonctionnalités Clés",
+        "projects.labels.viewCredential": "Voir le Certificat",
+        "footer.nav.about": "À Propos",
+        "footer.nav.experience": "Expérience",
+        "footer.nav.projects": "Projets",
+        "footer.nav.contact": "Contact",
+        "footer.copyright": "© 2024 Kebsi Montassar. Tous droits réservés.",
+        "footer.builtWith": "Conçu avec le souci de la confidentialité et de la sécurité."
       }
     }
   },

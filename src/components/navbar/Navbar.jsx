@@ -16,8 +16,9 @@ import {
 import { Link as RouterLink, useLocation } from 'react-router-dom'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { useRef, useEffect } from 'react'
-import data from '../../data/footerData'
+import {useFooterData} from '../../data/footerData'
 const Navbar = () => {
+  const data = useFooterData()
   const { colorMode } = useColorMode()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = useRef()

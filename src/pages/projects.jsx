@@ -13,7 +13,7 @@ import { keyframes } from '@emotion/react'
 
 import ProjectCard from '../components/Project/ProjectCard'
 import CertificationCard from '../components/Project/CertificationCard'
-import { projectsData, certs, texts, textsused } from '../data/projectsData'
+import { useProjectsData } from '../data/projectsData'
 
 const MotionBox = chakra(motion.div)
 const MotionHeading = chakra(motion.h2)
@@ -22,6 +22,9 @@ const MotionText = chakra(motion.p)
 
 // Projects page component
 const Projects = () => {
+
+  const data = useProjectsData()
+  const { projectsData, certs, texts,textsused  } = data
   const headingGradient = 'linear(to-r, purple.500, blue.500)';
 
   const bgColor = useColorModeValue('gray.50', 'gray.900')

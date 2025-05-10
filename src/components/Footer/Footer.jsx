@@ -2,11 +2,11 @@ import React from 'react'
 import { Box, IconButton, Link as ChakraLink, VStack, HStack, Text, useColorMode, Flex, Stack } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
-import data from '../../data/footerData'
+import { useFooterData } from '../../data/footerData'
+
 const Footer = () => {
     const { colorMode } = useColorMode()
-
-  
+    const data = useFooterData()
     
     const firstColor = colorMode === 'light' ? '#F7FAFC' : '#1A202C'
     const secondColor = colorMode === 'light' ? '#EDF2F7' : '#171923'
