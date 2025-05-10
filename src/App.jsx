@@ -6,7 +6,7 @@ import Home from './pages/home'
 import About from './pages/about'
 import Experience from './pages/experience'
 import Projects from './pages/projects'
-import Contact from './pages/Contact'
+import Contact from './pages/contact'
 import Footer from './components/Footer/Footer'
 import Lenis from '@studio-freight/lenis'
 import { useEffect } from 'react';
