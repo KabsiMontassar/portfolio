@@ -1,6 +1,8 @@
 
 import { FaAngular } from 'react-icons/fa';
 import flexflow from "../assets/projects/flexflow.png";
+import playmate from "../assets/projects/playmate.png";
+import verdeseeds from "../assets/projects/verdeseeds.png";
 
 // Projects data
 const projectsData = [
@@ -13,7 +15,7 @@ const projectsData = [
       'Built an admin dashboard for efficient platform management.',
       'Integrated Google Maps, Calendar, Mailing, and SMS APIs for seamless user experience.',
     ],
-    image: "",
+    image: playmate,
     link: `https://github.com/KabsiMontassar/PlayMate_Web`,
     technologies: ['PHP', 'Symfony', 'Ajax', 'Bootstrap', 'MySQL', 'API Integration', 'Backend Management'],
   },
@@ -50,7 +52,7 @@ const projectsData = [
       'Monitored system health with Prometheus & Grafana dashboards.',
     ],
     link: `https://github.com/KabsiMontassar/SpringBack`,
-    image: "",
+    image: verdeseeds,
 
     technologies: ['Angular', 'Spring Boot', 'Java', 'WebSockets', 'JWT', 'Docker', 'Kubernetes', 'OpenStack', 'Ansible', 'Heat', 'Prometheus', 'Grafana'],
   },

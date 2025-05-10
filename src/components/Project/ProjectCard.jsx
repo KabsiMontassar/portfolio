@@ -16,14 +16,13 @@ import {
     Tag,
     TagLabel,
     Divider,
-    useColorModeValue
+    useColorModeValue,
+    Image
 } from '@chakra-ui/react'
 import { motion, useInView } from 'framer-motion'
 import { FiGithub, FiCheckCircle, FiCode, FiCpu } from 'react-icons/fi'
 
 const MotionBox = chakra(motion.div)
-
-
 
 const ProjectCard = ({ project, index, allTextUsed }) => {
     const ref = useRef(null)
@@ -33,8 +32,6 @@ const ProjectCard = ({ project, index, allTextUsed }) => {
     const borderColor = useColorModeValue('gray.200', 'gray.700')
     const textColor = useColorModeValue('gray.700', 'gray.300')
     const accentColor = useColorModeValue('purple.500', 'purple.300')
-
-
 
     return (
         <MotionBox
@@ -83,7 +80,30 @@ const ProjectCard = ({ project, index, allTextUsed }) => {
                             border="1px solid"
                             borderColor={borderColor}
                         >
-
+                            <Box
+                                w="full"
+                                h="full"
+                                position="relative"
+                                sx={{
+                                    '&::before': {
+                                        content: '""',
+                                        display: 'block',
+                                        paddingTop: '66.67%' // 3:2 aspect ratio
+                                    }
+                                }}
+                            >
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    position="absolute"
+                                    top="0"
+                                    left="0"
+                                    w="full"
+                                    h="full"
+                                    objectFit="contain"
+                                    p={4}
+                                />
+                            </Box>
                         </Box>
                     </Box>
 
@@ -151,7 +171,6 @@ const ProjectCard = ({ project, index, allTextUsed }) => {
                                             px={4}
                                             py={2}
                                         >
-
                                             <TagLabel>{tech}</TagLabel>
                                         </Tag>
                                     ))}
