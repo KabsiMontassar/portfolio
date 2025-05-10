@@ -3,6 +3,7 @@ import { FaAngular } from 'react-icons/fa';
 import flexflow from "../assets/projects/flexflow.png";
 import playmate from "../assets/projects/playmate.png";
 import verdeseeds from "../assets/projects/verdeseeds.png";
+import { GrCertificate } from "react-icons/gr";
 
 // Projects data
 const projectsData = [
@@ -63,7 +64,7 @@ const certs = [
     title: 'IBM Artificial Intelligence Fundamentals',
     issuer: 'IBM',
     year: 2025,
-    icon: FaAngular,
+    icon: GrCertificate,
     color: '#052FAD',
     description: 'Fundamentals of AI including machine learning, deep learning, and neural networks',
     link: 'https://www.credly.com/badges/1ee596e7-9831-41f4-a81a-baa1700bfd38'
@@ -72,7 +73,7 @@ const certs = [
     title: 'Hedera Hashgraph Developer',
     issuer: 'The Hashgraph Association',
     year: 2025,
-    icon: FaAngular,
+    icon: GrCertificate,
     color: '#00C4BE',
     description: 'Building decentralized applications on the Hedera network',
     link: 'https://certs.hashgraphdev.com/e6beec52-97b1-4bf7-bb84-ee6fbfed1fcf.pdf'
@@ -81,7 +82,7 @@ const certs = [
     title: 'JavaScript Algorithms and Data Structures',
     issuer: 'FreeCodeCamp',
     year: 2022,
-    icon: FaAngular,
+    icon: GrCertificate,
     color: '#0A0A23',
     description: 'Mastery of JavaScript fundamentals and problem-solving techniques',
     link: 'https://freecodecamp.org/certification/fcc2e4e261a-212a-44f2-97ab-c8af1fc0a2c8/javascript-algorithms-and-data-structures'
@@ -90,7 +91,7 @@ const certs = [
     title: 'CCNA: Switching, Routing, and Wireless Essentials',
     issuer: 'Cisco Networking Academy',
     year: 2024,
-    icon: FaAngular,
+    icon: GrCertificate,
     color: '#F2F2F2',
     description: 'Fundamentals of networking, including switching, routing, and wireless technologies',
     link: 'https://www.credly.com/badges/2b09d86c-7320-4e62-870d-9f636f36425e'
