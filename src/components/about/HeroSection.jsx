@@ -18,6 +18,8 @@ const HeroSection = ({ alltexts }) => {
         `;
     const gradientAnimation = `${gradientShift} 15s ease infinite`;
 
+
+
     return (
         <>
             <Box mb={16}>
@@ -25,16 +27,14 @@ const HeroSection = ({ alltexts }) => {
                     fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }}
                     lineHeight="1.1"
                     mb={6}
+                    fontWeight="700"
+                    bgGradient="linear(to-r, purple.500, blue.500)"
+                    bgClip="text"
+                    animation={prefersReducedMotion ? undefined : gradientAnimation}
                 >
-                    <Box
-                        as="span"
-                        bgGradient="linear(to-r, purple.500, blue.500)"
-                        bgClip="text"
-                        backgroundSize="200% auto"
-                        animation={!prefersReducedMotion ? gradientAnimation : undefined}
-                    >
-                        {alltexts[0]}
-                    </Box>
+
+                    {alltexts[0]}
+
                 </Heading>
                 <Text
                     fontSize="xl"

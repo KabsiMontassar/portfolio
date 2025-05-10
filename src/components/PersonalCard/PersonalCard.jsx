@@ -41,8 +41,10 @@ const PersonalCard = ({data}) => {
                 <Box
                     borderRadius="3xl"
                     overflow="hidden"
-                    w={{ base: "280px", sm: "320px", md: "300px", lg: "300px", xl: "400px" }}
-                    h={{ base: "360px", sm: "420px", md: "400px", lg: "400px", xl: "500px" }}
+                    // big size for the image   lg is 800px
+                    w={{ base: "280px", sm: "300px", md: "350px", lg: "800px" }}
+                    h={{ base: "280px", sm: "300px", md: "350px", lg: "800px" }}
+                   
                     boxShadow="2xl"
                     transition="transform 0.7s ease"
                     _hover={{ transform: 'scale(1.05)' }}
@@ -77,13 +79,13 @@ const PersonalCard = ({data}) => {
                     position="relative"
                     borderRadius="3xl"
                     overflow="hidden"
-                    w={{ base: "280px", sm: "300px", md: "350px", lg: "400px" }}
-                    h={{ base: "280px", sm: "300px", md: "350px", lg: "400px" }}
+                    w={{ base: "180px", sm: "200px", md: "250px", lg: "300px" }}
+                    h={{ base: "180px", sm: "200px", md: "250px", lg: "300px" }}
                     bg={colorMode === 'light' ? 'purple.50' : 'purple.800'}
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
-                    boxShadow="2xl"
+                    boxShadow={{ base: "lg", md: "2xl" }}
                     transition="transform 0.3s ease"
                     _hover={{ transform: 'scale(1.02)' }}
                 >

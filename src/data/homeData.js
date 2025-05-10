@@ -13,7 +13,6 @@ const AchievementsData = {
     {
       title: "Projects",
       description: "Built responsive web applications using React, Node.js, and modern frameworks. Specialized in creating interactive dashboards and e-commerce solutions with focus on performance and accessibility.",
-      number: "15+",
       label: "projects",
       color: "purple",
       images: [
@@ -27,7 +26,6 @@ const AchievementsData = {
     {
       title: "Experience",
       description: "Professional work experience at tech companies, contributing to large-scale projects and collaborating with cross-functional teams. Led initiatives that improved performance by 40% and user satisfaction by 25%.",
-      number: "3+",
       label: "experiences",
       color: "green",
       images: [
@@ -40,7 +38,6 @@ const AchievementsData = {
     {
       title: `Education`,
       description: `Advanced degrees in Computer Science with focus on human-computer interaction and distributed systems. Published research papers on innovative approaches to user interface design.`,
-      number: `2+`,
       label: `education`,
       color: `teal`,
       images: [
@@ -52,7 +49,6 @@ const AchievementsData = {
     {
       title: "Hackathons",
       description: "Participated in competitive coding events, winning awards for innovative solutions in AI and web development categories. Collaborated with diverse teams to build prototypes under time constraints.",
-      number: "5+",
       label: "hackathons",
       color: "blue",
       images: [
@@ -66,7 +62,6 @@ const AchievementsData = {
       title: `Certificates`,
       description: `Completed certifications in web development, cloud computing, and UX design from recognized platforms like Coursera and
       Udemy. Continuously learning new technologies to stay ahead in the field.`,
-      number: `10+`,
       label: `certificates`,
       color: `orange`,
       images: [
@@ -79,7 +74,6 @@ const AchievementsData = {
     {
       title: `Skills`,
       description: `Mastered technologies including JavaScript, Python, React, Node.js, and cloud platforms like AWS and Firebase. Strong foundation in both frontend and backend development with focus on clean code practices.`,
-      number: `20+`,
       label: `skills`,
       color: `red`,
       images: [
@@ -95,7 +89,7 @@ const AchievementsData = {
 }
 
 const PersonalCardData = {
-  text : `Hi`
+  text: `Hi`
 }
 
 const data = {
@@ -107,4 +101,4 @@ const data = {
 
 
 
-export { data}
+export { data }

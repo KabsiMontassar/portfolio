@@ -73,8 +73,8 @@ const ImagePreview = ({ images, borderColor, textColor }) => {
                     >
                         <Icon
                             as={getIconByTitle(img.title)}
-                            w={6}
-                            h={6}
+                            w={8}
+                            h={8}
 
                             color={textColor}
                             mb={2}

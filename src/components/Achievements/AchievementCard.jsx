@@ -180,7 +180,7 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
                                         fontWeight="700"
                                         color={textColor}
                                     >
-                                        {achievement.number} {achievement.title}
+                                        {achievement.title}
                                     </Heading>
                                 </Box>
                             </Flex>

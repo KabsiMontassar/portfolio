@@ -101,7 +101,8 @@ const texts = {
     title: "My Projects",
     description: "Showcasing innovative solutions built with cutting-edge technologies",
     certsTitle: "Certifications",
-    certsDescription: "Validated expertise through industry-recognized certifications"
+    certsDescription: "Validated expertise through industry-recognized certifications",
+    certsText: "Certifications",
   }
 
 export { projectsData, certs  , texts , textsused}

@@ -94,12 +94,11 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-          >
+          >  
+
             <MotionHeading
               fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
-              bgGradient={colorMode === 'light'
-                ? 'linear(to-r, purple.600, blue.600)'
-                : 'linear(to-r, purple.300, blue.300)'}
+              bgGradient="linear(to-r, purple.500, blue.500)"
               bgClip="text"
               letterSpacing="tight"
               lineHeight="1.1"

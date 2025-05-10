@@ -5,14 +5,15 @@ import {
   chakra,
   SimpleGrid,
   useColorModeValue,
-  usePrefersReducedMotion
+  usePrefersReducedMotion,
+  Heading
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { keyframes } from '@emotion/react'
 
 import ProjectCard from '../components/Project/ProjectCard'
 import CertificationCard from '../components/Project/CertificationCard'
-import { projectsData, certs  ,texts , textsused} from '../data/projectsData'
+import { projectsData, certs, texts, textsused } from '../data/projectsData'
 
 const MotionBox = chakra(motion.div)
 const MotionHeading = chakra(motion.h2)
@@ -21,10 +22,8 @@ const MotionText = chakra(motion.p)
 
 // Projects page component
 const Projects = () => {
-  const headingGradient = useColorModeValue(
-    'linear(to-r, purple.600, blue.600)',
-    'linear(to-r, purple.300, blue.300)'
-  )
+  const headingGradient = 'linear(to-r, purple.500, blue.500)';
+
   const bgColor = useColorModeValue('gray.50', 'gray.900')
   const prefersReducedMotion = usePrefersReducedMotion()
 
@@ -112,15 +111,17 @@ const Projects = () => {
             transition={{ duration: 0.6 }}
             textAlign="center"
           >
-            <MotionHeading
-              fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
-              bgGradient={headingGradient}
-              bgClip="text"
-              letterSpacing="tight"
-              lineHeight="1.1"
-              mb={4}
-            >
-              {textsused.title}
+            <MotionHeading>
+              <Heading
+                mb={4}
+                fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
+                bgGradient={headingGradient}
+                bgClip="text"
+                letterSpacing="tight"
+                lineHeight="1.5">
+                {textsused.title}
+              </Heading>
+
             </MotionHeading>
             <MotionText
               fontSize={{ base: "lg", md: "xl" }}
@@ -152,15 +153,17 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               textAlign="center"
             >
-              <MotionHeading
-                fontSize={{ base: "4xl", md: "5xl" }}
-                bgGradient={headingGradient}
-                bgClip="text"
-                letterSpacing="tight"
-                lineHeight="1.1"
-                mb={4}
-              >
-                Certifications
+              <MotionHeading>
+                <Heading
+                  fontSize={{ base: "4xl", md: "5xl" }}
+                  bgGradient={headingGradient}
+                  bgClip="text"
+                  letterSpacing="tight"
+                  lineHeight="1.1"
+                  mb={4}>
+                  {textsused.certsText}
+                </Heading>
+
               </MotionHeading>
               <MotionText
                 fontSize={{ base: "lg", md: "xl" }}
