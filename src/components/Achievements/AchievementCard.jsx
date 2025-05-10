@@ -31,12 +31,17 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
 
     const colorMap = {
 
-        experiences: 'blue',
+        experiences : 'blue',
+        expériences: 'blue',
         education: 'teal',
+        formation: 'teal',
         projects: 'pink',
+        projets: 'pink',
         hackathons: 'purple',
         certificates: 'orange',
+        certificats: 'orange',
         skills: 'red',
+        compétences: 'red',
 
     };
 

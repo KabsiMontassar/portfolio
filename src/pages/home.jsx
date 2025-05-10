@@ -4,23 +4,11 @@ import Page from '../components/CursorEffectComp/page'
 import Hero from '../components/Hero/Hero'
 import Achievements from '../components/Achievements/Achievements'
 import PersonalCard from '../components/PersonalCard/PersonalCard'
-import {data} from '../data/homeData.js'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import {useHomeData} from '../data/homeData.js'
 
 const Home = () => {
+  const data = useHomeData()
+ 
   return (
     <Box position="relative" width="100%" overflow="hidden">
       <Box

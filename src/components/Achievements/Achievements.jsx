@@ -13,12 +13,17 @@ const Achievements = ({data}) => {
     return data.cards.map(item => ({
       ...item,
       color: {
-        experience: 'blue',
+        experience : 'blue',
+        expérience: 'blue',
         education: 'teal',
+        formation: 'teal',
         projects: 'pink',
+        projets: 'pink',
         hackathons: 'purple',
         certificates: 'orange',
+        certificats: 'orange',
         skills: 'red',
+        compétences: 'red',
       }[item.category]
     }));
   }, [data]);

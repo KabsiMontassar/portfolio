@@ -18,7 +18,7 @@ import {
 import { motion } from 'framer-motion'
 import { keyframes } from '@emotion/react'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
-import data from '../data/contactData'
+import useContactData from '../data/contactData'
 
 const MotionBox = motion.create(Box)
 const MotionHeading = motion.create(Heading)
@@ -26,8 +26,10 @@ const MotionText = motion.create(Text)
 const MotionVStack = motion.create(VStack)
 
 const Contact = () => {
+  
   const { colorMode } = useColorMode()
   const prefersReducedMotion = usePrefersReducedMotion()
+  const data = useContactData();
 
   const floatingAnimation = keyframes`
     0% { transform: translateY(0px) rotate(0deg); }

@@ -15,36 +15,34 @@ const PersonalCard = ({data}) => {
     return (
         <Flex
             as="section"
-            direction="column"
+            direction={{ base: "column", lg: "row" }}
             position="relative"
-            minH={{ base: "100vh", sm: "120vh", md: "100vh" }}
-            justifyContent="center"
+            minH={{ base: "auto", md: "100vh" }}
+            justifyContent={{ base: "flex-start", md: "center" }}
             alignItems="center"
             overflow="hidden"
-            px={{ base: 4, md: 6, lg: 8 }}
-            py={{ base: 8, md: 0 }}
-            gap={{ base: 8, md: 0 }}
+            px={{ base: 4, md: 8, lg: 12 }}
+            py={{ base: 12, md: 0 }}
+            gap={{ base: 8, md: 12, lg: 16 }}
         >
             {/* Profile Image */}
             <Flex
                 direction="column"
-                position={{ base: "relative", md: "absolute" }}
-                left={{ base: 0, md: "10%", lg: "15%" }}
-                top={{ base: 0, md: "50%" }}
-                transform={{ base: "none", md: "translateY(-50%)" }}
+                position={{ base: "relative", lg: "relative" }}
+                left={{ base: 0, lg: 0 }}
+                top={{ base: 0, lg: 0 }}
+                transform={{ base: "none", lg: "none" }}
                 zIndex={2}
-                mb={{ base: 4, md: 0 }}
-                mx={{ base: "auto", md: 0 }}
-                w={{ base: "100%", md: "auto" }}
+                flex={{ base: "1", lg: "1" }}
                 alignItems="center"
+                justifyContent="center"
+                w={{ base: "100%", lg: "60%" }} // Increased width for larger screens
             >
                 <Box
                     borderRadius="3xl"
                     overflow="hidden"
-                    // big size for the image   lg is 800px
-                    w={{ base: "280px", sm: "300px", md: "350px", lg: "800px" }}
-                    h={{ base: "280px", sm: "300px", md: "350px", lg: "800px" }}
-                   
+                    w={{ base: "300px", sm: "400px", md: "500px", lg: "600px", xl: "700px" }} // Increased sizes
+                    h={{ base: "300px", sm: "400px", md: "500px", lg: "600px", xl: "700px" }} // Increased sizes
                     boxShadow="2xl"
                     transition="transform 0.7s ease"
                     _hover={{ transform: 'scale(1.05)' }}
@@ -66,21 +64,21 @@ const PersonalCard = ({data}) => {
             {/* Greeting Card */}
             <Flex
                 direction="column"
-                position={{ base: "relative", md: "absolute" }}
-                right={{ base: 0, md: "15%", lg: "20%" }}
-                bottom={{ base: 0, md: "10%", lg: "5%" }}
+                position="relative"
+                right={0}
+                bottom={0}
                 zIndex={1}
-                mt={{ base: 2, md: 0 }}
-                mx={{ base: "auto", md: 0 }}
-                w={{ base: "100%", md: "auto" }}
+                flex={{ base: "1", lg: "1" }}
                 alignItems="center"
+                justifyContent="center"
+                w={{ base: "100%", lg: "50%" }}
             >
                 <Box
                     position="relative"
                     borderRadius="3xl"
                     overflow="hidden"
-                    w={{ base: "180px", sm: "200px", md: "250px", lg: "300px" }}
-                    h={{ base: "180px", sm: "200px", md: "250px", lg: "300px" }}
+                    w={{ base: "250px", sm: "300px", md: "350px", lg: "400px" }}
+                    h={{ base: "250px", sm: "300px", md: "350px", lg: "400px" }}
                     bg={colorMode === 'light' ? 'purple.50' : 'purple.800'}
                     display="flex"
                     alignItems="center"
@@ -90,7 +88,7 @@ const PersonalCard = ({data}) => {
                     _hover={{ transform: 'scale(1.02)' }}
                 >
                     <Text
-                        fontSize={"8xl"}
+                        fontSize={{ base: "2xl", sm: "3xl", md: "4xl", lg: "5xl" }}
                         fontWeight="bold"
                         color={colorMode === 'light' ? 'purple.700' : 'purple.100'}
                         textAlign="center"

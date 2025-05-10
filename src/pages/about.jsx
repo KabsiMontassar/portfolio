@@ -1,10 +1,11 @@
 import { Box, Container, usePrefersReducedMotion, useColorModeValue } from '@chakra-ui/react';
-import alltexts from '../data/aboutdata.js';
+import useAboutData from '../data/aboutdata.js';
 import HeroSection from '../components/about/HeroSection.jsx';
 import Technical from '../components/about/Technical.jsx';
 import Beyond from '../components/about/Beyond.jsx';
 const About = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
+  const aboutData = useAboutData();
 
   return (
     <>
@@ -54,9 +55,9 @@ const About = () => {
           </>
         )}
         <Container maxW="container.xl" position="relative"  >
-          <HeroSection alltexts={alltexts} />
-          <Technical alltexts={alltexts} />
-          <Beyond alltexts={alltexts} />
+          <HeroSection alltexts={aboutData} />
+          <Technical alltexts={aboutData} />
+          <Beyond alltexts={aboutData} />
         </Container>
       </Box>
     </>
