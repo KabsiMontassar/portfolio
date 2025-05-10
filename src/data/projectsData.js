@@ -1,5 +1,6 @@
 
 import { FaAngular } from 'react-icons/fa';
+import flexflow from "../assets/projects/flexflow.png";
 
 // Projects data
 const projectsData = [
@@ -12,7 +13,7 @@ const projectsData = [
       'Built an admin dashboard for efficient platform management.',
       'Integrated Google Maps, Calendar, Mailing, and SMS APIs for seamless user experience.',
     ],
-    images: [],
+    image: "",
     link: `https://github.com/KabsiMontassar/PlayMate_Web`,
     technologies: ['PHP', 'Symfony', 'Ajax', 'Bootstrap', 'MySQL', 'API Integration', 'Backend Management'],
   },
@@ -26,7 +27,7 @@ const projectsData = [
       'Used Docker for containerization and GitHub Actions for automated CI/CD.',
       'Ensured code quality and security with Mocha, Playwright, and Snyk.',
     ],
-    images: [],
+    image: flexflow,
     link: `https://github.com/KabsiMontassar/Task-Manager-with-Real-time-Notifications`,
     technologies: ['React', 'TypeScript', 'NestJS', 'PostgreSQL', 'MongoDB', 'JWT', 'WebSockets', 'Docker', 'GitHub Actions', 'CI/CD', 'Snyk', 'Microservices', 'Vite', 'Chakra'],
 
@@ -49,7 +50,7 @@ const projectsData = [
       'Monitored system health with Prometheus & Grafana dashboards.',
     ],
     link: `https://github.com/KabsiMontassar/SpringBack`,
-    images: [],
+    image: "",
 
     technologies: ['Angular', 'Spring Boot', 'Java', 'WebSockets', 'JWT', 'Docker', 'Kubernetes', 'OpenStack', 'Ansible', 'Heat', 'Prometheus', 'Grafana'],
   },
