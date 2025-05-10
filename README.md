@@ -27,7 +27,7 @@ A responsive and dynamic portfolio website built with React, showcasing professi
 
 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/portfolio.git
+git clone https://github.com/KabsiMontassar/portfolio
 cd portfolio
 ```
 
@@ -80,12 +80,7 @@ Built with Chakra UI for consistent theming and dark mode support:
 - Tablet & desktop optimized
 - Fluid transitions between breakpoints
 
-## 🔧 Configuration
 
-Environment variables can be set in `.env`:
-```env
-VITE_API_URL=your_api_url
-```
 
 ## 📄 License
 
