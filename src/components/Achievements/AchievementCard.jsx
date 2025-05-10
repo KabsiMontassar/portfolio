@@ -237,6 +237,7 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
                                         justifyContent="center"
                                     >
                                         <ImagePreview
+                                            category={achievement.label}
                                             images={achievement.images}
                                             colorKey={colorKey}
                                             borderColor={borderColor}

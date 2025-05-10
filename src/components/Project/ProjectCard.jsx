@@ -20,14 +20,12 @@ import {
 } from '@chakra-ui/react'
 import { motion, useInView } from 'framer-motion'
 import { FiGithub, FiCheckCircle, FiCode, FiCpu } from 'react-icons/fi'
-import { FaReact, FaAngular, FaNodeJs, FaDocker } from 'react-icons/fa'
-import { SiTypescript, SiNestjs, SiSpringboot, SiSymfony, SiPostgresql, SiMongodb, SiKubernetes } from 'react-icons/si'
 
 const MotionBox = chakra(motion.div)
 
 
 
-const ProjectCard = ({ project, index ,allTextUsed}) => {
+const ProjectCard = ({ project, index, allTextUsed }) => {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -37,19 +35,6 @@ const ProjectCard = ({ project, index ,allTextUsed}) => {
     const accentColor = useColorModeValue('purple.500', 'purple.300')
 
 
-    const techIcons = {
-        'React': <Icon as={FaReact} color="#61DAFB" />,
-        'Angular': <Icon as={FaAngular} color="#DD0031" />,
-        'TypeScript': <Icon as={SiTypescript} color="#3178C6" />,
-        'NestJS': <Icon as={SiNestjs} color="#E0234E" />,
-        'Spring Boot': <Icon as={SiSpringboot} color="#6DB33F" />,
-        'Symfony': <Icon as={SiSymfony} color="#000000" />,
-        'PostgreSQL': <Icon as={SiPostgresql} color="#336791" />,
-        'MongoDB': <Icon as={SiMongodb} color="#47A248" />,
-        'Docker': <Icon as={FaDocker} color="#2496ED" />,
-        'Kubernetes': <Icon as={SiKubernetes} color="#326CE5" />,
-        'Node.js': <Icon as={FaNodeJs} color="#339933" />,
-    }
 
     return (
         <MotionBox
@@ -98,7 +83,7 @@ const ProjectCard = ({ project, index ,allTextUsed}) => {
                             border="1px solid"
                             borderColor={borderColor}
                         >
-                         
+
                         </Box>
                     </Box>
 
@@ -166,11 +151,7 @@ const ProjectCard = ({ project, index ,allTextUsed}) => {
                                             px={4}
                                             py={2}
                                         >
-                                            {techIcons[tech] && (
-                                                <Box mr={2} display="inline-flex">
-                                                    {techIcons[tech]}
-                                                </Box>
-                                            )}
+
                                             <TagLabel>{tech}</TagLabel>
                                         </Tag>
                                     ))}

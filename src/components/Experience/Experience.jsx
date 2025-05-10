@@ -8,6 +8,7 @@ const ExperienceElement = ({ experienceData = [], eventsData = [] }) => {
       pt="120px"
       px={{ base: 2, md: 8, lg: 16 }}
       maxW="1200px"
+      
       mx="auto"
       position="relative"
       overflow="hidden"

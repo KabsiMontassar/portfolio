@@ -11,30 +11,32 @@ const AchievementsData = {
 
   cards: [
     {
+      title: "Experience",
+      description: "Professional work experience at tech companies, contributing to large-scale projects and collaborating with cross-functional teams. Developed skills in agile methodologies, project management, and mentoring.",
+
+      label: "experiences",
+      color: "green",
+      images: [
+        { url: "/images/experiences/exp1.jpg", title: "FIDNESS" },
+        { url: "/images/experiences/exp2.jpg", title: "ESPRIT" },
+        { url: "/images/experiences/exp3.jpg", title: "MOOD AND FOOD" }
+      ],
+      skills: ["Leadership", "Agile Methodologies", "Mentoring", "Project Management"]
+    },
+    {
       title: "Projects",
       description: "Built responsive web applications using React, Node.js, and modern frameworks. Specialized in creating interactive dashboards and e-commerce solutions with focus on performance and accessibility.",
       label: "projects",
       color: "purple",
       images: [
-        { url: "/images/projects/project1.jpg", title: "E-commerce Platform" },
-        { url: "/images/projects/project2.jpg", title: "Analytics Dashboard" },
-        { url: "/images/projects/project3.jpg", title: "Mobile App" }
+        { url: "/images/projects/project1.jpg", title: "PlayMate" },
+        { url: "/images/projects/project2.jpg", title: "FlexFlow" },
+        { url: "/images/projects/project3.jpg", title: "Verdeseeds" }
       ],
-      skills: ["React", "Node.js", "TypeScript", "GraphQL", "Chakra UI"]
+      skills: ["React", "Node.js", "NestJs", "TypeScript", "MongoDb", "PostgreSQl", "Chakra UI"]
     },
 
-    {
-      title: "Experience",
-      description: "Professional work experience at tech companies, contributing to large-scale projects and collaborating with cross-functional teams. Led initiatives that improved performance by 40% and user satisfaction by 25%.",
-      label: "experiences",
-      color: "green",
-      images: [
-        { url: "/images/experiences/exp1.jpg", title: "Tech Company A" },
-        { url: "/images/experiences/exp2.jpg", title: "Tech Company B" },
-        { url: "/images/experiences/exp3.jpg", title: "Tech Company C" }
-      ],
-      skills: ["Leadership", "Agile Methodologies", "Mentoring", "Project Management"]
-    },
+
     {
       title: `Education`,
       description: `Advanced degrees in Computer Science with focus on human-computer interaction and distributed systems. Published research papers on innovative approaches to user interface design.`,
@@ -44,7 +46,7 @@ const AchievementsData = {
         { url: "/images/education/edu1.jpg", title: "Bachelor's Degree" },
         { url: "/images/education/edu2.jpg", title: "Master's Degree" }
       ],
-      skills: ["Research", "Algorithms", "Distributed Systems", "HCI"]
+      skills: ["Research", "Algorithms", "Distributed Systems"]
     },
     {
       title: "Hackathons",
@@ -52,9 +54,9 @@ const AchievementsData = {
       label: "hackathons",
       color: "blue",
       images: [
-        { url: "/images/hackathons/hack1.jpg", title: "AI Challenge" },
-        { url: "/images/hackathons/hack2.jpg", title: "Web Dev Contest" },
-        { url: "/images/hackathons/hack3.jpg", title: "Hackathon Finals" }
+        { url: "/images/hackathons/hack1.jpg", title: "EMPOWER X HACK" },
+        { url: "/images/hackathons/hack2.jpg", title: "BIGTECH" },
+        { url: "/images/hackathons/hack3.jpg", title: "MUTUALHACK" }
       ],
       skills: ["Teamwork", "Problem Solving", "Prototyping", "Presentation"]
     },
@@ -65,11 +67,11 @@ const AchievementsData = {
       label: `certificates`,
       color: `orange`,
       images: [
-        { url: "/images/certificates/cert1.jpg", title: "Web Development" },
-        { url: "/images/certificates/cert2.jpg", title: "Cloud Computing" },
-        { url: "/images/certificates/cert3.jpg", title: "UX Design" }
+        { url: "/images/certificates/cert1.jpg", title: "IBM" },
+        { url: "/images/certificates/cert2.jpg", title: "The Hashgraph Association" },
+        { url: "/images/certificates/cert3.jpg", title: "Cisco" }
       ],
-      skills: ["Continuous Learning", "Cloud Architecture", "UI/UX Principles"]
+      skills: ["Continuous Learning", "BlockChain", "Artificial Intelligence"]
     },
     {
       title: `Skills`,
@@ -81,7 +83,7 @@ const AchievementsData = {
         { url: "/images/skills/skill2.jpg", title: "React Development" },
         { url: "/images/skills/skill3.jpg", title: "AWS Cloud" }
       ],
-      skills: ["JavaScript", "Python", "React", "Node.js", "AWS", "Firebase"]
+      skills: ["JavaScript", "TypeScript", "Python", "Java", "React", "Node.js", "AWS", "Firebase"]
     },
 
   ]

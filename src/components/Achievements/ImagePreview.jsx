@@ -15,19 +15,31 @@ import {
     EmailIcon
 } from '@chakra-ui/icons'
 
-const ImagePreview = ({ images, borderColor, textColor }) => {
+const ImagePreview = ({ category, images, borderColor, textColor }) => {
 
-    const getIconByTitle = (title) => {
-        if (title.toLowerCase().includes('platform')) return MdAttachMoney
-        if (title.toLowerCase().includes('dashboard')) return ViewIcon
-        if (title.toLowerCase().includes('app')) return CalendarIcon
-        if (title.toLowerCase().includes('tech')) return SettingsIcon
-        if (title.toLowerCase().includes('challenge') || title.toLowerCase().includes('contest') || title.toLowerCase().includes('hackathon')) return FaRankingStar
-        if (title.toLowerCase().includes('web') || title.toLowerCase().includes('cloud') || title.toLowerCase().includes('ux')) return GrCertificate
-        if (title.toLowerCase().includes('javascript') || title.toLowerCase().includes('react') || title.toLowerCase().includes('aws')) return StarIcon
-        if (title.toLowerCase().includes('bachelor') || title.toLowerCase().includes('master')) return TbFileCertificate
-        return EmailIcon
+
+    const getIconByCategory = (category) => {
+        switch (category) {
+            case 'experiences':
+                return SettingsIcon
+            case 'education':
+                return TbFileCertificate
+            case 'projects':
+                return CalendarIcon
+            case 'hackathons':
+                return FaRankingStar
+            case 'certificates':
+                return GrCertificate
+            case 'skills':
+                return StarIcon
+            default:
+                return EmailIcon
+        }
+
+
     }
+
+
 
     return (
         <SimpleGrid
@@ -72,7 +84,7 @@ const ImagePreview = ({ images, borderColor, textColor }) => {
                         px={4}
                     >
                         <Icon
-                            as={getIconByTitle(img.title)}
+                            as={getIconByCategory(category)}
                             w={8}
                             h={8}
 
