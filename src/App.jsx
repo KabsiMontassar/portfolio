@@ -33,17 +33,7 @@ function App() {
 
   }, [])
 
-  useEffect(() => {
-    const handleRouteChange = () => {
-      const path = window.location.pathname
-      if (!['/portfolio/', '/about', '/experience', '/projects', '/contact'].includes(path)) {
-        window.location.replace('/portfolio/')
-      }
-    }
-
-    handleRouteChange()
-  }, [])
-
+ 
 
 
 
