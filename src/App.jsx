@@ -33,6 +33,17 @@ function App() {
 
   }, [])
 
+  useEffect(() => {
+    const handleRouteChange = () => {
+      const path = window.location.pathname
+      if (!['/portfolio/', '/about', '/experience', '/projects', '/contact'].includes(path)) {
+        window.location.replace('/portfolio/')
+      }
+    }
+
+    handleRouteChange()
+  }, [])
+
 
 
 
@@ -49,7 +60,7 @@ function App() {
         <Navbar />
         <FloatingSettings />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/portfolio/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/projects" element={<Projects />} />

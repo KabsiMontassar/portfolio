@@ -63,7 +63,7 @@ const Navbar = () => {
       >
         <ChakraLink 
           as={RouterLink} 
-          to="/" 
+          to="/portfolio" 
           fontSize={{ base: "sm", sm: "md", md: "xl" }} // Smaller font on mobile
           fontWeight="700" 
           position="relative" 
