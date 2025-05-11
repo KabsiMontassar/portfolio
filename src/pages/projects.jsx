@@ -43,6 +43,7 @@ const Projects = () => {
 
   return (
     <Box
+      userSelect={"none"}
       pt={{ base: '80px', md: '120px' }}
       minH="100vh"
       bg={bgColor}

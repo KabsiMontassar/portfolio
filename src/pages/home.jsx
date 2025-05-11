@@ -10,7 +10,7 @@ const Home = () => {
   const data = useHomeData()
  
   return (
-    <Box position="relative" width="100%" overflow="hidden">
+    <Box userSelect={"none"} position="relative" width="100%" overflow="hidden">
       <Box
         as="section"
         height={{ base: "90vh", md: "100vh" }}

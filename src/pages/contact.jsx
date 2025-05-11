@@ -13,11 +13,13 @@ import {
   IconButton,
   useColorModeValue,
   usePrefersReducedMotion,
+  useToast,
 } from '@chakra-ui/react'
 
 import { motion } from 'framer-motion'
 import { keyframes } from '@emotion/react'
-import { FaLinkedin, FaGithub } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaCheck } from 'react-icons/fa'
+import { useState } from 'react'
 import useContactData from '../data/contactData'
 
 const MotionBox = motion.create(Box)
@@ -30,6 +32,13 @@ const Contact = () => {
   const { colorMode } = useColorMode()
   const prefersReducedMotion = usePrefersReducedMotion()
   const data = useContactData();
+  const [copiedIndex, setCopiedIndex] = useState(null);
+
+  const handleCopy = (value, index) => {
+    navigator.clipboard.writeText(value);
+    setCopiedIndex(index);
+    setTimeout(() => setCopiedIndex(null), 2000);
+  };
 
   const floatingAnimation = keyframes`
     0% { transform: translateY(0px) rotate(0deg); }
@@ -40,7 +49,7 @@ const Contact = () => {
   const floating = `${floatingAnimation} 6s ease-in-out infinite`
 
   return (
-    <Box pt="50px" position="relative" minH="100vh" overflow="hidden">
+    <Box   pt="50px" position="relative" minH="100vh" overflow="hidden">
       {/* Animated background elements */}
       <Box
         position="absolute"
@@ -143,17 +152,19 @@ const Contact = () => {
                       transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                     >
                       <Button
+                        onClick={() => handleCopy(method.value, index)}
                         as="a"
                         variant="outline"
                         w="full"
                         size="lg"
                         leftIcon={<Icon as={method.icon} />}
+                        rightIcon={copiedIndex === index && <Icon as={FaCheck} color="green.500" />}
                         justifyContent="start"
                         px={6}
                         py={8}
                         borderRadius="xl"
                         borderWidth="1px"
-                        borderColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
+                        borderColor={copiedIndex === index ? 'green.500' : (colorMode === 'light' ? 'gray.200' : 'gray.700')}
                         bg={colorMode === 'light' ? 'white' : 'gray.800'}
                         _hover={{
                           transform: 'translateY(-3px)',
@@ -165,7 +176,7 @@ const Contact = () => {
                         <VStack align="start" spacing={1}>
                           <Text fontWeight="600">{method.title}</Text>
                           <Text fontSize="sm" color={colorMode === 'light' ? 'gray.600' : 'gray.400'}>
-                            {method.value}
+                            {method.value} 
                           </Text>
                         </VStack>
                       </Button>

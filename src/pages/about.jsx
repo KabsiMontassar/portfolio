@@ -10,6 +10,7 @@ const About = () => {
   return (
     <>
       <Box
+       userSelect={"none"}
         pt="100px"
         position="relative"
         overflow="hidden"

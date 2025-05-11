@@ -5,6 +5,7 @@
    box-sizing: border-box;
    font-style: normal;
    font-weight: 400;
+   
 }
 
 .greeting-text{
@@ -77,3 +78,4 @@
 .achievement-card.red:hover {
   box-shadow: 0 0 50px -2px rgba(245, 101, 101, 0.5);
 }
+

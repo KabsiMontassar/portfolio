@@ -5,9 +5,8 @@ import { useExperienceData } from '../data/experiencedata'
 
 const Experience = () => {
   const { experienceData, eventsData } = useExperienceData();
- console.log(eventsData)
   return (
-    <Box pb={20}>
+    <Box userSelect={"none"} pb={20}>
       <Box
         position="absolute"
         top={0}

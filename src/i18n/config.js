@@ -168,7 +168,11 @@ i18n.use(initReactI18next).init({
         "events.mutualhack.description": [
           "Built an AI-driven system to analyze patient vitals collected from IoT devices.",
           "Implemented real-time health monitoring and alerting for early disease detection."
-        ]
+        ],
+        "certs.ibm.description": "Comprehensive training in AI fundamentals, covering machine learning algorithms, neural networks, and practical AI applications. Focus on ethical AI development and real-world implementation strategies.",
+        "certs.hedera.description": "Advanced certification in blockchain development on the Hedera network, including smart contracts, tokenization, and decentralized application architecture. Hands-on experience with HashGraph consensus.",
+        "certs.javascript.description": "Extensive certification covering JavaScript fundamentals, advanced algorithms, data structures, and modern ES6+ features. Includes practical problem-solving and coding challenges.",
+        "certs.cisco.description": "Professional certification in network engineering, covering routing protocols, switching technologies, wireless networking, and network security. Includes hands-on lab experience with Cisco equipment."
       }
     },
     fr: {
@@ -288,12 +292,6 @@ i18n.use(initReactI18next).init({
           "Conçu et développé une application web pour la gestion des contrats partenaires, implémentant le chiffrement et d'autres mesures de sécurité pour protéger les données sensibles.",
           "Conçu et implémenté des fonctionnalités de visualisation de données pour améliorer la présentation des données, permettant une gestion efficace et améliorant la rétention des clients."
         ],
-
-        
-        
-
-
-
         "events.bigtech.title": "Hackathon Impact Now 1ère Place",
         "events.bigtech.company": "BIGTECH",
         "events.bigtech.location": "Tunis, Tunisie",
@@ -303,7 +301,6 @@ i18n.use(initReactI18next).init({
           "Focus sur l'amélioration de l'interface utilisateur et du design global pour une meilleure expérience utilisateur.",
           "Optimisation de la solution pour répondre aux standards de la compétition et assurer une haute performance sous évaluation."
         ],
-
         "events.empowerxhack.title": "Empower X-Hack 3ème Place",
         "events.empowerxhack.company": "Ecole Supérieure Privée d'Ingénierie et de Technologies - ESPRIT",
         "events.empowerxhack.location": "Tunis, Ariana",
@@ -313,19 +310,17 @@ i18n.use(initReactI18next).init({
           "Développement d'une API côté serveur pour permettre à l'application mobile d'interagir avec les méthodes blockchain.",
           "Création d'une plateforme web permettant aux utilisateurs de dépenser des jetons gagnés via l'application mobile."
         ],
-  
-
-
-
-
         "events.mutualhack.title": "Hackathon Mutual Hack",
         "events.mutualhack.company": "MAE ASSURANCES",
         "events.mutualhack.location": "Tunis, Tunisie",
         "events.mutualhack.description": [
           "Développement d'un système basé sur l'IA pour analyser les signes vitaux des patients collectés via des appareils IoT.",
           "Implémentation d'un système de surveillance et d'alerte en temps réel pour la détection précoce des maladies."
-        ]
-
+        ],
+        "certs.ibm.description": "Formation complète sur les fondamentaux de l'IA, couvrant les algorithmes d'apprentissage automatique, les réseaux de neurones et les applications pratiques de l'IA. Focus sur le développement éthique de l'IA et les stratégies d'implémentation.",
+        "certs.hedera.description": "Certification avancée en développement blockchain sur le réseau Hedera, incluant les smart contracts, la tokenisation et l'architecture d'applications décentralisées. Expérience pratique avec le consensus HashGraph.",
+        "certs.javascript.description": "Certification approfondie couvrant les fondamentaux JavaScript, les algorithmes avancés, les structures de données et les fonctionnalités modernes ES6+. Inclut la résolution pratique de problèmes et des défis de codage.",
+        "certs.cisco.description": "Certification professionnelle en ingénierie réseau, couvrant les protocoles de routage, les technologies de commutation, les réseaux sans fil et la sécurité réseau. Inclut une expérience pratique avec les équipements Cisco."
       }
     }
   },

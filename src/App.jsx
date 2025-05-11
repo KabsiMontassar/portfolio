@@ -51,10 +51,10 @@ function App() {
         <FloatingSettings />
         <Routes>
           <Route path="/portfolio/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/portfolio/about" element={<About />} />
+          <Route path="/portfolio/experience" element={<Experience />} />
+          <Route path="/portfolio/projects" element={<Projects />} />
+          <Route path="/portfolio/contact" element={<Contact />} />
         </Routes>
       </Box>
       <Footer />

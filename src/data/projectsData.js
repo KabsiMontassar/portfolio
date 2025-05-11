@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { FaAngular } from 'react-icons/fa';
 import { GrCertificate } from "react-icons/gr";
 import flexflow from "../assets/projects/flexflow.png";
 import playmate from "../assets/projects/playmate.png";
@@ -42,7 +41,7 @@ const useProjectsData = () => {
       year: 2025,
       icon: GrCertificate,
       color: '#052FAD',
-      description: 'Fundamentals of AI including machine learning, deep learning, and neural networks',
+      description: t('certs.ibm.description'),
       link: 'https://www.credly.com/badges/1ee596e7-9831-41f4-a81a-baa1700bfd38'
     },
     {
@@ -51,7 +50,7 @@ const useProjectsData = () => {
       year: 2025,
       icon: GrCertificate,
       color: '#00C4BE',
-      description: 'Building decentralized applications on the Hedera network',
+      description: t('certs.hedera.description'),
       link: 'https://certs.hashgraphdev.com/e6beec52-97b1-4bf7-bb84-ee6fbfed1fcf.pdf'
     },
     {
@@ -60,7 +59,7 @@ const useProjectsData = () => {
       year: 2022,
       icon: GrCertificate,
       color: '#0A0A23',
-      description: 'Mastery of JavaScript fundamentals and problem-solving techniques',
+      description: t('certs.javascript.description'),
       link: 'https://freecodecamp.org/certification/fcc2e4e261a-212a-44f2-97ab-c8af1fc0a2c8/javascript-algorithms-and-data-structures'
     },
     {
@@ -69,7 +68,7 @@ const useProjectsData = () => {
       year: 2024,
       icon: GrCertificate,
       color: '#F2F2F2',
-      description: 'Fundamentals of networking, including switching, routing, and wireless technologies',
+      description: t('certs.cisco.description'),
       link: 'https://www.credly.com/badges/2b09d86c-7320-4e62-870d-9f636f36425e'
     }
   ];

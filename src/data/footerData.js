@@ -4,10 +4,10 @@ const useFooterData = () => {
     const { t } = useTranslation();
 
     const navlinks = [
-        { name: t('footer.nav.about'), path: '/about' },
-        { name: t('footer.nav.experience'), path: '/experience' },
-        { name: t('footer.nav.projects'), path: '/projects' },
-        { name: t('footer.nav.contact'), path: '/contact' }
+        { name: t('footer.nav.about'), path: '/portfolio/about' },
+        { name: t('footer.nav.experience'), path: '/portfolio/experience' },
+        { name: t('footer.nav.projects'), path: '/portfolio/projects' },
+        { name: t('footer.nav.contact'), path: '/portfolio/contact' }
     ];
 
     const data = {
