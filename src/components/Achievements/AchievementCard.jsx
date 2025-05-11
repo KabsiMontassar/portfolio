@@ -135,7 +135,7 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
                     <Box
                         className={`achievement-card ${colorChoice}`}
                         w={{ base: "full", md: isExpanded ? "full" : "600px" }}
-                        h={{ base: "auto", md: isExpanded ? "400px" : "300px" }}
+                        h={{ base: "auto", md: isExpanded ? "510px" : "300px" }}
                         bg={bgColor}
                         p={{ base: 6, md: 8 }}
                         borderRadius="3xl"
@@ -145,6 +145,7 @@ export const AchievementCard = ({ achievement, index, expandedCards, onToggleExp
                         transform={isExpanded ? "translateY(0)" : "translateY(10px)"}
                         transition="all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275)"
                         overflow="hidden"
+                        
                         display="flex"
                         flexDirection="column"
                         justifyContent="space-between"
