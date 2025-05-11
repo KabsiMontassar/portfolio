@@ -9,7 +9,7 @@ const PersonalCard = ({data}) => {
     const navigate = useNavigate();
 
     const navigateToContact = () => {
-        navigate('/contact');
+        navigate('/portfolio/contact');
     }
 
     return (
@@ -113,6 +113,7 @@ const PersonalCard = ({data}) => {
                         transition="transform 0.2s ease"
                         onClick={navigateToContact}
                         aria-label="contactMe"
+                       
                     >
                         <Icon
                             as={ArrowRightIcon}

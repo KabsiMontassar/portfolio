@@ -33,7 +33,7 @@ const Hero = ({ data }) => {
           <Button
             size={{ base: "md", md: "lg" }}
             colorScheme="purple"
-            onClick={() => navigate('/about')}
+            onClick={() => navigate('/portfolio/about')}
             _hover={{
               transform: 'translateY(-2px)',
               boxShadow: 'lg',

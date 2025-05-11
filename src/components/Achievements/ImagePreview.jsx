@@ -19,22 +19,20 @@ const ImagePreview = ({ category, images, borderColor, textColor }) => {
 
 
     const getIconByCategory = (category) => {
-        switch (category) {
-            case 'experiences':
-                return SettingsIcon
-            case 'education':
-                return TbFileCertificate
-            case 'projects':
-                return CalendarIcon
-            case 'hackathons':
-                return FaRankingStar
-            case 'certificates':
-                return GrCertificate
-            case 'skills':
-                return StarIcon
-            default:
-                return EmailIcon
-        }
+        const icons = {
+            experiences: SettingsIcon,
+            education: TbFileCertificate,
+            projects: CalendarIcon,
+            hackathons: FaRankingStar,
+            certificates: GrCertificate,
+            skills: StarIcon,
+            expériences: SettingsIcon,
+            formation: TbFileCertificate,
+            projets: CalendarIcon,
+            certificats: GrCertificate,
+            compétences: StarIcon
+        };
+        return icons[category] || EmailIcon;
 
 
     }
