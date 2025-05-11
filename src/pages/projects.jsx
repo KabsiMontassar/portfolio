@@ -24,7 +24,7 @@ const MotionText = chakra(motion.p)
 const Projects = () => {
 
   const data = useProjectsData()
-  const { projectsData, certs, texts,textsused  } = data
+  const { projectsData, certs, texts, textsused } = data
   const headingGradient = 'linear(to-r, purple.500, blue.500)';
 
   const bgColor = useColorModeValue('gray.50', 'gray.900')
@@ -115,16 +115,15 @@ const Projects = () => {
             transition={{ duration: 0.6 }}
             textAlign="center"
           >
-            <MotionHeading>
-              <Heading
-                mb={4}
-                fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
-                bgGradient={headingGradient}
-                bgClip="text"
-                letterSpacing="tight"
-                lineHeight="1.5">
-                {textsused.title}
-              </Heading>
+            <MotionHeading mb={4}
+              fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
+              bgGradient={headingGradient}
+              bgClip="text"
+              letterSpacing="tight"
+              fontWeight={"bold"}
+              lineHeight="1.5">
+
+              {textsused.title}
 
             </MotionHeading>
             <MotionText
@@ -157,16 +156,15 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               textAlign="center"
             >
-              <MotionHeading>
-                <Heading
-                  fontSize={{ base: "4xl", md: "5xl" }}
-                  bgGradient={headingGradient}
-                  bgClip="text"
-                  letterSpacing="tight"
-                  lineHeight="1.1"
-                  mb={4}>
-                  {textsused.certsText}
-                </Heading>
+              <MotionHeading mb={4}
+                fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
+                bgGradient={headingGradient}
+                bgClip="text"
+                letterSpacing="tight"
+                fontWeight={"bold"}
+                lineHeight="1.5">
+
+                {textsused.certsText}
 
               </MotionHeading>
               <MotionText

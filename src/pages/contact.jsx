@@ -13,7 +13,6 @@ import {
   IconButton,
   useColorModeValue,
   usePrefersReducedMotion,
-  useToast,
 } from '@chakra-ui/react'
 
 import { motion } from 'framer-motion'
